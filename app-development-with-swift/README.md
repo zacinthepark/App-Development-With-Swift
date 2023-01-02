@@ -4026,8 +4026,13 @@ addPomodoro()
 }
 ```
 
-- 폴더 정리: App(AppDelegate, SceneDelegate) - Models, ViewControllers(MainViewController, Storyboard) / Assets(xcassets, LaunchScreen.storyboard, Info.plist) / Products(Pomodoro.app)
-- Info.plist의 경우 디렉토리 위치가 변경될 때 에러가 뜸 / 에러가 난 부분 수동으로 디렉토리 설정(Pomodoro/Assets/Info.plist)
+- 폴더 정리
+
+  - App(AppDelegate, SceneDelegate)
+  - Models, ViewControllers(MainViewController, Storyboard)
+  - Assets(xcassets, LaunchScreen.storyboard, Info.plist) / Products(Pomodoro.app)
+  - Info.plist의 경우 디렉토리 위치가 변경될 때 에러가 뜸
+    - 에러가 난 부분 수동으로 디렉토리 설정(Pomodoro/Assets/Info.plist)
 
 - Model에서는 modeling, 해당 모델에 대한 실제 인스턴스 생성은 주로 VC에서
 - 직관성 + 수정 용이성을 위해 최대한 반복되는 부분 없이 쪼개서 이름을 붙이자
@@ -4038,13 +4043,22 @@ addPomodoro()
 - VC 상단에 Outlet, 그리고 모델 인스턴스 생성
 - viewDidLoad 함수의 경우 되도록이면 VC 상단에 위치
 
-- init // custom initializer 생성
-- String(repeating: count:) // count만큼 해당 string을 repeating해라
-- mutating func // 하나의 인스턴스는 스스로의 저장값을 바꿀 수 없어서, 저장값을 바꿀 수 있도록 mutating func으로 함
-- UIImage? // Failable, 해당 Image가 있을 수도 없을 수도 있다는 이야기
-- configureTimeLabel(timeText: String?){timeLabel.isHidden = timeText == nil, timeLabel.text = timeText} // timeText가 nil일 수도 있기에 String?으로 설정, timeText가 nil이라면 timeLabel을 숨기고, 그렇지 않다면 timeText를 보여줘라
-- MainViewController{enum Mode{}} // MainViewController를 통해 적용할 화면들을 기능, 용도에 따라 mode 설정해보자
-- extension MainViewController.Mode{} // Mode별 구현 사항 설정
-- extension MainViewController{private func update(mode: Mode){switch mode{}}} // Mode별 구현 사항을 바탕으로 실제 화면을 업데이트해주는 함수 설정 // 이 때 또 반복되는 작업이 있다면 이 안에서도 decomposition을 통해 묶어줘라
+- init
+  - custom initializer 생성
+- String(repeating: count:)
+  - count만큼 해당 string을 repeating해라
+- mutating func
+  - 하나의 인스턴스는 스스로의 저장값을 바꿀 수 없어서, 저장값을 바꿀 수 있도록 mutating func으로 함
+- UIImage?
+  - Failable, 해당 Image가 있을 수도 없을 수도 있다는 이야기
+- configureTimeLabel(timeText: String?){timeLabel.isHidden = timeText == nil, timeLabel.text = timeText}
+  - timeText가 nil일 수도 있기에 String?으로 설정, timeText가 nil이라면 timeLabel을 숨기고, 그렇지 않다면 timeText를 보여줘라
+- MainViewController{enum Mode{}}
+  - MainViewController를 통해 적용할 화면들을 기능, 용도에 따라 mode 설정해보자
+- extension MainViewController.Mode{}
+  - Mode별 구현 사항 설정
+- extension MainViewController{private func update(mode: Mode){switch mode{}}}
+  - Mode별 구현 사항을 바탕으로 실제 화면을 업데이트해주는 함수 설정
+  - 이 때 또 반복되는 작업이 있다면 이 안에서도 decomposition을 통해 묶어줘라
 
 ---
