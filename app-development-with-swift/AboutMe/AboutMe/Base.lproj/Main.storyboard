@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="alx-zw-n67">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bio-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AboutMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="yaQ-iD-6U9">
+                                <rect key="frame" x="47" y="82.333333333333343" width="320" height="451.66666666666663"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sokcho" translatesAutoresizingMaskIntoConstraints="NO" id="D1c-00-JUD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="9LI-NC-pSX"/>
+                                            <constraint firstAttribute="height" constant="280" id="BuD-ag-sXY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCl-cY-b8M">
+                                        <rect key="frame" x="0.0" y="350" width="320" height="101.66666666666669"/>
+                                        <string key="text">My name is Jinwoo Park. I am a graduate from Yonsei University, Korea. I majored in English Literature, but now I'm in my new challenge to be an iOS developer. I love hiphop, the spirit of hustling real hard.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WCl-cY-b8M" secondAttribute="trailing" id="WaH-Vr-eWK"/>
+                                    <constraint firstItem="WCl-cY-b8M" firstAttribute="leading" secondItem="yaQ-iD-6U9" secondAttribute="leading" id="sU3-Wm-vC0"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <constraints>
+                            <constraint firstItem="yaQ-iD-6U9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-60" id="7gv-Yy-550"/>
+                            <constraint firstItem="yaQ-iD-6U9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ndB-qD-59R"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bio" image="pencil" catalog="system" id="scn-qG-TIK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371.01449275362324" y="85.59782608695653"/>
+        </scene>
+        <!--Contact-->
+        <scene sceneID="bWO-5t-n8G">
+            <objects>
+                <viewController id="WTd-gt-PXD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="itM-mw-Lqq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="universe" translatesAutoresizingMaskIntoConstraints="NO" id="7bR-wb-dHh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Contact:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUZ-h6-E16">
+                                <rect key="frame" x="156" y="117.66666666666669" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="zacinthepark@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdA-q5-ggY">
+                                <rect key="frame" x="103.66666666666669" y="207.66666666666666" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mQF-7D-sLo"/>
+                        <constraints>
+                            <constraint firstItem="7bR-wb-dHh" firstAttribute="trailing" secondItem="mQF-7D-sLo" secondAttribute="trailing" id="187-uL-Ky9"/>
+                            <constraint firstItem="hdA-q5-ggY" firstAttribute="centerX" secondItem="itM-mw-Lqq" secondAttribute="centerX" id="56Z-qd-jaF"/>
+                            <constraint firstItem="7bR-wb-dHh" firstAttribute="top" secondItem="mQF-7D-sLo" secondAttribute="top" id="7kL-eU-g3E"/>
+                            <constraint firstItem="7bR-wb-dHh" firstAttribute="bottom" secondItem="mQF-7D-sLo" secondAttribute="bottom" id="CTB-W1-24f"/>
+                            <constraint firstItem="hdA-q5-ggY" firstAttribute="centerY" secondItem="itM-mw-Lqq" secondAttribute="centerY" constant="-150" id="GBO-XL-xCp"/>
+                            <constraint firstItem="UUZ-h6-E16" firstAttribute="centerY" secondItem="itM-mw-Lqq" secondAttribute="centerY" constant="-240" id="bXk-2W-cgc"/>
+                            <constraint firstItem="7bR-wb-dHh" firstAttribute="leading" secondItem="mQF-7D-sLo" secondAttribute="leading" id="lOw-M2-667"/>
+                            <constraint firstItem="UUZ-h6-E16" firstAttribute="centerX" secondItem="itM-mw-Lqq" secondAttribute="centerX" id="yrZ-ae-ALb"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Contact" image="paperplane" catalog="system" id="5cr-q5-ee8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBo-Q3-c54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1976.8115942028987" y="85.59782608695653"/>
+        </scene>
+        <!--Hobby-->
+        <scene sceneID="YKM-Bz-SmA">
+            <objects>
+                <viewController id="mRT-e9-cRf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YqB-vk-8mM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="Qbo-5f-eLs">
+                                <rect key="frame" x="47" y="117.99999999999997" width="320" height="380.33333333333326"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onstage 3" translatesAutoresizingMaskIntoConstraints="NO" id="8So-73-cWP">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="XGC-ga-vRE"/>
+                                            <constraint firstAttribute="height" constant="280" id="gbL-7d-9CV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is when I performed." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgK-sf-sKa">
+                                        <rect key="frame" x="0.0" y="360" width="320" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="rgK-sf-sKa" firstAttribute="leading" secondItem="Qbo-5f-eLs" secondAttribute="leading" id="WZd-bo-Mr8"/>
+                                    <constraint firstAttribute="trailing" secondItem="rgK-sf-sKa" secondAttribute="trailing" id="odE-G6-EVt"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Moa-LB-n0K"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Qbo-5f-eLs" firstAttribute="centerX" secondItem="YqB-vk-8mM" secondAttribute="centerX" id="FqX-yX-RX7"/>
+                            <constraint firstItem="Qbo-5f-eLs" firstAttribute="centerY" secondItem="YqB-vk-8mM" secondAttribute="centerY" constant="-60" id="VO5-W0-foF"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hobby" image="person.wave.2" catalog="system" id="BZ7-ho-GJz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJB-N1-g4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173.913043478261" y="85.59782608695653"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="kl6-0K-Xkg">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="alx-zw-n67" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lWM-TN-RjW">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="vFX-Fl-o2Q"/>
+                        <segue destination="mRT-e9-cRf" kind="relationship" relationship="viewControllers" id="Qit-Fg-VZp"/>
+                        <segue destination="WTd-gt-PXD" kind="relationship" relationship="viewControllers" id="uvu-Xb-QpH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUl-jn-ycN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1174" y="-675"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="onstage 3" width="864" height="1296"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="person.wave.2" catalog="system" width="128" height="119"/>
+        <image name="sokcho" width="720" height="720"/>
+        <image name="universe" width="960" height="540"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
