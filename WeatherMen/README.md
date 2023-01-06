@@ -1,4 +1,4 @@
-# WEATHERMEN
+# WeatherMen
 
 ---
 
