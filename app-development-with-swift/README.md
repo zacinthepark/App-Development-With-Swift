@@ -1,19 +1,43 @@
-# App Development with Swift
+## App Development with Swift
 
-## Notes
+---
 
-### lesson 1 (Playground Basics)
+### Index
+
+- [Playground Basics](#lesson-1-playground-basics)
+- [Naming and Identifiers](#lesson-2-naming-and-identifiers)
+- [How to deal with text information in Swift](#lesson-3-strings-how-to-deal-with-text-information-in-swift)
+- [Hello, World!](#lesson-4-hello-world)
+- [First App](#lesson-5-first-app)
+- [Functions](#lesson-6-functions)
+- [Boogiebot](#lesson-7-boogiebot)
+- [Constants and Variables](#lesson-8-constants-and-variables)
+- [Types](#lesson-9-types)
+- [Parameters and Results](#lesson-10-parameters-and-results)
+- [Making Decisions](#lesson-11-making-decisions)
+- [Instances, Methods, and Properties](#lesson-12-instances-methods-and-properties)
+- [QuestionBot](#lesson-13-questionbot)
+- [Arrays and Loops](#lesson-14-arrays-and-loops)
+- [Defining Structures](#lesson-15-defining-structures)
+
+## lesson 1 (Playground Basics)
+
+---
 
 results sidebar
 `//` —> comments
 calculations: `+, -, *, /`
 에러가 있으면 results sidebar에 결과값이 표기 x
 
+## lesson 2 (Naming and Identifiers)
+
 ---
 
-### lesson 2 (Naming and Identifiers)
+“It is important to use clear names when writing code”
 
-“it is important to use clear names when writing code” 1)내 코드의 의도를 드러내줌 2)다른 프로그래머와 협업도 쉬움 3)디버그하기 더 쉬울 것임
+1. 내 코드의 의도를 드러내줌
+2. 다른 프로그래머와 협업도 쉬움
+3. 디버그하기 더 쉬울 것임
 
 a line of code=statement
 constant
@@ -35,9 +59,9 @@ initializer(생성자): type을 인위적으로 변경 가능
 `var`: vary able, variable
 `let`: constant
 
----
+## lesson 3 (Strings) How to deal with text information in Swift
 
-### lesson 3 (Strings) How to deal with text information in Swift
+---
 
 스위프트를 포함한 대부분의 프로그래밍 언어에서 텍스트값은 string이라 불림(a single letter is not useful by itself)
 strings are made up of characters(letters, punctuation marks, numbers, symbols, invisible characters(spaces, tabs))
@@ -71,9 +95,9 @@ Escape Sequences: The pattern of an escape character followed by something that�
 `\(~~)`
 `\n` - newline character, 나타나는 결과가 새로운 줄로 시작하게 함
 
----
+## lesson 4 (Hello, World!)
 
-### lesson 4 (Hello, World!)
+---
 
 Configuring Xcode Environemnt
 
@@ -112,11 +136,10 @@ Programmers often use log messages to indicate that something has gone wrong or 
 Wrapup
 ⁃ console은 코더가 자기 프로그램에 대한 정보를 나타낼 수 있는, 기록할 수 있는 곳(a tool programmers use to display all kinds of information in a program)
 ⁃ 다른 사람이 코드 가져다 쓸 때 메세지를 볼 수도, 프로그램 중 무엇이 잘못되었는지 등을 알려줄 수 있음.
+⁃ 더불어, 앱을 만들 때는 results sidebar가 없으므로 print() 형태+콘솔 출력을 통해 어떠한 결과가 만들어지고 있는지 확인할 수 있음.
+⁃ 고로, Debugging의 용도도 있음. 결과 확인을 통해 제대로 출력되는지 알 수 있기 때문. Sometimes, you’ll add temporary print statements to figure out why your program isn’t working. Tracking down code issues, or bugs, is one of the most common uses of the console.
 
-    ⁃	더불어, 앱을 만들 때는 results sidebar가 없으므로 print() 형태+콘솔 출력을 통해 어떠한 결과가 만들어지고 있는지 확인할 수 있음.
-    ⁃	고로, Debugging의 용도도 있음. 결과 확인을 통해 제대로 출력되는지 알 수 있기 때문. Sometimes, you’ll add temporary print statements to figure out why your program isn’t working. Tracking down code issues, or bugs, is one of the most common uses of the console.
-
-정리하자면, Console은 프로그램이 어떻게 돌아가고 있는지 보여주는 곳. 여기 적혀있는 기록을 log라 한다. 이는 1)사용의 측면: 기본적으로 프로그래머가 print하도록 결정한 정보를 보여주고 제공하는 용도가 있다. 이를 사용하는 프로그래머들은 그러므로 이를 통해 정보를 얻을 수 있다. 실제로 mac의 콘솔 앱을 들어가보면 맥의 프로그램들의 로그를 확인할 수 있음. 2)코딩의 측면: 앱을 만들 때 print()를 통해 결과를 확인할 수 있음. 이 값들을 관찰함을 통해 버그를 발견. 디버깅을 하고자 할 수 있음.
+정리하자면, Console은 프로그램이 어떻게 돌아가고 있는지 보여주는 곳. 여기 적혀있는 기록을 log라 한다. 이는 1. 사용의 측면: 기본적으로 프로그래머가 print하도록 결정한 정보를 보여주고 제공하는 용도가 있다. 이를 사용하는 프로그래머들은 그러므로 이를 통해 정보를 얻을 수 있다. 실제로 mac의 콘솔 앱을 들어가보면 맥의 프로그램들의 로그를 확인할 수 있음. 2. 코딩의 측면: 앱을 만들 때 print()를 통해 결과를 확인할 수 있음. 이 값들을 관찰함을 통해 버그를 발견. 디버깅을 하고자 할 수 있음.
 
 console = logging & debugging
 
@@ -125,9 +148,9 @@ console = logging & debugging
 console = behind the stage
 You’ve seen how developers use the console to log messages about an ​app’s status or with extra details about problems.
 
----
+## lesson 5 (First App)
 
-### lesson 5 (First App)
+---
 
 5.1 New Project
 
@@ -139,18 +162,18 @@ Most of these templates have a preconfigured interface and source code files
 Build means “Assemble all the parts into an app.” Run means “Start the app,” as if you’d tapped its icon on the Home screen. Follow the steps below to build and run your app.
 You’ll use “Build and Run” a lot while developing your app, not just when you’re done.
 
-    - Product Name: 프로젝트 이름
-    - Team: Apple Developer account로 로그인 후, device에 app을 build할 수 있도록 함 // 없다면 iOS Simulator를 사용
-    - Organization Name
-    - Organization Identifier: 임의로 com.example 사용
-    - Bundle Identifier: Organization Identifier.Product Name
-    - Language: Swift / Objective-C
+- Product Name: 프로젝트 이름
+- Team: Apple Developer account로 로그인 후, device에 app을 build할 수 있도록 함 // 없다면 iOS Simulator를 사용
+- Organization Name
+- Organization Identifier: 임의로 com.example 사용
+- Bundle Identifier: Organization Identifier.Product Name
+- Language: Swift / Objective-C
 
 - If you’re running an app for the first time, Xcode asks whether you’d like to enable developer mode on your Mac. Developer mode gives Xcode access to certain debugging features without requiring you to enter your password each time.
 
 - If you can’t see the whole simulator because of the screen size, go to Window > Minimize / Zoom to fit the whole simulator on the screen.
 
-  5.2 Explore Your Project (Xcode에 대한 전반적 설명)
+5.2 Explore Your Project (Xcode에 대한 전반적 설명)
 
 To get started building apps in Xcode, it’s enough to:
 ⁃ Find your code and interface files
@@ -170,41 +193,52 @@ Navigator에 나타나는 파일명: A.B
 A: Launchscreen, Main, ViewController와 같이 파일의 identity를 나타냄
 B: file extension // 파일의 종류를 나타냄
 
-    - .swift files: tell your app what to do, and when and how to do it. 앱에 명령하는 것. code.
-    - .storyboard files: tell your app where to display information on the screen. Xcode에서 이를 보여주는 환경을 Interface Builder라 부름.
-    - .xcassets: holds all the images for your app, including the ​app icon.
-    - .plist: manage your app’s setup information.
-    - Project File: display name under your app icon on the Home screen, portrait/landscape orientation 지원 여부 등…
+- .swift files: tell your app what to do, and when and how to do it. 앱에 명령하는 것. code.
+- .storyboard files: tell your app where to display information on the screen. Xcode에서 이를 보여주는 환경을 Interface Builder라 부름.
+- .xcassets: holds all the images for your app, including the ​app icon.
+- .plist: manage your app’s setup information.
+- Project File: display name under your app icon on the Home screen, portrait/landscape orientation 지원 여부 등
 
 5.3 Edit the Storyboard
 
-1 Add an image to your project 2)Add an image view to the view controller 3)Tell the image view to display your image
+1. Add an image to your project
+2. Add an image view to the view controller
+3. Tell the image view to display your image
 
-    - Assets.xcassets에 추가하고자 하는 사진 파일 드래그
-    - 기존의 View 삭제(Delete 버튼) —> View > Show Library —> ‘Image View’ 검색 —> View Controller에 드래그
-    - 추가된 ‘Image View’ —> Attritbutes Inspector —> Image 선택 // Content Mode: Scale To Fill은 화면 크기에 맞춰서 사진을 늘림(깨짐 발생 가능), Aspect Fit은 stretching or squashing 없이 이미지를 view 안에 맞춤
+- Assets.xcassets에 추가하고자 하는 사진 파일 드래그
+- 기존의 View 삭제(Delete 버튼) —> View > Show Library —> ‘Image View’ 검색 —> View Controller에 드래그
+- 추가된 ‘Image View’ —> Attritbutes Inspector —> Image 선택 // Content Mode: Scale To Fill은 화면 크기에 맞춰서 사진을 늘림(깨짐 발생 가능), Aspect Fit은 stretching or squashing 없이 이미지를 view 안에 맞춤
 
 Summary
 
-    - The project navigator shows a list of all your code, interface, and configuration files.
-    - You can change the editor’s contents by choosing different files in the project navigator.
-    - When you select different files in the project navigator, you see different options in the utilities area.
-    - You can show and hide the navigation and utilities areas as you like.
+- The project navigator shows a list of all your code, interface, and configuration files.
+- You can change the editor’s contents by choosing different files in the project navigator.
+- When you select different files in the project navigator, you see different options in the utilities area.
+- You can show and hide the navigation and utilities areas as you like.
+
+## lesson 6 (Functions)
 
 ---
 
-### lesson 6 (Functions)
+Building blocks(=functions) of code!
+Practice calling functions and learn how to define functions of your own
 
-building blocks(=functions) of code! / practice calling functions and learn how to define functions of your own
+Any identifier followed by parentheses is a function
 
-any identifier followed by parentheses is a function
+Abstraction
+- a fundamental idea in software development
+- the idea of taking something complex and defining a simpler way to refer to it
+- ‘get dressed’라는 말 안에는 여러 step이 있지만 우리는 이를 ‘get dressed’라 표현함
+- this is how programmers keep from getting overwhelmed by details and complexity
 
-Abstraction: a fundamental idea in software development / the idea of taking something complex and defining a simpler way to refer to it / ‘get dressed’라는 말 안에는 여러 step이 있지만 우리는 이를 ‘get dressed’라 표현함 / this is how programmers keep from getting overwhelmed by details and complexity
-Functions: one of the most fundamental ways to define abstraction in code
-—> 가령 print( )라는 function을 호출할 때(calling a function), 우리는 그 안에서 벌어지는 세부 단계들을 일일이 명령하지 않고, print( )라는 명령어 하나로 쉽게 할 수 있는 것임
+Functions
+- one of the most fundamental ways to define abstraction in code
+- 가령 print( )라는 function을 호출할 때(calling a function), 우리는 그 안에서 벌어지는 세부 단계들을 일일이 명령하지 않고, print( )라는 명령어 하나로 쉽게 할 수 있는 것임
 
-A Single Piece of Work - 코드를 어떻게 묶는가!
-Function declare 하는 법(you can wrap up the code you want to use more than once)
+A Single Piece of Work
+- 코드를 어떻게 묶는가!
+
+Function declare 하는 법 (you can wrap up the code you want to use more than once)
 
 ```swift
 func ~~~() {
@@ -232,20 +266,20 @@ func X() {
 X()
 ```
 
-주의할 점: Infinite Loops! function 내에 그 function 스스로를 정의하면 무한루프가 되버림. `func X() {func A() func B() func X() } —> X()` 호출 시 무한루프 발생.
+주의할 점: Infinite Loops! function 내에 그 function 스스로를 정의하면 무한루프가 되버림. `func X() { func A() func B() func X() } —> X()` 호출 시 무한루프 발생.
 
-그렇다면 이러한 function이 왜 중요한가? - Hiding Complexity!
-—> The point of using functions is to break things down into understandable, reusable parts. Each part does a very clear piece of work. When working on an app, you’re never looking at every single line of code. You’ll call a function knowing what it does, but not necessarily how it does it.
+그렇다면 이러한 function이 왜 중요한가?
+- Hiding Complexity!
+- The point of using functions is to break things down into understandable, reusable parts. Each part does a very clear piece of work. When working on an app, you’re never looking at every single line of code. You’ll call a function knowing what it does, but not necessarily how it does it.
 
-    - Making your programs Easier to Change
+- Making your programs Easier to Change
+- print할 내용이 달라지면 일일이 고칠 필요없이 최소 단위 부분만 바꾸면 됨.
 
-—>print할 내용이 달라지면 일일이 고칠 필요없이 최소 단위 부분만 바꾸면 됨.
+- Functions = A Powerful Example of Abstraction
 
-    - Functions = A Powerful Example of Abstraction
+## lesson 7 (Boogiebot)
 
 ---
-
-### lesson 7 (Boogiebot)
 
 Live Views 기능: a playground feature that let you see instant updates to your work, without having to add inline results as you did in the Strings playground. Live views also allow you to play with animation.
 
@@ -267,36 +301,40 @@ Defining algorithms is a large part of programming. There are complex mathematic
 a preplanned sequence of moves, in repeating patterns
 functions made up of functions (made up of functions, and so on…)
 
----
+## lesson 8 (Constants and Variables)
 
-### lesson 8 (Constants and Variables)
+---
 
 A large part of programming is making up things, giving them names, and then calling those things by name to use them.
 
 Constants & Variables (Name-Value를 연결하는 방식)
 
-    - constant: assign된 값이 항상 똑같기에(constant) constant라 부른다. names that always refer to the same value.
-    - variable: 값이 vary-able. names where the value can change over time. 아이디어는 그대로 존재하지만, 이에 해당하는 값이 변하는 것.
+- constant: assign된 값이 항상 똑같기에(constant) constant라 부른다. names that always refer to the same value.
+- variable: 값이 vary-able. names where the value can change over time. 아이디어는 그대로 존재하지만, 이에 해당하는 값이 변하는 것.
 
 Declare 방법
+
 constant: `let A =` —> A는 이제부터 constant라 선언!
 variable: `var A` = —> A는 이제부터 variable이라 선언!
 
 Variable은 그럼 언제 어떻게 사용하는가?
+
 You use variables in places where a value in your program needs to change over time. An example of this would be the score of a game. As the player scores more points, your code would update the value of a variable keeping track of the score.
 
-    - variable 선언 // var score = 0 // 다음 assignment가 있기까지 계속 0
-    - 새로운 value assign // score = 10 // 이 때부터 score의 value는 10
-    - assign이 없는 단순 calculation은 value를 바꾸지 않음 // score+5 // 15라는 값이 출력되지만, 여전히 score의 value는 10
-    - score=score+10 // 이러한 방식도 가능 // 이 때부터 score의 value는 20
-    - 이처럼 Up에서 Down까지 내려가며 variable의 value는 다음 assignment가 있기 전까지만 유지됨
+- variable 선언 // var score = 0 // 다음 assignment가 있기까지 계속 0
+- 새로운 value assign // score = 10 // 이 때부터 score의 value는 10
+- assign이 없는 단순 calculation은 value를 바꾸지 않음 // score+5 // 15라는 값이 출력되지만, 여전히 score의 value는 10
+- score=score+10 // 이러한 방식도 가능 // 이 때부터 score의 value는 20
+- 이처럼 Up에서 Down까지 내려가며 variable의 value는 다음 assignment가 있기 전까지만 유지됨
 
 `score = score + 10` —> (1) take the current value of ‘score’ (2) add 10 (3) assign the result to ‘score’ as its new value
 
 이것을 합쳐서 한번에 하게 해주는 것이
-`+=`(compound assignment operator) : combines addition (+) and assignment (=) into one combined operation.
-`score = score + 10` <————> `score += 10`
-숫자말고 string에도 동일하게 적용
+`+=`
+- compound assignment operator
+- combines addition (+) and assignment (=) into one combined operation.
+- `score = score + 10`, `score += 10`은 동일
+- 숫자말고 string에도 동일하게 적용
 
 Constants or Variables?
 
@@ -304,7 +342,9 @@ Constants or Variables?
 constant의 장점은 값을 고정시키기에 confusion이 발생하지 않는다. 그러므로 프로그램 상 immutable이라 판단될 떄에는 value 설정을 constant로 하자.
 you should only use a variable when the value absolutely needs to change over time!
 
-(+Xcode의 Fix-it 기능: error 표시에 !대신에 하얀 점이 있을 시 Xcode가 error 해결 방법을 제시해줌. 하지만 이는 단순한 suggestion이므로 잘 고려해서 받아들일지 말지 스스로 의사결정을 해라)
+Xcode의 Fix-it 기능
+
+error 표시에 !대신에 하얀 점이 있을 시 Xcode가 error 해결 방법을 제시해줌. 하지만 이는 단순한 suggestion이므로 잘 고려해서 받아들일지 말지 스스로 의사결정을 해라
 
 Safer Code vs. Varying, Unexpected World
 
@@ -312,49 +352,50 @@ Variable이 그냥 내 마음대로 바꿀 수 있는 것이니까 더 좋다고
 
 Wrapup
 
-    - Values declared with let are constants, and can’t be changed once a value is assigned. These values are called immutable.
-    - Values declared with var are variables, and can be assigned new values over time. These values are called mutable.
-    - A mutable value can be used as part of an assignment statement to itself: score = score + 10.
-    - Compound assignment operators allow mutable values to be updated: score += 10.
-    - Using constants and variables in the correct places helps make your code safer and easier to understand.
+- Values declared with let are constants, and can’t be changed once a value is assigned. These values are called immutable.
+- Values declared with var are variables, and can be assigned new values over time. These values are called mutable.
+- A mutable value can be used as part of an assignment statement to itself: score = score + 10.
+- Compound assignment operators allow mutable values to be updated: score += 10.
+- Using constants and variables in the correct places helps make your code safer and easier to understand.
+
+## lesson 9 (Types)
 
 ---
-
-### lesson 9 (Types)
 
 Features and Capabilities / Properties and Behaviors (용도와 특징)
 
 Types describe:
 
-    - What a value is.
-    - What a value can do.
-    - Where you can use a value.
+- What a value is.
+- What a value can do.
+- Where you can use a value.
 
 Type은 어떤 개념인가?
 어떠한 Idea(좋아하는 과일)에 특정 Thing(바나나)를 연결시키듯이, Swift keeps track of the type of value associated with constants and variables. 각각의 type들은 공구함의 각 공구들처럼 프로그래밍에 쓰이는 tool이라 이해하자.
 
 Types of Value in Swift
 
-    - Every Value has a Type.
-    - Option키 누른 상태에서 identifier 클릭하면 해당 type 확인 가능.
-    - String: 문자열
-    - Int (Integer): 정수(whole number) / 양수, 음수, 0
-    - Double: a number with a decimal point // “Double-precision floating point” number. A Float type also refers to a number with a decimal point, but the default Double is twice as precise.
-    - Float: a number with a decimal point
+- Every Value has a Type.
+- Option키 누른 상태에서 identifier 클릭하면 해당 type 확인 가능.
+- String: 문자열
+- Int (Integer): 정수(whole number) / 양수, 음수, 0
+- Double: a number with a decimal point // “Double-precision floating point” number. A Float type also refers to a number with a decimal point, but the default Double is twice as precise.
+- Float: a number with a decimal point
 
 Why would you ever want to use less precise decimal numbers?
-— If you have a huge amount of data, the Float type will save space because it occupies half as much memory. If your calculations only require accuracy to the nearest hundredth, then there's no reason to store all those extra digits. Swift's default is Double because typical programs don't work with enough numeric data to cause issues with memory, and more accuracy makes your code less prone to subtle errors.
 
-Type Safety
+If you have a huge amount of data, the Float type will save space because it occupies half as much memory. If your calculations only require accuracy to the nearest hundredth, then there's no reason to store all those extra digits. Swift's default is Double because typical programs don't work with enough numeric data to cause issues with memory, and more accuracy makes your code less prone to subtle errors.
 
-- Swift won’t let you write code that uses types incorrectly or unexpectedly. This is called type safety — and prevents you from making all sorts of errors in your code.
+**Type Safety**
 
-  - The value of a variable can change, but the type of the variable can’t change.
+Swift won’t let you write code that uses types incorrectly or unexpectedly. This is called type safety — and prevents you from making all sorts of errors in your code.
+
+The value of a variable can change, but the type of the variable can’t change.
 
 42 = Int
 “42” = String
 
-    - Another instance of type safety would occur if you tried to add values of different types.
+Another instance of type safety would occur if you tried to add values of different types.
 
 String + Int —> 성립 불가
 
@@ -362,41 +403,50 @@ binary operator: 작업을 하기 위해 2개의 값이 필요. 곱하기, 덧�
 unary operator: 1개의 값이 필요(단항연산자). NOT, 역수(inverse), FFT, integral, differentiation.
 operand: 연산자에 입력으로 들어가는 값들. Operands are the things the operator works with.
 
-    - You can‘t mix and match Double and Int types in Swift because of type safety.
+You can‘t mix and match Double and Int types in Swift because of type safety.
 
-Type Inference
+**Type Inference**
 
-—> Swift에서 제공하는 강력한 기능으로 변수나 상수를 만들 때에 데이터 type을 생략하게 되면 Swift 컴파일러가 변수의 값을 확인하고 그 값에 맞는 타입을 추론하여서 타입을 자동으로 정해줌. 즉, 일일이 데이터 타입 선언 없이도 값에 의해서 데이터 형이 정해지는 것이다.
+Swift에서 제공하는 강력한 기능으로 변수나 상수를 만들 때에 데이터 type을 생략하게 되면 Swift 컴파일러가 변수의 값을 확인하고 그 값에 맞는 타입을 추론하여서 타입을 자동으로 정해줌. 즉, 일일이 데이터 타입 선언 없이도 값에 의해서 데이터 형이 정해지는 것이다.
 
-    - Type Inference from Literal Context // 리터럴(literal)이란? 값(value)이 생긴 형태
-        - ex)let string = 42 // string type: Int
-    - Type Inference from Assignment
-        - ex)let anotherString = string // anotherString type: Int
+- Type Inference from Literal Context // 리터럴(literal)이란? 값(value)이 생긴 형태
+    - `let string = 42`
+    - string type: Int
+- Type Inference from Assignment
+    - `let anotherString = string`
+    - anotherString type: Int
 
-Type Annotation(데이터형을 명시적으로 선언하는 법)
+**Type Annotation** (데이터형을 명시적으로 선언하는 법)
 
-    - Type annotation is entered right after the name declaration, using a colon and the name of the type:
-    - Upper Camel Case: type 명은 functions, variables, constants의 이름들과 구분하기 위해 lower camel case가 아닌 upper camel case 사용(ex. TrainingShoe, RacingBike)
+Type annotation is entered right after the name declaration, using a colon and the name of the type:
+Upper Camel Case: type 명은 functions, variables, constants의 이름들과 구분하기 위해 lower camel case가 아닌 upper camel case 사용(ex. TrainingShoe, RacingBike)
 
-`let annotatedDouble: Double = 20` - Correct - 20이라는 Int 값을 Double로 지정함 - Int —> Double
-`let twenty: String = 20` - Wrong - 20이라는 Int 값을 String으로 지정하는 것은 불가함 - Cannot convert value of type 'Int' to specified type 'String’
+`let annotatedDouble: Double = 20` 
+- Correct
+- 20이라는 Int 값을 Double로 지정함
+- Int —> Double
 
-Swift Standard Library
+`let twenty: String = 20`
+- Wrong
+- 20이라는 Int 값을 String으로 지정하는 것은 불가함
+- Cannot convert value of type 'Int' to specified type 'String’
 
-— Swift has built-in types that represent the basic building blocks of all programs. You have spent a lot of time with String and Int, there are also many more.
+**Swift Standard Library**
 
-    - Array
-    - Dictionary
-    - Set
-    - Sequence
-    - Error
-    - Bool
+Swift has built-in types that represent the basic building blocks of all programs. You have spent a lot of time with String and Int, there are also many more.
+
+- Array
+- Dictionary
+- Set
+- Sequence
+- Error
+- Bool
 
 They’re part of the Swift standard library. All programming languages have something similar — the basic set of capabilities required to do fundamental programming tasks.
 
 쉽게 말해, 프로그래밍을 하는데 있어 사용되는 다양한 type이라는 ‘도구’들이 모여있는 하나의 표준 공구함, 하나의 표준 ‘라이브러리’이다.
 
-Beyond the Standard Library
+**Beyond the Standard Library**
 
 Programmers can also create their own types by combining and adding to the types and capabilities in the standard library. Take one of your made-up types from the experiment on the previous page, and imagine what types it might depend on. For example, a TrainingShoe might use an Int for a size, a String for a brand name, a Date for its release date, and another Int for its price in dollars.
 
@@ -417,22 +467,21 @@ To create a Date representing right now, you simply use Date():
 
 `let today = Date()`
 
-- you will see today’s date and time in the results sidebar.
+- You will see today’s date and time in the results sidebar.
+- Unlike with strings and numbers, there’s no way to create a Date from a literal.
+- Without importing the framework, Swift will not recognize the code Date() and will give you an error.
 
-  - Unlike with strings and numbers, there’s no way to create a Date from a literal.
-  - Without importing the framework, Swift will not recognize the code Date() and will give you an error.
+이해한 바를 남기자면, 프로그래밍에 있어서 사용되는 여러 값들은 type들을 가지고, 각 type들이 할 수 있는 역할들이 각각 있다. 가령, String은 텍스트값을 나타내는데 주로 사용될 것이고, Int, Double과 같은 넘버들은 여러 calculation에 사용이 많이 될 터이고 이외에도 Swift 표준 라이브러리에서 제공하는 Array, Sequence, Dictionary 등 다양한 type들을 통해 프로그래밍 상 여러가지를 만들어낼 수 있을 것이다. 즉, 우리는 라이브러리라는 공구함에서 여러 type이라는 공구를 꺼내서 사용하는 것이다.
 
-* 이해한 바를 남기자면, 프로그래밍에 있어서 사용되는 여러 값들은 type들을 가지고, 각 type들이 할 수 있는 역할들이 각각 있다. 가령, String은 텍스트값을 나타내는데 주로 사용될 것이고, Int, Double과 같은 넘버들은 여러 calculation에 사용이 많이 될 터이고 이외에도 Swift 표준 라이브러리에서 제공하는 Array, Sequence, Dictionary 등 다양한 type들을 통해 프로그래밍 상 여러가지를 만들어낼 수 있을 것이다. 즉, 우리는 라이브러리라는 공구함에서 여러 type이라는 공구를 꺼내서 사용하는 것이다.
+반대로, 스위프트 역시 우리가 지정한 여러 변수, 상수, 함수 등에서 사용되는 값들의 type을 1. 리터럴 형태를 통해서 or 2. assignment를 통해서, 계속 추적하면서 각 type들이 사용될 수 있는 분야에 사용되고 있는지, 그렇지 않다면 에러 표시를 해준다.
 
-반대로, 스위프트 역시 우리가 지정한 여러 변수, 상수, 함수 등에서 사용되는 값들의 type을 1)리터럴 형태를 통해서 or 2)assignment를 통해서, 계속 추적하면서 각 type들이 사용될 수 있는 분야에 사용되고 있는지, 그렇지 않다면 에러 표시를 해준다.
-
-프레임워크의 경우 라이브러리와 비슷하게 개발에 있어 용이하게 사용할 수 있는 일종의 코드 뼈대(?)를 제공한다. 하지만 import 명령을 해야 한다. 이후 Date()와 같이 제공되는 코드를 사용할 수 있다. 이는 표준 라이브러리에서 리터럴 형태를 통해 쉽게 알 수 있는 type이 아니다. 사용 빈도가 높고, 더 specific한 것을 더욱 편리하게 represent하기 위해 따로 프레임워크로 제공되는 type이다. Xcode에 내재된 프레임워크.
+프레임워크의 경우 라이브러리와 비슷하게 개발에 있어 용이하게 사용할 수 있는 일종의 코드 뼈대를 제공한다. 하지만 import 명령을 해야 한다. 이후 Date()와 같이 제공되는 코드를 사용할 수 있다. 이는 표준 라이브러리에서 리터럴 형태를 통해 쉽게 알 수 있는 type이 아니다. 사용 빈도가 높고, 더 specific한 것을 더욱 편리하게 represent하기 위해 따로 프레임워크로 제공되는 type이다. Xcode에 내재된 프레임워크.
 
 프레임워크와 라이브러리는 유사하지만, Flow에 있어 차이가 있다. 라이브러리는 단순 활용 가능한 도구들의 집합으로, 사용자가 FLOW를 만들며, 라이브러리는 가져다 쓰는 개념이지만, 프레임워크는 FLOW(제어흐름), 주도성에 있어 프레임워크가 지니고 있다. 이를 ‘제어의 역전’이라 한다. 앱 코드가 프레임워크에 의해 사용되는 느낌이다. 프로젝트 당 하나의 프레임워크만 사용할 수 있다.
 
----
+## lesson 10 (Parameters and Results)
 
-### lesson 10 (Parameters and Results)
+---
 
 ```swift
 func helloJohnny() {
@@ -474,11 +523,11 @@ hello(firstName: “Johnny”, lastName: “Appleseed”)
 - each parameter is a pair of one name and one type and that the commas separate each parameter.
 - Tab Key를 통해 편리하게 다음 패러미터로 이동 가능.
 
-Returning Values
+**Returning Values**
 
 패러미터를 통해 결과값을 직접 입력하는 함수를 넘어, 리턴값을 주는 함수는 어떻게 만드는가?
 
-함수가 종료되었을 때 결과값을 돌려주는 것을 returning a value라 한다. 이 때 parameter list 뒤에 1)-> 2)받고자 하는 리턴값의 type 2가지를 추가로 정의해주어야 한다.
+함수가 종료되었을 때 결과값을 돌려주는 것을 returning a value라 한다. 이 때 parameter list 뒤에 1. `->` 2. 받고자 하는 리턴값의 type 2가지를 추가로 정의해주어야 한다.
 그리고 함수의 body에 return statement를 정의하자.
 
 ```swift
@@ -493,13 +542,13 @@ let spaceAvailable = currentSpace - eachVideoDuration _ numberOfVideos _ megabyt
 spaceAvailable(eachVideoDuration: 10, numberOfVideos: 50)
 ```
 
-- 돌아오는 리턴값은 If your 50 videos are 10 seconds each, you’ll have 8500 MBs remaining
+- 돌아오는 리턴값은 `If your 50 videos are 10 seconds each, you’ll have 8500 MBs remaining`
 
 이 때 parameter는 2개, 돌아오는 리턴값은 1개이다.
 
 무엇은 let으로 constant 설정을 하고, 무엇은 parameter로 설정하는지 어떻게 결정? —> 직관적으로 자주, 그리고 쉽게 변경해서 넣을 값들을 패러미터로 설정.
 
-- 패러미터에 입력되는 값, 함수가 리턴하는 값 역시 직접 입력하는 것 외에 선언된 constant, variable 역시 사용될 수 있다(Variables and constants can also be used as the arguments)!
+- 패러미터에 입력되는 값, 함수가 리턴하는 값 역시 직접 입력하는 것 외에 선언된 constant, variable 역시 사용될 수 있다 (Variables and constants can also be used as the arguments)!
 
 ```swift
 let desiredVideoDuration = 40
@@ -508,11 +557,11 @@ let videoMessage = spaceAvailableMessage(eachVideoDuration : desiredVideoDuratio
 let namedVideoMessage = “Hey Micah! \(videoMessage)”
 ```
 
-- 이 결과는 “Hey Micah! If your 100 videos are 40 seconds each, you’ll have -2000 MBs remaining”
+- 이 결과는 `Hey Micah! If your 100 videos are 40 seconds each, you’ll have -2000 MBs remaining`
 
-- 결국, return을 하는 함수는 하나의 값으로 최종적으로 귀결되는 함수이다. 함수를 통해 어떠한 value를 받고자 하며, 이러한 value를 더 나아가 활용하고자 한다면, 리턴 함수를 쓰는 것이 좋다. 가령 위에서 ‘let videoMessage = spaceAvailableMessage(eachVideoDuration : desiredVideoDuration, numberOfVideos: holidayVideoCount)’ 같이 함수 이후 리턴값을 constant로 설정할 수 있다. 함수를 변수, 상수 등에 할당이 가능하다.
+- 결국, return을 하는 함수는 하나의 값으로 최종적으로 귀결되는 함수이다. 함수를 통해 어떠한 value를 받고자 하며, 이러한 value를 더 나아가 활용하고자 한다면, 리턴 함수를 쓰는 것이 좋다. 가령 위에서 `let videoMessage = spaceAvailableMessage(eachVideoDuration : desiredVideoDuration, numberOfVideos: holidayVideoCount)` 같이 함수 이후 리턴값을 constant로 설정할 수 있다. 함수를 변수, 상수 등에 할당이 가능하다.
 
-Kinds of Function
+**Kinds of Function**
 
 When you write functions, you now have four possible combinations of parameters and return values. Here’s a summary that describes when you might use each type of function:
 
@@ -568,14 +617,14 @@ Functions can:
 - Return information
 - Function의 장점은 Hiding Complexity!
 
-Naming
+**Naming**
 
 직관적인 Function을 만들기 위해, 정의할 때 이름은 다음과 같은 테스트를 마음 속으로 생각하자.
 
-    - side effect test: A function that has a side effect should have a verb in the name. 예를 들어, print를 하는 함수라면, hello()가 아닌, printHello()로 할 것.
-    - function-as-a-sentence: Functions in Swift should read as much like a sentence as possible. 예를 들어, func printHello(name: String)가 아닌, func printHello(to: String)으로 하는 것이 훨씬 직관적이다.
+- side effect test: A function that has a side effect should have a verb in the name. 예를 들어, print를 하는 함수라면, hello()가 아닌, printHello()로 할 것.
+- function-as-a-sentence: Functions in Swift should read as much like a sentence as possible. 예를 들어, func printHello(name: String)가 아닌, func printHello(to: String)으로 하는 것이 훨씬 직관적이다.
 
-Parameters Names and Argument Labels
+**Parameters Names and Argument Labels**
 
 잠시 매개변수(parameter)와 전달인자(argument)를 복습해보자.
 
@@ -596,10 +645,10 @@ printHello(to: “Maya”)
 
 그래서 사용하는 것이 전달인자 레이블(Argument Label)이다. 전달인자 레이블을 별도로 지정할 시 함수 외부에서 매개변수의 역할을 더 명확히 할 수 있다.
 
-    - 매개변수 이름(Parameter Name): 함수를 정의할 때 사용하는 이름.
-    - 전달인자 레이블(Argument Label): 함수를 호출할 때 사용하는 이름.
-    - 함수 내부에서는 전달인자 레이블 사용 불가, 함수 호출 시에는 매개변수 이름 사용 불가.
-    - 매개변수 이름과 전달인자 레이블은 같은 이름으로 사용할 수 있음.
+- 매개변수 이름(Parameter Name): 함수를 정의할 때 사용하는 이름.
+- 전달인자 레이블(Argument Label): 함수를 호출할 때 사용하는 이름.
+- 함수 내부에서는 전달인자 레이블 사용 불가, 함수 호출 시에는 매개변수 이름 사용 불가.
+- 매개변수 이름과 전달인자 레이블은 같은 이름으로 사용할 수 있음.
 
 ```swift
 func 함수 이름(전달인자 레이블 매개변수1이름: 매개변수1타입, 전달인자 레이블 매개변수2이름: 매개변수2타입) -> 반환 타입 {
@@ -616,7 +665,7 @@ print(greeting(from: “Jinwoo”, to: “Maya)) // Hello Maya! I’m Jinwoo
 
 여기서 ‘myName’, ‘yourName’은 매개변수 이름(Parameter Names)이고 함수 내부에서 정의할 때만 쓰였다. ‘from’, ‘to’는 전달인자 레이블(Argument Labels)이고, 함수를 호출, 즉 사용할 때 쓰였다. 확실히 함수를 사용(호출)할 때 훨씬 직관적임을 알 수 있다.
 
-The Argument Without a Name
+**The Argument Without a Name**
 
 패러미터 이름=전달인자 레이블인 경우가 아닌, 패러미터 이름은 있지만, 전달인자 레이블은 없는 경우를 declare하고 싶을 때는?
 
@@ -635,49 +684,48 @@ printHelloTo(“Hiro”) // Hello Hiro
 
 Wrapup
 
-    - Functions take in information / do things with it / pass information out! (함수가 하는 일)
-    - Functions should read like sentences when you call them! Carefully choose names for your parameters and functions! (함수의 네이밍)
-    - Apps are built from many functions, passing information back and forth and working with it, and you now have the power to make these important building blocks!
+- Functions take in information / do things with it / pass information out! (함수가 하는 일)
+- Functions should read like sentences when you call them! Carefully choose names for your parameters and functions! (함수의 네이밍)
+- Apps are built from many functions, passing information back and forth and working with it, and you now have the power to make these important building blocks!
+
+## lesson 11 (Making Decisions)
 
 ---
 
-### lesson 11 (Making Decisions)
-
 True and False
 
-Boolean Values
+**Boolean Values**
 
-    - true and false are special values in Swift: true, false는 숫자나 스트링처럼 하나의 값이다.
-    - The values true and false are known as Boolean values: 이러한 것을 Boolean이라 부른다.
-    - 19세기 수학자 George Boole에서 따온 이름임.
+- true and false are special values in Swift: true, false는 숫자나 스트링처럼 하나의 값이다.
+- The values true and false are known as Boolean values: 이러한 것을 Boolean이라 부른다.
+- 19세기 수학자 George Boole에서 따온 이름임.
 
 그렇다면 Boolean 값들을 답으로 도출하는 코드들에는 어떠한 것들이 있을까?
 
-Comparison Statement
+**Comparison Statement**
 
-- Give Boolean Results
-
+Give Boolean Results
 Comparison Operator(비교 연산자)를 사용한 코드를 의미한다. 비교 연산자에는 다음과 같은 것들이 있다.
 
-    - ==
-        - equal
-            - string 값 역시 적용 가능
-    - !=
-        - not equal
-    - <
-        - less than
-    - >
-        - more than
-    - <=
-        - less than or equal to
-    - >=
-        - more than or equal to
+- `==`
+    - equal
+    - string 값 역시 적용 가능
+- `!=`
+    - not equal
+- `<`
+    - less than
+- `>`
+    - more than
+- `<=`
+    - less than or equal to
+- `>=`
+    - more than or equal to
 
-Conditional Statement
+**Conditional Statement**
 
-- Give Boolean Results + Do different things depending on the results
+Give Boolean Results + Do different things depending on the results
 
-- if statement
+if statement
 
 ```swift
 if ~~~ {
@@ -685,11 +733,11 @@ if ~~~ {
 }
 ```
 
-    - ~~~는 true or false 값을 가지는 code
-    - ~~~ 값이 true라면, 그 안에 있는 ~.~.~.~라는 code를 실행
-    - ~~~ 값이 false라면, 그 안의 code를 실행하지 않음
+- ~~~는 true or false 값을 가지는 code
+- ~~~ 값이 true라면, 그 안에 있는 ~~~~~~라는 code를 실행
+- ~~~ 값이 false라면, 그 안의 code를 실행하지 않음
 
-- if/else statement
+if/else statement
 
 ```swift
 if ~~A~~ {
@@ -699,11 +747,11 @@ if ~~A~~ {
 }
 ```
 
-    - else 키워드 사용
-    - ~~A~~라는 code가 true 값이라면 ~~B~~ 실행
-    - ~~A~~가 false 값이라면 ~~C~~ 실행
+- else 키워드 사용
+- ~~A~~라는 code가 true 값이라면 ~~B~~ 실행
+- ~~A~~가 false 값이라면 ~~C~~ 실행
 
-- else if statement
+else if statement
 
 ```swift
 if ~~X~~ {
@@ -717,12 +765,12 @@ if ~~X~~ {
 }
 ```
 
-    - else if 키워드를 통해 복수의 condition을 추가할 수 있음
-    - X가 false, Y가 true, Z가 true일 시, 1)X는 false이므로 다음 condition으로 이동, 2)Y가 true이므로 결과 도출, 3)Z는 true이기는 하나 이미 Y에서 종료되므로 결과 도출되지 않음
-    - 즉, 하나의 결과만 도출됨(true이면서 + 순서가 먼저인 것)
-    - 그러므로 조건문에서 코드의 순서도 매우 중요!
+- else if 키워드를 통해 복수의 condition을 추가할 수 있음
+- X가 false, Y가 true, Z가 true일 시, 1. X는 false이므로 다음 condition으로 이동, 2. Y가 true이므로 결과 도출, 3. Z는 true이기는 하나 이미 Y에서 종료되므로 결과 도출되지 않음
+- 즉, 하나의 결과만 도출됨(true이면서 + 순서가 먼저인 것)
+- 그러므로 조건문에서 코드의 순서도 매우 중요!
 
-Functions and Decisions
+**Functions and Decisions**
 
 if의 condition을 직관성을 높이기 위해 함수로 묶어줄 수 있다!
 
@@ -748,7 +796,6 @@ let weightPerPerson = 50
 let carryingCapacity = bandMemberCount _ weightPerPerson _ maximumTripCount
 
     return gearWeight < carryingCapacity
-
 }
 
 if bandCanCarryGear(bandMemberCount: 5, gearWeight: 600) {
@@ -760,20 +807,17 @@ if bandCanCarryGear(bandMemberCount: 5, gearWeight: 600) {
 // “Everyone quits! Looks like you’ve got a solo show.”
 ```
 
-Remainder Operator
+**Remainder Operator**
 
-`%`
+나머지 연산자
 
-- 나머지 연산자
-
-  - Swift에서 나눗셈의 나머지를 알려주는 연산자
-  - 다른 언어에서는 모듈로 연산자(modulo operator)라고 하며, Swift에서는 음수에도 동작함
-  - 엄밀히 말하면, 모듈로 연산하기보다 나머지(remainder)가 된다는 것을 의미
-  - `a % b`에 대한 해답을 얻기 위해 `a = (b * some multiplier) + remainder`라는 공식을 계산하고 출력으로 remaider를 반환함(some multiplier는 a안에 b가 들어갈 수 있는 최대 갯수)
-  - `9 % 4`
-    - equals `1, -9 % 4`
-      - equals -1
-  - `a % b`와 `a % -b`는 같은 값을 출력함
+- `%`
+- Swift에서 나눗셈의 나머지를 알려주는 연산자
+- 다른 언어에서는 모듈로 연산자(modulo operator)라고 하며, Swift에서는 음수에도 동작함
+- 엄밀히 말하면, 모듈로 연산하기보다 나머지(remainder)가 된다는 것을 의미
+- `a % b`에 대한 해답을 얻기 위해 `a = (b * some multiplier) + remainder`라는 공식을 계산하고 출력으로 remaider를 반환함(some multiplier는 a안에 b가 들어갈 수 있는 최대 갯수)
+- `9 % 4`
+- `a % b`와 `a % -b`는 같은 값을 출력함
 
 ```swift
 func isCandyAmountAcceptable(bandMemberCount: Int, candyCount: Int) -> Bool {
@@ -789,126 +833,137 @@ if isCandyAmountAcceptable(bandMemberCount: 6, candyCount: 79) {
 // “Everyone quits! This is unacceptable!”
 ```
 
-- if 문에서 condition 자리에서 도출되는 boolean 값은 return하는 값이 아니라, 해당 코드를 실행할지(if true), 말지(if false)를 결정하는 값이다.
+if 문에서 condition 자리에서 도출되는 boolean 값은 return하는 값이 아니라, 해당 코드를 실행할지(if true), 말지(if false)를 결정하는 값이다.
+
+## lesson 12 (Instances, Methods, and Properties)
 
 ---
 
-### lesson 12 (Instances, Methods, and Properties)
+**Type과 Instance**
 
-Type과 Instance
-
-    - 타입이란 단순히 어떠한 value가 어떠한 종류인지를 알려주는 것(label)을 넘어서, 공구함의 각 공구들처럼 프로그래밍에 쓰이는 tool, 즉 각 타입별로 여러 capabilities가 있다.
-    - 타입에는 String, Int와 같이 단순한 것부터 시작하여 // Swift Standard Library에서 제공하는 built-in 타입들 // 그리고 import 명령을 통해 사용할 수 있는 Foundation과 같은 Framework에서 제공하는 여러 타입들이 있다.
-    - types, functions 모두 프로그래밍에 있어서 building blocks이다.
-    - types = the basic set of capabilities (required to do fundamental programming tasks)
-    - libraries, framworks = groups of types and capabilities
-    - Framework에서는 Date() 와 같이 더 specific한 목적과 관련된 type을 제공한다.
-    - 라이브러리, 프레임워크를 차용하는 것 외에도 프로그래머는 create their own types by combining and adding to the types and capabilities.
-    - 인스턴스 = 타입의 실례
+- 타입이란 단순히 어떠한 value가 어떠한 종류인지를 알려주는 것(label)을 넘어서, 공구함의 각 공구들처럼 프로그래밍에 쓰이는 tool, 즉 각 타입별로 여러 capabilities가 있다.
+- 타입에는 String, Int와 같이 단순한 것부터 시작하여 // Swift Standard Library에서 제공하는 built-in 타입들 // 그리고 import 명령을 통해 사용할 수 있는 Foundation과 같은 Framework에서 제공하는 여러 타입들이 있다.
+- types, functions 모두 프로그래밍에 있어서 building blocks이다.
+- types = the basic set of capabilities (required to do fundamental programming tasks)
+- libraries, framworks = groups of types and capabilities
+- Framework에서는 Date() 와 같이 더 specific한 목적과 관련된 type을 제공한다.
+- 라이브러리, 프레임워크를 차용하는 것 외에도 프로그래머는 create their own types by combining and adding to the types and capabilities.
+- 인스턴스 = 타입의 실례
 
 인스턴스(Instance)는 이러한 type들이 가지는 기본적인 속성, capabilities에 특정 값이 들어간 여러 다른 개체들을 뜻한다.
 
 `let hello = “hello” // let aDifferentHello = “hello”`
 
-- 여기서 인스턴스는 hello, aDifferentHello 2개이다. // 2개의 인스턴스가 동일한 데이터를 hold하고 있는 것이다.
+- 여기서 인스턴스는 hello, aDifferentHello 2개이다.
+- 2개의 인스턴스가 동일한 데이터를 hold하고 있는 것이다.
 
-그렇다면 인스턴스를 어떻게 Create하고 // 어떻게 Use(Accessing Values and Behaviors)할까?
+- 그렇다면 인스턴스를 어떻게 Create하고
+- 어떻게 Use(Accessing Values and Behaviors)할까?
 
-Creating Instance
+**Creating Instance**
 
-    - Literal을 통해 직접 value 입력
+- Literal을 통해 직접 value 입력
+    - Only a few types, like String, Bool, and Int, can be created using literals, but every type has at least one initializer.
 
-Only a few types, like String, Bool, and Int, can be created using literals, but every type has at least one initializer.
+- Initializer
+    - You use an initializer to create a new instance of a particular type. 새로운 인스턴스를 create, initialize한다!
+    - 간단한 타입들을 제외하고는 모든 타입들은 최소 1개의 이니셜라이저를 가진다고 보면 됨
+    - 리터럴을 통해 생성될 수 있는 간단한 타입(String, Int, Boolean 등)도 이니셜라이저 사용 가능
+        - let A = String() // let B = Bool() // let C = Int()
+    - 패러미터를 포함할 수 있음
+    - import Foundation
+    - let rightNow = Date()
+    - let oneHourLater = Date(timeIntervalSinceNow: 3600)
 
-    - Initializer
+- Initializers vs Functions
+    - 공통점
+        - () 형태를 가짐
+        - 정의 시에 패러미터를 가질 수도, 가지지 않을 수도 있음
+        - 호출 시에 필요한 argument 값을 전달함으로써 호출함
+    - 차이점
+        - () 앞의 이름에서 함수는 lowerCamelCase, 이니셜라이저는 UpperCamelCase
+        - 즉, 이니셜라이저에서는 타입 이름을 사용함
+        - 그리고 함수는 어떠한 값을 반환하지만, 이니셜라이저는 해당 타입의 새로운 인스턴스를 반환함
 
-        - You use an initializer to create a new instance of a particular type. 새로운 인스턴스를 create, initialize한다!
-        - 간단한 타입들을 제외하고는 모든 타입들은 최소 1개의 이니셜라이저를 가진다고 보면 됨
-        - 리터럴을 통해 생성될 수 있는 간단한 타입(String, Int, Boolean 등)도 이니셜라이저 사용 가능
-            - let A = String() // let B = Bool() // let C = Int()
-        - 패러미터를 포함할 수 있음
-        - import Foundation
-        - let rightNow = Date()
-        - let oneHourLater = Date(timeIntervalSinceNow: 3600)
-
-    - Initializers vs Functions
-
-        - 공통점
-            - () 형태를 가짐
-            - 정의 시에 패러미터를 가질 수도, 가지지 않을 수도 있음
-            - 호출 시에 필요한 argument 값을 전달함으로써 호출함
-
-        - 차이점
-            - () 앞의 이름에서 함수는 lowerCamelCase, 이니셜라이저는 UpperCamelCase
-            - 즉, 이니셜라이저에서는 타입 이름을 사용함
-            - 그리고 함수는 어떠한 값을 반환하지만, 이니셜라이저는 해당 타입의 새로운 인스턴스를 반환함
-
-Methods - Instance Method / Method 는 특정 타입과 관련된 함수를 말함 - String 타입과 관련된 hasPrefix()와 같은 함수도 메서드, 그리고 클래스에서 선언된 함수도 메서드 - 인스턴스+점(.)+메서드를 통해 호출 - let introduction = “It was a dark and stormy night” // func hasPrefix(\_ prefix: String) -> Bool // introduction.hasPrefix(“It was”) // true - This is known as calling a method on the instance.
+**Methods**
+- Instance Method, 혹은 Method 는 특정 타입과 관련된 함수를 말함
+- String 타입과 관련된 hasPrefix()와 같은 함수도 메서드, 그리고 클래스에서 선언된 함수도 메서드
+- `인스턴스+점(.)+메서드`를 통해 호출
+- `let introduction = “It was a dark and stormy night”`
+- `func hasPrefix(\_ prefix: String) -> Bool`
+- `introduction.hasPrefix(“It was”) // true`
+- This is known as calling a method on the instance
 
 You don’t need to pass in the value of introduction. The method is being performed by the instance assigned to introduction, so the value is already available to it.
 
-- hasPrefix()라는 함수 자체가 String 타입들의 인스턴스 내에서만 기능하는 것 // 즉 위의 예에서는 introduction이라는 인스턴스 내에서 동작할 수 있는 것이기에 // 따로 introduction이라는 인스턴스의 값을 다시 전달할 필요가 없다.
+- `hasPrefix()`라는 함수 자체가 String 타입들의 인스턴스 내에서만 기능하는 것
+- 즉 위의 예에서는 introduction이라는 인스턴스 내에서 동작할 수 있는 것이기에
+- 따로 introduction이라는 인스턴스의 값을 다시 전달할 필요가 없음
 
-Methods and Type Safety
+**Methods and Type Safety**
 
 메서드란
 
 - 특정 타입의 인스턴스 내에서만 정의되는 함수이기에
-
-  - 해당 타입과 관련된 인스턴스가 없는 경우
-  - 인스턴스가 있더라도 해당 타입이 아닌 경우
+- 해당 타입과 관련된 인스턴스가 없는 경우
+- 인스턴스가 있더라도 해당 타입이 아닌 경우
 
 사용할 수 없다.
 
-Properties
+**Properties**
 
-    - a property is a constant or variable built in to each instance of a type.
-    - 특정 타입과 관련한 값을 뜻함
-    - var isEmpty: Bool {get} // String 타입의 인스턴스들에 적용되는 프로퍼티 // isEmpty라는 이름을 가지고 있고, Bool 타입이며, String 인스턴스들에 따라 다른 값을 도출할 것이므로 var로 선언
-    - {get} indicates you can only get the value of this property, but you can’t set it // This is also called read-only property.
-    - 인스턴스+점(.)+프로퍼티 네임을 통해 호출
-    - let something = “It was the best of times” // something.isEmpty —> false 반환
-    - let nothing = “” // nothing.isEmpty —> true 반환
+- a property is a constant or variable built in to each instance of a type.
+- 특정 타입과 관련한 값을 뜻함
+- `var isEmpty: Bool {get}`
+    - String 타입의 인스턴스들에 적용되는 프로퍼티
+    0 isEmpty라는 이름을 가지고 있고, Bool 타입이며, String 인스턴스들에 따라 다른 값을 도출할 것이므로 var로 선언
+    - {get} indicates you can only get the value of this property, but you can’t set it
+        - This is also called read-only property.
+- 인스턴스+점(.)+프로퍼티 네임을 통해 호출
+- let something = “It was the best of times”
+    - something.isEmpty —> false 반환
+- let nothing = “”
+    - nothing.isEmpty —> true 반환
 
-Properties and Type Safety
+**Properties and Type Safety**
 
 프로퍼티 역시 특정 타입의 인스턴스 내에서 정의되는 값이기에
 
-    - 해당 타입과 관련된 인스턴스가 없는 경우
-    - 인스턴스가 있더라도 해당 타입이 아닌 경우
+- 해당 타입과 관련된 인스턴스가 없는 경우
+- 인스턴스가 있더라도 해당 타입이 아닌 경우
 
 사용할 수 없다.
 
-Properties VS Methods
+**Properties VS Methods**
 
-    - Properties
-        - Getting values from an instance
-        - Setting values on an instance
+- Properties
+    - Getting values from an instance
+    - Setting values on an instance
 
-    - Methods
-        - Providing behavior specific to an instance
-        - If the work you want to perform needs extra information, then it must be a method
-        - 즉, 전달인자(arguments)가 필요한 경우는 메서드
-        - side effects(값을 반환하는 것 외의 기능)에 관한 것은 메서드
-        - var magic = “Now you see it” // magic.removeAll() // magic —> “”
+- Methods
+    - Providing behavior specific to an instance
+    - If the work you want to perform needs extra information, then it must be a method
+    - 즉, 전달인자(arguments)가 필요한 경우는 메서드
+    - side effects(값을 반환하는 것 외의 기능)에 관한 것은 메서드
+    - var magic = “Now you see it” // magic.removeAll() // magic —> “”
 
 - When you’re building an app, almost all of code you write is in the form of instance methods or properties on types. And they’re often on types that you create. An app is made of many instances of different types, all working together.
 
-APIs
+**APIs**
 
 잠시 API(Application Programming Interface)가 무엇인지 짚고 넘어가자 - API는 우리가 직접 짠 코드가 아닌, 프로그래밍하는데 있어 다른 곳에서 주어지는 코드 정도로 이해하자 - An API is a specific set of functionality that can be used by a software developer to accomplish a task - String 타입의 여러 인스턴스 메소드, 프로퍼티 역시 String 타입의 API라고 할 수 있다!
 
 그렇다면 이처럼 Type이 제공하는 API를 확인하는 방법은?
 
-    - Autocompletion Popover
-        - 해당 메서드, 혹은 프로퍼티의 이름을 대충이라도 알고 있으면 autocompletion 기능을 통해 찾을 수 있다.
+- Autocompletion Popover
+    - 해당 메서드, 혹은 프로퍼티의 이름을 대충이라도 알고 있으면 autocompletion 기능을 통해 찾을 수 있다.
 
-    - Option-click a type, method or property
-        - One of the most important skills you'll develop as a programmer is how to find and understand things in documentation.
-        - Learning this skill is much more valuable than remembering a list of instance methods or properties.
+- Option-click a type, method or property
+    - One of the most important skills you'll develop as a programmer is how to find and understand things in documentation.
+    - Learning this skill is much more valuable than remembering a list of instance methods or properties.
 
-    - Utilities -> Inspectors -> Quick Help
-        - 코드 커서가 있는 곳의 메서드, 프로퍼티 등에 대한 정보를 띄워줌
+- Utilities -> Inspectors -> Quick Help
+    - 코드 커서가 있는 곳의 메서드, 프로퍼티 등에 대한 정보를 띄워줌
 
 - 1, 2, 3에서 제공하는 것들의 Full Version, 즉 Full Documentation을 보고싶다면?
   - Open in Developer Documentation 클릭
@@ -916,27 +971,27 @@ APIs
 
 타입과 관련된 여러 API들 확인 가능!
 
-Classes and Structs
+**Classes and Structs**
 
-    - Both provide a way to define types in Swift
-    - Both have instances
-    - Instances are created with an initializer
-    - Both can have methods
-    - Both can have properties
-    - When you create and use instances, you’ll write the same Swift code whether a type is a struct or class
-    - 이후 스스로 struct, class를 define하는 법도 배울 것
+- Both provide a way to define types in Swift
+- Both have instances
+- Instances are created with an initializer
+- Both can have methods
+- Both can have properties
+- When you create and use instances, you’ll write the same Swift code whether a type is a struct or class
+- 이후 스스로 struct, class를 define하는 법도 배울 것
 
 Why Methods and Properties?
 
-    - Methods and properties help to break down the complexity of a large program by putting related pieces of information (properties) and work to be done (methods) together in a single self-contained package (an instance).
-    - type 속에 정의된 함수(method)가 아닌 function을 top-level function이라 한다.
-    - top-level function이나 variable을 사용하는 것 대신, method나 property를 사용하는 것 다음과 같은 장점이 있다.
+- Methods and properties help to break down the complexity of a large program by putting related pieces of information (properties) and work to be done (methods) together in a single self-contained package (an instance).
+- type 속에 정의된 함수(method)가 아닌 function을 top-level function이라 한다.
+- top-level function이나 variable을 사용하는 것 대신, method나 property를 사용하는 것 다음과 같은 장점이 있다.
 
-    - 프로그램을 여러 type들의 인스턴스로 객체화함에 따라 complexity를 줄이고, 코드를 더 이해하기 쉽게 만들어준다.
-    - 앞서 함수의 의의가 naming을 통해 해당 기능들의 직관성을 높이는 것처럼, 인스턴스 역시 이러한 역할의 연장선이라 할 수 있다.
-    - 인스턴스 속의 복잡한 과정들은 가린 채, 메서드와 프로퍼티를 호출하기만 하면 된다.
-    - 더불어, autocompletion에서도 도움이 된다. 타입과 인스턴스를 설정할 시, autocompletion은 해당 타입에서만 가능한 메서드를 제안하지만, 만약 이러한 설정 없이 top-level function들만 있다면 autocompletion에 모든 function들을 제안할 것이다.
-    - 또한 API 문서 역시 여러 타입들로 쉽게 구성할 수 있고, 또한 이에 따라 찾아보기도 쉽다.
+- 프로그램을 여러 type들의 인스턴스로 객체화함에 따라 complexity를 줄이고, 코드를 더 이해하기 쉽게 만들어준다.
+- 앞서 함수의 의의가 naming을 통해 해당 기능들의 직관성을 높이는 것처럼, 인스턴스 역시 이러한 역할의 연장선이라 할 수 있다.
+- 인스턴스 속의 복잡한 과정들은 가린 채, 메서드와 프로퍼티를 호출하기만 하면 된다.
+- 더불어, autocompletion에서도 도움이 된다. 타입과 인스턴스를 설정할 시, autocompletion은 해당 타입에서만 가능한 메서드를 제안하지만, 만약 이러한 설정 없이 top-level function들만 있다면 autocompletion에 모든 function들을 제안할 것이다.
+- 또한 API 문서 역시 여러 타입들로 쉽게 구성할 수 있고, 또한 이에 따라 찾아보기도 쉽다.
 
 - 인스턴스들이 서로 ‘같은 value’를 가지더라도, 각각의 value들은 각각의 인스턴스들에 해당하는 별개의 것들이다.
 
@@ -950,9 +1005,9 @@ myPlans += “ , go to cafe”
 // 이후 myPlans의 값을 업데이트할 경우, myPlans만 “eat dinner, run 5km, go to cafe”로 업데이트되며, friendPlans의 경우 별개의 인스턴스에 저장되어 있는 것이므로 그대로 “eat dinner, run 5km”이다.
 ```
 
----
+## lesson 13 (QuestionBot)
 
-### lesson 13 (QuestionBot)
+---
 
 App을 만드는 과정은 다수의 인원들(designers, developers)의 협업으로 이루어지며, 앱의 다른 파트들이 동시에 진행될 수 있음.
 이번 레슨에서는 QuestionBot이라는 챗 앱에서 질문에 답을 하는 brain기능을 담당한다고 가정하자.
@@ -961,7 +1016,7 @@ App을 만드는 과정은 다수의 인원들(designers, developers)의 협업�
 
 I Playground를 통해 QuestionBot의 ‘QuestionAnswerer’ 파트에 해당하는 코드 짜기
 
-    - String의 Case를 통일하기
+- String의 Case를 통일하기
 
 ```swift
 “where” == “where” // true
@@ -977,7 +1032,7 @@ let question = “WHERE ARE THE COOKIES?”
 let lowerQuestion = question.lowercased() // “where are the cookies?”
 ```
 
-    - Remainder Operator를 통해 Default Answer를 세분화하기
+- Remainder Operator를 통해 Default Answer를 세분화하기
 
 조건문에 있어서 특정 조건들이 모두 해당하지 않는 나머지 기본 상태를 default라 한다. if 조건문에서는 else가 여기에 해당한다.
 
@@ -988,8 +1043,8 @@ let lowerQuestion = question.lowercased() // “where are the cookies?”
 - count 값을 2로 나누었을 경우 나머지가 0인 경우, 1인 경우로 나눔
   - “hello”.count % 2 = 1
     —2가지 default 경우가 생김
-
-3가지 default 경우를 원할 경우 String의 count를 3으로 나눈 경우 - "~~~”.count % 3
+3가지 default 경우를 원할 경우 String의 count를 3으로 나눈 경우
+- "~~~”.count % 3
 
 ```swift
 func responseTo(question: String) -> String {
@@ -1022,44 +1077,72 @@ func responseTo(question: String) -> String {
 
 Playground에서 작성한 코드를 Xcode에 옮기기
 
-    - 복사할 function의 opening brace를 double-click하면 해당 function을 highlight해줌.
-    - copy-paste the function
+- 복사할 function의 opening brace를 double-click하면 해당 function을 highlight해줌.
+- copy-paste the function
 
 자주 하는 실수 2가지
 
-    - Pasting the function into the wrong file
-        - “Invalid redeclaration of responseTo(question:)”
+- Pasting the function into the wrong file
+    - “Invalid redeclaration of responseTo(question:)”
 
-    - Pasting the function in the wrong place in the file
-        - “Invalid redeclaration of responseTo(question:)”
+- Pasting the function in the wrong place in the file
+    - “Invalid redeclaration of responseTo(question:)”
 
 Customizing the interface
 
 Main Storyboard 파일의 Interface Builder를 통해서(오른쪽 inspector 활용): - Background color 바꾸기 - Emoji 바꾸기(ctrl-command-space) - Text 바꾸기(새로운 줄로 이동하고 싶으면 ctrl-enter)
 
----
+## lesson 14 (Arrays and Loops)
 
-### lesson 14 (Arrays and Loops)
+---
 
 In Swift, a list is called an array.
 
 이전에 배운 list는 `let shoppingList = “Eggs” + “\n” + “Tomatoes” + “\n” + … `와 같이 newline character를 이용해 display하는 것이었음
 
-하지만 list와 관련해서 다음과 같은 생각이 들 수 있음: - How could you call a function on each member of the list without needing to retype them all? - How could you double-check whether you've already added something to the list? - If your list has grown to hundreds of items, could you easily remove the one that says “Tomatoes”? - What if your list isn't made of String values, but something else, like a list of prices that you'd like to add up? - What's the first thing? The last thing? The 24th thing? - How many things are there? - How can you rearrange the list?
+하지만 list와 관련해서 다음과 같은 생각이 들 수 있음:
 
-Array Literals & Indices - Array Literal: [a, b, c, d, e, f, …] // square brackets으로 묶어주고, 안에 item들은 comma로 구분 - Index: 배열의 항목들은 index라 불리는 number를 가짐 // index는 배열에서 항목이 갖는 위치를 뜻함 // 0에서 시작 - 배열이름[인덱스 넘버]를 통해 해당 배열 인덱스에 해당하는 항목을 부를 수 있음 // 이를 subscript라 부름 // devices[0] = “iPhone” - Array를 constant로 선언할 시 // 해당 배열에 해당하는 항목 // 항목들의 순서(인덱스)가 변하지 않음을 의미
+- How could you call a function on each member of the list without needing to retype them all?
+- How could you double-check whether you've already added something to the list?
+- If your list has grown to hundreds of items, could you easily remove the one that says “Tomatoes”?
+- What if your list isn't made of String values, but something else, like a list of prices that you'd like to add up?
+- What's the first thing? The last thing? The 24th thing?
+- How many things are there?
+- How can you rearrange the list?
 
-- subscript: array, dictionary 등 collection 타입과 관련하여 특정 member elements에 간단하게 접근할 수 있는 문법 // array[index], dictionary[key] // 서브스크립트는 별도의 getter(접근자), setter(설정자) 등의 메서드를 구현하지 않아도 인덱스를 통해 값을 설정하거나 가져올 수 있다.
+**Array Literals & Indices**
 
-Count - 배열이름.count - array의 항목 수를 알려줌 - let chores = [“Vacuuming”, “Dusting”, “Laundry”, “Feed the dragons”] // let numberOfChores = chores.count // let minutesPerChore = 10 // let choresTime = minutesPerChore \* numberOfChores // 40 - Declaration // var count: Int { get }
+- Array Literal: [a, b, c, d, e, f, …]
+    - square brackets으로 묶어주고, 안에 item들은 comma로 구분
+- Index: 배열의 항목들은 index라 불리는 number를 가짐
+    - index는 배열에서 항목이 갖는 위치를 뜻함
+    - 0에서 시작 - 배열이름[인덱스 넘버]를 통해 해당 배열 인덱스에 해당하는 항목을 부를 수 있음
+    - 이를 subscript라 부름
+    - `devices[0] = “iPhone”`
+    - Array를 constant로 선언할 시
+        - 해당 배열에 해당하는 항목
+        - 항목들의 순서(인덱스)가 변하지 않음을 의미
+- subscript: array, dictionary 등 collection 타입과 관련하여 특정 member elements에 간단하게 접근할 수 있는 문법 
+    - `array[index]`, `dictionary[key]`
+    - 서브스크립트는 별도의 getter(접근자), setter(설정자) 등의 메서드를 구현하지 않아도 인덱스를 통해 값을 설정하거나 가져올 수 있다.
 
-Types
+**Count**
 
-    - Array의 타입은 [String], [Int]와 같이 그 자체로는 array 타입, 그리고 그 안의 각 요소들의 type으로 나뉜다.
-    - [SomeType]: “This array is a collection of SomeType instances.”
-    - let grades = [“A”, “B”, “C”, “D”, “E”] // grades[0]: String = “A” // 이처럼 array안의 element를 추출하면 type inference를 한다.
+- 배열이름.count
+- array의 항목 수를 알려줌
+- `let chores = [“Vacuuming”, “Dusting”, “Laundry”, “Feed the dragons”]`
+- `let numberOfChores = chores.count`
+- `var count: Int { get }`
 
-Processing Arrays
+**Types**
+
+- Array의 타입은 `[String]`, `[Int]`와 같이 그 자체로는 array 타입, 그리고 그 안의 각 요소들의 type으로 나뉜다.
+- `[SomeType]`: “This array is a collection of SomeType instances.”
+- `let grades = [“A”, “B”, “C”, “D”, “E”]`
+    - `grades[0]: String = “A”`
+    - 이처럼 array안의 element를 추출하면 type inference를 한다.
+
+**Processing Arrays**
 
 ```swift
 let friends = [“Name”, “Name2”, “Name3”, “Name4”, “Name5”]
@@ -1073,14 +1156,14 @@ invite(friend: friends[1])
 invite(friend: friends[2])
 ```
 
-이러한 경우 문제는 1)반복작업을 해야 한다는 점, 2)반복작업 중 실수가 나올 수 있다는 점 등 비효율적이다. 이를 어떻게 해결할까?
+이러한 경우 문제는 1. 반복작업을 해야 한다는 점, 2. 반복작업 중 실수가 나올 수 있다는 점 등 비효율적이다. 이를 어떻게 해결할까?
 
-Loops
+**Loops**
 
-    - 배열을 다룸에 있어 반복작업을 자동적으로 하는 것을 looping through the array라 한다.
-    - When the code is finished with all the items in the collection, the loop stops automatically and the code continues executing through the rest of the program.
-    - for…in loop
-    - for 매개변수 in 범위 {각 item들에 적용할 함수}
+- 배열을 다룸에 있어 반복작업을 자동적으로 하는 것을 looping through the array라 한다.
+- When the code is finished with all the items in the collection, the loop stops automatically and the code continues executing through the rest of the program.
+- for…in loop
+- for 매개변수 in 범위 {각 item들에 적용할 함수}
 
 ```swift
 let friends = [“Name”, “Name2”, “Name3”, “Name4”, “Name5”]
@@ -1101,20 +1184,23 @@ Hey, ✨Name5✨, please come to my party on Friday!
 Done, all friends have been invited.
 ```
 
-- friend라는 상수는 for…in 구문에서 String Constant로 선언되기는 했으나, 해당 함수 내에서만 선언된 것이며, 함수 외의 부분에서는 선언된 것이 아니다!
+friend라는 상수는 for…in 구문에서 String Constant로 선언되기는 했으나, 해당 함수 내에서만 선언된 것이며, 함수 외의 부분에서는 선언된 것이 아니다!
 
-Mutable Arrays
+**Mutable Arrays**
 
-    - let 키워드를 통해 constant로 선언한 배열은 해당 item과 item들의 순서가 고정됨을 의미한다. (immutable arrays)
-    - var 키워드를 통해 variable로 선언한 배열은 속하는 item들의 value를 자유롭게 바꿀 수 있다. (mutable arrays)
-    - 단, variable이 type이 아닌 value만을 바꿀 수 있듯이, var로 선언한 배열 역시 항목들의 type을 바꿀 수는 없다!
+- let 키워드를 통해 constant로 선언한 배열은 해당 item과 item들의 순서가 고정됨을 의미한다. (immutable arrays)
+- var 키워드를 통해 variable로 선언한 배열은 속하는 item들의 value를 자유롭게 바꿀 수 있다. (mutable arrays)
+- 단, variable이 type이 아닌 value만을 바꿀 수 있듯이, var로 선언한 배열 역시 항목들의 type을 바꿀 수는 없다!
 
-Adding Items
+**Adding Items**
 
-    - Mutable Arrays에 적용
-    - 배열 인스턴스.append(추가하고자 하는 value) // array 맨 끝 인덱스에 value 추가
-    - 배열 인스턴스.insert(추가하고자 하는 value, at: 인덱스) // array의 해당 인덱스에 value 추가 // 삽입하고자 하는 index는 배열 범위 내
-    - 배열 인스턴스 += [추가하고자 하는 배열] // array의 끝부분에 해당 value 추가
+- Mutable Arrays에 적용
+- `.append(추가하고자 하는 value)`
+    - array 맨 끝 인덱스에 value 추가
+- `.insert(추가하고자 하는 value, at: 인덱스)`
+    - array의 해당 인덱스에 value 추가 // 삽입하고자 하는 index는 배열 범위 내
+- `someArray += [추가하고자 하는 배열`]`
+    - array의 끝부분에 해당 value 추가
 
 ```swift
 var list = [String]() // string value를 가지는 배열 인스턴스 생성
@@ -1130,69 +1216,70 @@ list.insert(“Blueberry”, at: 3)
 “Blueberry”
 “Plum”
 
-Removing Items
+**Removing Items**
 
-    - Mutable Arrays에 적용
-    - 배열 인스턴스.remove(at: 인덱스) // 해당 인덱스 value를 추출하여 반환함 + 기존의 배열은 해당 인덱스 value를 뺀 상태로 업데이트
-    - 배열 인스턴스.removeFirst() // 배열 첫 번째 value를 추출하여 반환함 + 기존의 배열은 첫 value를 뺀 상태로 업데이트
-    - 배열 인스턴스.removeLast() // 배열 마지막 value를 추출하여 반환함 + 기존의 배열은 마지막 value를 뺀 상태로 업데이트
-    - 배열 인스턴스.removeAll() // 배열의 value를 모두 제거
+- Mutable Arrays에 적용
+- `.remove(at: 인덱스)`
+    - 해당 인덱스 value를 추출하여 반환함 + 기존의 배열은 해당 인덱스 value를 뺀 상태로 업데이트
+- `.removeFirst()`
+    - 배열 첫 번째 value를 추출하여 반환함 + 기존의 배열은 첫 value를 뺀 상태로 업데이트
+- `.removeLast()`
+    - 배열 마지막 value를 추출하여 반환함 + 기존의 배열은 마지막 value를 뺀 상태로 업데이트
+- `.removeAll()`
+    - 배열의 value를 모두 제거
 
 ```swift
 var numbers = [0, 1, 2, 3, 4]
-
 let someNumber = numbers.remove(at: 2) // 2
 numbers = [0, 1, 3, 4]
-
 let firstNumber = numbers.removeFirst() // 0
 numbers = [1, 3, 4]
-
 let lastNumber = numbers.removeLast() // 4
 numbers = [1, 3]
-
 numbers.removeAll() // []
 ```
 
-Replacing Items
+**Replacing Items**
 
-    - Mutable Arrays에 적용
-    - subscript를 활용하여 해당 인덱스의 값을 새로 선언
-    - 배열의 index 범위를 초과하는 index는 사용할 수 없음 // 그러므로 subscript를 통해 배열 내 특정 index의 값 replacing만 가능하며, adding or removing은 불가
+- Mutable Arrays에 적용
+- subscript를 활용하여 해당 인덱스의 값을 새로 선언
+- 배열의 index 범위를 초과하는 index는 사용할 수 없음
+- 그러므로 subscript를 통해 배열 내 특정 index의 값 replacing만 가능하며, adding or removing은 불가
 
 ```swift
 var flavors = [“Chocolate”, “Vanilla”, “Strawberry”, “Pistachio”, “Rocky Road”]
-
 let firstFlavor = flavors[0] // “Chocolate”
-
 flavors[0] = “Fudge Ripple”
 let newFirstFlavor = flavors[0] // “Fudge Ripple”
-
 firstFlavor // “Chocolate”
 newFirstFlavor // “Fudge Ripple”
 ```
 
-위의 인덱스 범위는 0~4이므로 - 새로운 맛을 추가하고자 flavors[5] = “Monster”와 같은 선언은 불가함 - 추가하고자 하면 flavors.append(“Monster”), flavors.insert(“Monster”, at: 5), flavors += [“Monster”] 중에 하나 사용
+위의 인덱스 범위는 0~4이므로
+- 새로운 맛을 추가하고자 `flavors[5] = “Monster”`와 같은 선언은 불가함
+- 추가하고자 하면 `flavors.append(“Monster”)`, `flavors.insert(“Monster”, at: 5)`, `flavors += [“Monster”]` 중에 하나 사용
 
 Wrapup
 
 You can use arrays to hold lists of items. Arrays have two key features:
 
-    - The items in the array are all of the same type.
-    - The items in the array are in a specific order.
+- The items in the array are all of the same type.
+- The items in the array are in a specific order.
 
 Because of these two features, you can access items from specific points in the array using the index, and you’ll always get back a value of a known type.
 
 Here are some other things you’ve learned about arrays:
 
-    - The first index of an array is zero, not one.
-    - Accessing arrays using the index can be dangerous. If the index used is outside the bounds of the array, your program will crash.
-    - You can find out the number of items in an array using the count property.
-    - You can use for…in loops to safely access each item in the array in order, without needing to know how many items the array contains.
-    - Mutable arrays allow you to add, remove, and replace items.
+- The first index of an array is zero, not one.
+- Accessing arrays using the index can be dangerous. If the index used is outside the bounds of the array, your program will crash.
+- You can find out the number of items in an array using the count property.
+- You can use for…in loops to safely access each item in the array in order, without needing to know how many items the array contains.
+- Mutable arrays allow you to add, remove, and replace items.
 
-- array의 항목 수가 많을 시, Swift가 모든 항목을 체크하여 type inference하는 데에 시간이 많이 걸릴 수 있음 —> type annotation을 통해 playground가 느려지는 것을 방지할 수 있음.
-  가령, let shoudMascotChangeVotes = [false, true, true, false, ………………………..]는 type inference가 오래 걸릴 수 있으므로,
-  let shouldMascotChangeVotes: [Bool] = [false, true, true, false, ………………………..]와 같이 미리 [Bool]이라 타입 선언해줄 수 있음.
+- array의 항목 수가 많을 시, Swift가 모든 항목을 체크하여 type inference하는 데에 시간이 많이 걸릴 수 있음
+- type annotation을 통해 playground가 느려지는 것을 방지할 수 있음.
+    - 가령, let shoudMascotChangeVotes = [false, true, true, false, ………………………..]는 type inference가 오래 걸릴 수 있으므로,
+    - `let shouldMascotChangeVotes: [Bool] = [false, true, true, false, ………………………..]`와 같이 미리 `[Bool]`이라 타입 선언해줄 수 있음.
 
 - for…in 구문을 반복해서 사용해야 하는 상황이라면, function 속에 포함시켜 쉽게 재사용할 수 있게 만들자!
 
@@ -1223,9 +1310,9 @@ print(runMessage)
 }
 ```
 
----
+## lesson 15 (Defining Structures)
 
-### lesson 15 (Defining Structures)
+---
 
 Modeling Data
 
