@@ -19,6 +19,13 @@
 - [QuestionBot](#lesson-13-questionbot)
 - [Arrays and Loops](#lesson-14-arrays-and-loops)
 - [Defining Structures](#lesson-15-defining-structures)
+- [QuestionBot 2](#lesson-16-questionbot-2)
+- [Actions and Outlets](#lesson-17-actions-and-outlets)
+- [Adaptive User Interfaces](#lesson-18-adaptive-user-interfaces)
+- [Enumerations and Switch](#lesson-19-enumerations-and-switch)
+- [Final Project](#lesson-20-final-project)
+- [App Design](#lesson-21-app-design)
+- [Pomodoro (Self Wrapup Project)](#pomodoro)
 
 ## lesson 1 (Playground Basics)
 
@@ -99,7 +106,7 @@ Escape Sequences: The pattern of an escape character followed by something that�
 
 ---
 
-Configuring Xcode Environemnt
+**Configuring Xcode Environemnt**
 
 Colors - Preferences —> Themes
 Hide the Results Sidebar - 드래그하면됨 (옛날에는 이것이 없었음) —> 하지만 콘솔이 있다!
@@ -114,9 +121,11 @@ print("Testing, one two three.")
 Most programmers, whether learning their first programming language or their fiftieth, choose to start with a friendly “hello.” But not just a generic hello. For their first hello, programmers typically go for the grander gesture and greet the whole world. This is the long-standing tradition you learned about earlier in this lesson.
 
 Messages from Programmers
+
 Why would you want to print to the console when you have a perfectly good results sidebar? - results sidebar는 playground용. XCode로 앱 만들 때는 results sidebar 없음. - results sidebar는 single line, 적은 양의 정보만 보여줌. - If you’re using code that was written by other people, the console is where you’ll see their direct messages about their code.
 
 What Can You Print? (what can you send to the console?)
+
 strings
 numbers and calculations 이처럼 results sidebar에 입력할 수 있는 것들은 콘솔로도 print 가능
 string expressions
@@ -125,7 +134,8 @@ The `\n` you see in the results sidebar for the print statements is because prin
 
 Next, find out a common use for the console.
 
-Logging
+**Logging**
+
 You may have heard of a captain’s log, where a seafaring (or spacefaring) captain records all the day-to-day info about the running of the ship.
 But did you know that apps can have logs, too?
 When coders print messages to the console, it’s usually to record, or to log, information about a program as it runs.
@@ -133,7 +143,8 @@ Printing messages to the console is known as logging
 the messages are sometimes called log messages.
 Programmers often use log messages to indicate that something has gone wrong or that something unexpected has happened. As you’ll see below, messages can provide warnings and help diagnose problems.
 
-Wrapup
+**Wrapup**
+
 ⁃ console은 코더가 자기 프로그램에 대한 정보를 나타낼 수 있는, 기록할 수 있는 곳(a tool programmers use to display all kinds of information in a program)
 ⁃ 다른 사람이 코드 가져다 쓸 때 메세지를 볼 수도, 프로그램 중 무엇이 잘못되었는지 등을 알려줄 수 있음.
 ⁃ 더불어, 앱을 만들 때는 results sidebar가 없으므로 print() 형태+콘솔 출력을 통해 어떠한 결과가 만들어지고 있는지 확인할 수 있음.
@@ -350,7 +361,7 @@ Safer Code vs. Varying, Unexpected World
 
 Variable이 그냥 내 마음대로 바꿀 수 있는 것이니까 더 좋다고 생각하는 것은 금물이다. 때로는 Constant로 확정 짓는 것이 중요할 때가 있다. Variable로 value를 지을 시, 해당 value와 관련하여 연결된 여러 code들, 작업들이, 실수나 사고로 인하여 value가 변경될 시 전부 영향을 받게 된다. (마치 ‘친구가 원하는 음료=커피’ 이어서 커피 기계를 샀는데, 친구가 원하는 음료의 값이 바뀌면 낭패에 빠지는 것처럼). 그러므로 각 코드의 부분들이 어떤 역할을 하는지 명확히 이해를 하고, 확정해야 될 부분은 constant로, 그리고 정말 프로그램에 걸쳐 변화한 필요한 값일 경우에만 variable을 적용한다.
 
-Wrapup
+**Wrapup**
 
 - Values declared with let are constants, and can’t be changed once a value is assigned. These values are called immutable.
 - Values declared with var are variables, and can be assigned new values over time. These values are called mutable.
@@ -682,7 +693,7 @@ printHelloTo(“Hiro”) // Hello Hiro
 
 - 함수 정의 시에는 argument label 자리에 `\_`를 넣어주었고, 이에 따라 함수 호출 시에 `argument label: 전달값`이 아닌, argument label없이 전달값만 입력하면 됨을 확인할 수 있다.
 
-Wrapup
+**Wrapup**
 
 - Functions take in information / do things with it / pass information out! (함수가 하는 일)
 - Functions should read like sentences when you call them! Carefully choose names for your parameters and functions! (함수의 네이밍)
@@ -1259,7 +1270,7 @@ newFirstFlavor // “Fudge Ripple”
 - 새로운 맛을 추가하고자 `flavors[5] = “Monster”`와 같은 선언은 불가함
 - 추가하고자 하면 `flavors.append(“Monster”)`, `flavors.insert(“Monster”, at: 5)`, `flavors += [“Monster”]` 중에 하나 사용
 
-Wrapup
+**Wrapup**
 
 You can use arrays to hold lists of items. Arrays have two key features:
 
@@ -1314,13 +1325,15 @@ print(runMessage)
 
 ---
 
-Modeling Data
+**Modeling Data**
 
-    - App을 만드는데 있어서 중요한 것은 how your app is going to represent the information that it needs를 고려하는 것이다.
-    - 즉, 앱이 포함하는 정보에는 String, Int, Array와 같은 단순한 타입으로 표현될 수 있는 정보도 있지만 // 음악 앱의 경우 tracks, artists, albums, playlists // 쇼핑 앱의 경우 products, shopping carts, customers, orders와 같은 정보들을 통해 // 실제 세계와 같은 software model을 구현해야 한다.
-    - 이처럼 앱이 다루는 data들의 type들을 통상적으로 model, 혹은 data model이라 칭한다.
-    - In general, the types of data that an app deals with are known collectively as its model, or sometimes more verbosely, its data model.
-    - 이와 같이 ‘정보를 모델링’하는 것이 중요하고, 또한 이를 가능하게 하는 것이 새로운 데이터 타입을 만드는 것이다!
+- App을 만드는데 있어서 중요한 것은 how your app is going to represent the information that it needs를 고려하는 것이다.
+- 즉, 앱이 포함하는 정보에는 String, Int, Array와 같은 단순한 타입으로 표현될 수 있는 정보도 있지만
+    - 음악 앱의 경우 tracks, artists, albums, playlists
+    - 쇼핑 앱의 경우 products, shopping carts, customers, orders와 같은 정보들을 통해 // 실제 세계와 같은 software model을 구현해야 한다.
+- 이처럼 앱이 다루는 data들의 type들을 통상적으로 model, 혹은 data model이라 칭한다.
+- In general, the types of data that an app deals with are known collectively as its model, or sometimes more verbosely, its data model.
+- 이와 같이 ‘정보를 모델링’하는 것이 중요하고, 또한 이를 가능하게 하는 것이 새로운 데이터 타입을 만드는 것이다!
 
 ```swift
 let songTitles = [“Ooh yeah”, “Maybe”, “No, no, no”, “Makin’ up your mind”]
@@ -1332,14 +1345,14 @@ let song3 = “\(songTitles[2]) by \(artists[2]), duration \(durations[2])s” /
 - 작업하기 매우 번거로움
 - Song이라는 type이 있다면 어떨까?
 
-Custom Types
+**Custom Types**
 
-    - struct 키워드를 통해 새로운 타입을 만들 수 있음
-    - 기존의 타입들을 활용하여 struct 키워드를 통해 structure, 구조체를 만들 수 있음
-    - struct을 통해 형성한 것은 새로운 ‘타입’이므로 UpperCamelCase를 사용
-    - 그 안의 properties는 lowerCamelCase를 사용
-    - every type has at least one initializer
-    - initializer 중 각 멤버 프로퍼티를 매개변수로 갖는 initializer를 memberwise initializer라 한다
+- struct 키워드를 통해 새로운 타입을 만들 수 있음
+- 기존의 타입들을 활용하여 struct 키워드를 통해 structure, 구조체를 만들 수 있음
+- struct을 통해 형성한 것은 새로운 ‘타입’이므로 UpperCamelCase를 사용
+- 그 안의 properties는 lowerCamelCase를 사용
+- every type has at least one initializer
+- initializer 중 각 멤버 프로퍼티를 매개변수로 갖는 initializer를 memberwise initializer라 한다
 
 ```swift
 struct Song {
@@ -1360,14 +1373,14 @@ Song(title: “Leave the Door Open”, artist: “Silk Sonic”, duration: 243)
 //
 ```
 
-Struct Properties
+**Struct Properties**
 
-    - struct을 통해 만든 타입의 인스턴스 프로퍼티에 접근하는 방법 역시 점(.)을 통해 접근
-    - song.title // “Leave the Door Open”
-    - song.artist // “Silk Sonic”
-    - song.duration // 243
-    - 타입인 Song은 각각의 인스턴스가 어떤 것을 포함할지, 즉 instance member만 정의(title, artist, duration)
-    - 실제 인스턴스인 song에 instance member의 프로퍼티 value가 있는 것(“Leave the Door Open”, “Silk Sonic”, 243)
+- struct을 통해 만든 타입의 인스턴스 프로퍼티에 접근하는 방법 역시 점(.)을 통해 접근
+- song.title // “Leave the Door Open”
+- song.artist // “Silk Sonic”
+- song.duration // 243
+- 타입인 Song은 각각의 인스턴스가 어떤 것을 포함할지, 즉 instance member만 정의(title, artist, duration)
+- 실제 인스턴스인 song에 instance member의 프로퍼티 value가 있는 것(“Leave the Door Open”, “Silk Sonic”, 243)
 
 Mutable Properties
 
@@ -1387,11 +1400,14 @@ song.rating = 4
 song.rating // 4
 ```
 
-Calculated Properties - 단순히 상수, 변수 값을 저장하는 것 외에 연산된 값을 저장하는 calculated property도 생성할 수 있음 - Array에서 count 프로퍼티 역시 calculated property
+**Calculated Properties**
 
-    - var로 선언 // A calculated property is declared a var, since it could change depending on the rest of the struct
-    - var선언, name, type annotation, 연산code, 해당 type return 값으로 구성
-    - 인스턴스에서 프로퍼티로 접근할 때는 점(.)+name이 필요하지만, struct 정의 내에서 프로퍼티에 접근할 때는 점 없이 name으로만 접근함
+- 단순히 상수, 변수 값을 저장하는 것 외에 연산된 값을 저장하는 calculated property도 생성할 수 있음
+- Array에서 count 프로퍼티 역시 calculated property
+- var로 선언
+- A calculated property is declared a var, since it could change depending on the rest of the struct
+- var선언, name, type annotation, 연산code, 해당 type return 값으로 구성
+- 인스턴스에서 프로퍼티로 접근할 때는 점(.)+name이 필요하지만, struct 정의 내에서 프로퍼티에 접근할 때는 점 없이 name으로만 접근함
 
 ```swift
 var name: type {
@@ -1427,7 +1443,9 @@ song.formattedDuration // “2m 30s”
 song.formattedTitle // “No, no, no by Fizz”
 ```
 
-Functions - 다른 타입들과 마찬가지로 custom type에 역시 function이 활용될 수 있음
+**Functions**
+
+- 다른 타입들과 마찬가지로 custom type에 역시 function이 활용될 수 있음
 
 ```swift
 struct Rectangle {
@@ -1447,9 +1465,16 @@ let anotherRectangle = Rectangle(width: 10, height: 30)
 isRectangle(rectangle, biggerThan: anotherRectangle) // false
 ```
 
-하지만 다음과 같은 문제가 있다: - 함수를 호출할 때 argument가 2개로, 무엇이 기준인지 모호하며 직관성이 떨어짐 - 해당 function은 rectangles와 관련하여 사용할 것인데, 프로그램 전체에서 사용 가능하도록 설정됨 - autocompletion에서 찾기 힘들 수 있음
+하지만 다음과 같은 문제가 있다:
+- 함수를 호출할 때 argument가 2개로, 무엇이 기준인지 모호하며 직관성이 떨어짐
+- 해당 function은 rectangles와 관련하여 사용할 것인데, 프로그램 전체에서 사용 가능하도록 설정됨
+- autocompletion에서 찾기 힘들 수 있음
 
-Instance Methods - type definition의 body에서 function을 생성하여 instance method를 만들 수 있음 - 프로퍼티와 마찬가지로 type 정의 내부에서는 다른 프로퍼티에 점 없이 접근 - 인스턴스 생성 후에는 마찬가지로 점을 통해 접근
+**Instance Methods**
+
+- type definition의 body에서 function을 생성하여 instance method를 만들 수 있음
+- 프로퍼티와 마찬가지로 type 정의 내부에서는 다른 프로퍼티에 점 없이 접근
+- 인스턴스 생성 후에는 마찬가지로 점을 통해 접근
 
 ```swift
 struct Rectangle {
@@ -1477,7 +1502,14 @@ otherRectangle.isBiggerThan(rectangle) // true
 - isBiggerThan function이 Rectangle 타입의 인스턴스 메서드가 되었고
 - 넣어야 하는 argument 수도 2개에서 1개로 줄어 직관성이 높아짐
 
-Wrapup - Every app has a model that represents the data it uses. - You can define your own types in Swift to organize data in a way that makes sense for your app. - One way to create custom types is by defining structs. - A struct is a type that can group together properties and methods. - Some properties hold data, like variables or constants. Others return a calculated value. - You create and use instances of your custom types the same way as any other type in Swift. - You use your custom types like any other types, including as function parameters and return types.
+**Wrapup**
+
+- Every app has a model that represents the data it uses.
+- You can define your own types in Swift to organize data in a way that makes sense for your app.
+- One way to create custom types is by defining structs. - A struct is a type that can group together properties and methods.
+- Some properties hold data, like variables or constants. Others return a calculated value.
+- You create and use instances of your custom types the same way as any other type in Swift.
+- You use your custom types like any other types, including as function parameters and return types.
 
 My Type
 
@@ -1517,7 +1549,9 @@ let height: Double
 
 Placeholder Type
 
-- placeholder types: types that have empty implementations // 우선 전체적인 코드가 돌아갈 수 있도록 타입은 생성했지만 아직 타입의 내용은 설정하지 않은 상태 // 전체적인 코드 흐름부터 우선적으로 짜고 싶은 경우 사용
+- placeholder types: types that have empty implementations
+- 우선 전체적인 코드가 돌아갈 수 있도록 타입은 생성했지만 아직 타입의 내용은 설정하지 않은 상태
+- 전체적인 코드 흐름부터 우선적으로 짜고 싶은 경우 사용
 
 ```swift
 struct Shoelaces {
@@ -1546,30 +1580,37 @@ let newLaces = Shoelaces()
 let newShoe = TrainingShoe(size: 39, isTied: true, laces: newLaces)
 ```
 
+## lesson 16 (QuestionBot 2)
+
 ---
 
-### lesson 16 (QuestionBot 2)
+다음 항목들을 보여주는 ChatBot에 관해 알아보자:
+- A list of messages forming a conversation
+- Messages entered by the user that look different from those given by the app
+- A “thinking” indicator
+- An entry area where the user can type a question
 
-다음 항목들을 보여주는 ChatBot에 관해 알아보자: - A list of messages forming a conversation - Messages entered by the user that look different from those given by the app - A “thinking” indicator - An entry area where the user can type a question
+Table View? Cell?
+- a scrolling list of items를 a table view라 부른다.
+- 해당 list에서 각 item들을 a cell이라 부른다.
 
-Table View? Cell? - a scrolling list of items를 a table view라 부른다. - 해당 list에서 각 item들을 a cell이라 부른다.
+### MVC
 
-- MVC
+- Model + View + Controller
+- app을 구현함에 있어 app에 맞게 사용할 수 있는 data의 type을 설정하는 Model 파트, app을 user에 보여주는 design 측면을 설정하는 View 파트, 그리고 data model과 view 사이에서 업데이트 및 관리를 담당하는 Controller 파트로 보통 구현한다.
 
-  - Model + View + Controller
-  - app을 구현함에 있어 app에 맞게 사용할 수 있는 data의 type을 설정하는 Model 파트, app을 user에 보여주는 design 측면을 설정하는 View 파트, 그리고 data model과 view 사이에서 업데이트 및 관리를 담당하는 Controller 파트로 보통 구현한다.
+### Protocol & Extension
 
-- Protocol & Extension
+- Protocol은 특정 역할을 수행하기 위한 메서드, 프로퍼티, 기타 요구사항 등의 청사진으로, 프로토콜을 채택한 타입은 프로토콜이 요구하는 기능을 구현하여 프로토콜을 준수(conform)하여야 한다.
+- Extension은 기존 타입의 기능을 ‘확장’한다. // 프로토콜 지향 프로그래밍: 구조체에서 주로 사용한다. 클래스의 경우 상속을 통해 해당 클래스의 타입은 기능을 상속받는다. 이는 한계점이 있다. 반대로 프로토콜로 기본적인 타입의 속성을 설정해놓고, 익스텐션을 통해 해당 프로토콜에서 사용 가능한 기능을 정의해놓으면, 보다 쉽게 접근할 수 있다.
 
-  - Protocol은 특정 역할을 수행하기 위한 메서드, 프로퍼티, 기타 요구사항 등의 청사진으로, 프로토콜을 채택한 타입은 프로토콜이 요구하는 기능을 구현하여 프로토콜을 준수(conform)하여야 한다.
-  - Extension은 기존 타입의 기능을 ‘확장’한다. // 프로토콜 지향 프로그래밍: 구조체에서 주로 사용한다. 클래스의 경우 상속을 통해 해당 클래스의 타입은 기능을 상속받는다. 이는 한계점이 있다. 반대로 프로토콜로 기본적인 타입의 속성을 설정해놓고, 익스텐션을 통해 해당 프로토콜에서 사용 가능한 기능을 정의해놓으면, 보다 쉽게 접근할 수 있다.
+### 열거형(Enum)
 
-- 열거형(Enum)
-  - 구조체, 클래스와 같이 하나의 타입
-  - Switch문과 주로 많이 호응
-  - UpperCamelCase로 정의, 각 case는 lowerCamelCase로 정의
-  - 각 case 그 자체가 고유의 값임 // 각 케이스는 한 줄에 개별로도, 한 줄에 여러 개도 정의할 수 있음
-  - EnumName.caseName을 통해 case 호출, 타입이 명확한 경우 .caseName으로도 호출 가능
+- 구조체, 클래스와 같이 하나의 타입
+- Switch문과 주로 많이 호응
+- UpperCamelCase로 정의, 각 case는 lowerCamelCase로 정의
+- 각 case 그 자체가 고유의 값임 // 각 케이스는 한 줄에 개별로도, 한 줄에 여러 개도 정의할 수 있음
+- EnumName.caseName을 통해 case 호출, 타입이 명확한 경우 .caseName으로도 호출 가능
 
 ```swift
 enum Weekday {
@@ -1585,13 +1626,37 @@ day = .tue // tue
 
 Exploring The Project
 
-UI (V) - Main.storyboard: 앱의 메인 화면이 어떻게 보일지? // The interface of the app, including the layout of the screens - LaunchScreen.storyboard: 앱의 시작 화면이 어떻게 보일지? // The screen displayed when the app is first launched - an empty white screen - ThinkingCell.swift: ThinkingCell은 어떻게 보일지? // A specialized cell for showing the app is thinking - ConversationCell.swift: ConversationCell은 어떻게 보일지? // A specialized cell for showing a message in the conversation - AskCell.swift: AskCell은 어떻게 보일지? // A specialized cell for allowing the user to type in a question - Assets.xcassets: 앱에서 사용되는 이미지 저장 // The asset catalog holding all of the images used in the app
+UI (V)
 
-Controllers (C) - ConversationViewController.swift: Data Models를 바탕으로 View에 listing 및 업데이트를 담당 // This class is responsible for the list view and handling updates when the user asks questions
+- Main.storyboard: 앱의 메인 화면이 어떻게 보일지?
+    - The interface of the app, including the layout of the screens
+- LaunchScreen.storyboard: 앱의 시작 화면이 어떻게 보일지?
+    - The screen displayed when the app is first launched
+    - an empty white screen
+- ThinkingCell.swift: ThinkingCell은 어떻게 보일지?
+    - A specialized cell for showing the app is thinking
+- ConversationCell.swift: ConversationCell은 어떻게 보일지?
+    - A specialized cell for showing a message in the conversation
+- AskCell.swift: AskCell은 어떻게 보일지?
+    - A specialized cell for allowing the user to type in a question
+- Assets.xcassets: 앱에서 사용되는 이미지 저장
+    - The asset catalog holding all of the images used in the app
 
-Model (M) - Message.swift: 앱에 사용될 여러 메세지와 관련된 타입 모델을 설정 - QuestionAnswerer.swift: 질문에 답해주는 기능과 관련된 타입 모델을 설정 - ConversationDataSource.swift: 메세지와 기능을 통해 만들어진 대화 정보에 관한 타입 모델
+Controllers (C)
 
-Support Files - AppDelegate.swift: Part of the standard app template, normally used to handle events such as the app being launched - Info.plist: Part of the standard app template, holding information about the app itself
+- ConversationViewController.swift: Data Models를 바탕으로 View에 listing 및 업데이트를 담당
+    - This class is responsible for the list view and handling updates when the user asks questions
+
+Model (M)
+
+- Message.swift: 앱에 사용될 여러 메세지와 관련된 타입 모델을 설정
+- QuestionAnswerer.swift: 질문에 답해주는 기능과 관련된 타입 모델을 설정
+- ConversationDataSource.swift: 메세지와 기능을 통해 만들어진 대화 정보에 관한 타입 모델
+
+Support Files
+
+- AppDelegate.swift: Part of the standard app template, normally used to handle events such as the app being launched
+- Info.plist: Part of the standard app template, holding information about the app itself
 
 ```swift
 // Message.swift
@@ -1697,12 +1762,12 @@ class ConversationDataSource {
 - data source와 같이 ‘a type that exists just to provide information to another part of your app’은 자주 사용되는 아이디어다.
 - actions, outlets은 your own custom interactions in an app을 구현하기 위해 사용한다.
 
----
-
 ### 클래스(class)와 상속(Inheritance)
 
-    - class는 자식클래스(Subclass)와 부모클래스(Superclass)로 나뉨
-    - 상속(Inheritance): 기반클래스를 다른 클래스에서 물려받는 것을 의미 // Subclass는 Superclass의 메서드, 프로퍼티, 서브스크립트를 사용 및 재정의할 수 있음 // 프로퍼티 감시자를 구현할 수 있음
+- class는 자식클래스(Subclass)와 부모클래스(Superclass)로 나뉨
+- 상속(Inheritance): 기반클래스를 다른 클래스에서 물려받는 것을 의미
+- Subclass는 Superclass의 메서드, 프로퍼티, 서브스크립트를 사용 및 재정의할 수 있음
+- 프로퍼티 감시자를 구현할 수 있음
 
 ```swift
 class 자식클래스 이름: 부모클래스 이름 {
@@ -1710,16 +1775,16 @@ class 자식클래스 이름: 부모클래스 이름 {
 }
 ```
 
-    - 재정의(Override): 부모클래스의 메서드, 프로퍼티, 서브스크립트 등을 그대로 사용하지 않고 변경하여 사용하는 것을 의미(키워드로 override 사용)
-    - super 키워드: 자식클래스에서 부모클래스의 속성을 사용하고 싶을 때 사용
-        - 메서드 부모버전 호출
-            - super.메서드이름()
-        - 프로퍼티 부모버전 호출
-            - super.프로퍼티이름
-        - 서브스크립트 부모버전 호출
-            - super[index]
+- 재정의(Override): 부모클래스의 메서드, 프로퍼티, 서브스크립트 등을 그대로 사용하지 않고 변경하여 사용하는 것을 의미(키워드로 override 사용)
+- `super` 키워드: 자식클래스에서 부모클래스의 속성을 사용하고 싶을 때 사용
+    - 메서드 부모버전 호출
+        - `super.메서드이름()`
+    - 프로퍼티 부모버전 호출
+        - `super.프로퍼티이름`
+    - 서브스크립트 부모버전 호출
+        - `super[index]`
 
-#### 메서드 재정의(Method Override)
+### 메서드 재정의(Method Override)
 
 ```swift
 class Parents {
@@ -1735,12 +1800,14 @@ print(“I’m your daughter”)
 }
 ```
 
-#### 프로퍼티 재정의(Property Override)
+### 프로퍼티 재정의(Property Override)
 
 - 저장 프로퍼티로 재정의는 불가
 - 프로퍼티를 재정의한다는 것은 접근자(Getter), 설정자(Setter), 프로퍼티 감시자(Property Observer)를 재정의하는 것
-- 부모클래스 읽기 전용 프로퍼티 —> 자식클래스에서 읽고 쓰기 가능하게 변경 가능
-- 부모클래스 읽기, 쓰기 가능한 프로퍼티 —> 자식클래스에서 읽기 전용으로 재정의 불가
+- 부모클래스 읽기 전용 프로퍼티
+    - 자식클래스에서 읽고 쓰기 가능하게 변경 가능
+- 부모클래스 읽기, 쓰기 가능한 프로퍼티
+    - 자식클래스에서 읽기 전용으로 재정의 불가
 - 설정자(Setter)만 따로 재정의할 수 없고, 접근자(Getter), 설정자(Setter)모두 재정의해야 함
 
 ```swift
@@ -1765,7 +1832,7 @@ override var subject: String = “test” // cannot override stored property err
 }
 ```
 
-#### 서브스크립트 재정의(Subscript Override)
+### 서브스크립트 재정의(Subscript Override)
 
 ```swift
 class Group {
@@ -1782,34 +1849,44 @@ return members[number+1]
 }
 ```
 
----
-
 ### View Controller Lifecycle
 
-View Controller는 생명주기를 갖는다. 일종의 ‘보여졌다’ ‘사라지는’ 주기를 뜻한다. View는 ‘init —> loadView —> viewDidLoad —> viewWillAppear —> viewDidAppear —> viewWillDisappear —> viewDidDisappear —> viewDidUnload’와 같은 주기를 갖는다 (UIViewController Lifecycle).
+- View Controller는 생명주기를 갖는다. 일종의 ‘보여졌다’ ‘사라지는’ 주기를 뜻한다.
+- View는 `init —> loadView —> viewDidLoad —> viewWillAppear —> viewDidAppear —> viewWillDisappear —> viewDidDisappear —> viewDidUnload`와 같은 주기를 갖는다 (UIViewController Lifecycle).
 
-    - loadView()는 컨트롤러가 관리하는 뷰를 ‘만드는’ 역할을 한다. 뷰를 만들고 메모리에 올린다.
-    - viewDidLoad()가 이후 호출됨. Called after the controller’s view is loaded into memory. ——> 뷰의 추가 초기화를 수행하려면 여기서 수행!!! (If you want to perform any additional initialization of your views, do so in the viewDidLoad() method).
+- `loadView()`는 컨트롤러가 관리하는 뷰를 ‘만드는’ 역할을 한다. 뷰를 만들고 메모리에 올린다.
+- `viewDidLoad()`가 이후 호출됨.
+    - Called after the controller’s view is loaded into memory.
+    - 뷰의 추가 초기화를 수행하려면 여기서 수행! (If you want to perform any additional initialization of your views, do so in the viewDidLoad() method).
 
 ```swift
 class ViewController: UIViewController {
-override func viewDidLoad() {
-super.viewDidLoad()
-// Do any additional setup after loading the view, typically from a nib.
+    override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+    }
 }
 ```
 
-- UIViewController라는 상위 클래스에서 상속받은 것에 앞서 수행될 함수(override func)를 viewDidLoad() 이후, 즉 뷰가 메모리에 로드된 후 설정하라는 뜻.
+- UIViewController라는 상위 클래스에서 상속받은 것에 앞서 수행될 함수(override func)를 `viewDidLoad()` 이후, 즉 뷰가 메모리에 로드된 후 설정하라는 뜻.
 
-  - viewDidLoad() 메서드는 뷰의 로딩이 완료되었을 때 시스템에 의해 자동으로 호출 // 일반적으로 리소스를 초기화하거나 초기 화면을 구성하는 용도로 주로 사용됨 // 화면이 처음 만들어질 때 한 번만 실행되므로 처음 한 번만 실행해야 하는 초기화 코드가 있을 경우 이 메서드 내부에 작성
+- `viewDidLoad()` 메서드는 뷰의 로딩이 완료되었을 때 시스템에 의해 자동으로 호출
+    - 일반적으로 리소스를 초기화하거나 초기 화면을 구성하는 용도로 주로 사용됨
+    - 화면이 처음 만들어질 때 한 번만 실행되므로 처음 한 번만 실행해야 하는 초기화 코드가 있을 경우 이 메서드 내부에 작성
 
-  - viewWillAppear()는 뷰가 이제 나타날 것이라는 신호를 컨트롤러에게 알리는 역할 // 뷰가 나타나기 직전에 호출 // 다른 뷰로 갔다가 다시 돌아오는 상황에서는 viewDidLoad()는 적용x, viewWillAppear()만 적용 // 그러므로 앱의 초기화 작업은 viewDidLoad()에서 해도 되겠지만, 다른 뷰에서 갔다가 다시 돌아오는 상황에서 해주고 싶은 처리는 viewWillAppear()에서 함
+- `viewWillAppear()`는 뷰가 이제 나타날 것이라는 신호를 컨트롤러에게 알리는 역할
+    - 뷰가 나타나기 직전에 호출
+    - 다른 뷰로 갔다가 다시 돌아오는 상황에서는 `viewDidLoad()`는 적용x, `viewWillAppear()`만 적용
+    - 그러므로 앱의 초기화 작업은 `viewDidLoad()`에서 해도 되겠지만, 다른 뷰에서 갔다가 다시 돌아오는 상황에서 해주고 싶은 처리는 `viewWillAppear()`에서 함
 
-  - viewDidAppear()는 뷰가 나타났다는 것을 컨트롤러에게 알리는 역할 // 화면에 적용될 애니메이션을 그려줌 // 뷰가 화면에 나타난 직후에 실행
+- `viewDidAppear()`는 뷰가 나타났다는 것을 컨트롤러에게 알리는 역할
+    - 화면에 적용될 애니메이션을 그려줌
+    - 뷰가 화면에 나타난 직후에 실행
 
-  - viewWillDisappear()는 뷰가 사라지기 직전에 호출되는 함수 // 뷰가 삭제되려 하고 있는 것을 컨트롤러에 통지
+- `viewWillDisappear()`는 뷰가 사라지기 직전에 호출되는 함수
+    - 뷰가 삭제되려 하고 있는 것을 컨트롤러에 통지
 
-  - viewDidDisappear()는 뷰가 제거되었음을 컨트롤러에게 알림
+- `viewDidDisappear()`는 뷰가 제거되었음을 컨트롤러에게 알림
 
 실행 —> View A
 
@@ -1832,44 +1909,57 @@ A viewWillAppear 🧐?
 B viewDidDisappear
 A viewDidAppear
 
-🧐: View A는 네비게이션 컨트롤러에서 rootView이므로 viewDidLoad()를 처음 실행 시 한 번만 수행(나머지 뷰는 스택에서 사라질 시 pop, 메모리에서 사라지므로, 다시 viewDiDLoad()가 필요!)
+🧐: View A는 네비게이션 컨트롤러에서 rootView이므로 `viewDidLoad()`를 처음 실행 시 한 번만 수행(나머지 뷰는 스택에서 사라질 시 pop, 메모리에서 사라지므로, 다시 `viewDiDLoad()`가 필요!)
 
-    - 네비게이션 컨트롤러의 동작은 자료구조에서의 ‘스택(stack)’과 같다.
-    - 스택은 새로운 뷰가 해당 스택 메모리 위에 push되어 해당 스택의 top이 된다. push 연산과 반대로 pop 연산은 현재 화면을 사라지게 하고, 스택 메모리 밑에 있는 화면이 스택의 top이 되면서 top 화면을 보여준다.
-    - pop을 하면 스택에서 빠져나간 뷰는 메모리에서 사라진다. (🧐와 연관)
+- 네비게이션 컨트롤러의 동작은 자료구조에서의 ‘스택(stack)’과 같다.
+- 스택은 새로운 뷰가 해당 스택 메모리 위에 push되어 해당 스택의 top이 된다. push 연산과 반대로 pop 연산은 현재 화면을 사라지게 하고, 스택 메모리 밑에 있는 화면이 스택의 top이 되면서 top 화면을 보여준다.
+- pop을 하면 스택에서 빠져나간 뷰는 메모리에서 사라진다. (🧐와 연관)
+
+## lesson 17 (Actions and Outlets)
 
 ---
 
-### lesson 17 (Actions and Outlets)
+- Action과 Outlet은 code와 storyboard를 연결하기 위한 수단
+- 이를 통해 app이 run하는 동안 storyboard의 요소들이 code를 통해 user actions에 반응할 수 있도록 함
 
-    - Action과 Outlet은 code——storyboard를 연결하기 위한 수단
-    - 이를 통해 app이 run하는 동안 storyboard의 요소들이 code를 통해 user actions에 반응할 수 있도록 함
-    - Outlet // storyboard에 있는 사물(objects)들을 code의 variable로 연결해줌 // code—>storyboard로 갈 수 있는 ‘배출구’(outlet) // 이를 통해 app이 돌아갈 때 스토리보드의 사물로부터 정보를 얻거나, 반대로 변화를 줄 수 있음
-    - Action // storyboard에 가해지는 특정 동작(controls)들을 (ex. switches, buttons) 코드화할 수 있음 // storyboard의 동작—>Action을 통해—>코드의 method로 연결 // 이를 통해 app이 돌아갈 때 해당 동작이 특정 메서드를 작동시킴
-    - Action과 Outlet Connections를 만드는 3가지 방법: 1)object를 code로 control-drag 2)code의 ◉를 object로 drag 3)Connections Inspector 사용
+### Outlet
+- storyboard에 있는 사물(objects)들을 code의 variable로 연결해줌
+-  code —> storyboard로 갈 수 있는 ‘배출구’(outlet)
+- 이를 통해 app이 돌아갈 때 스토리보드의 사물로부터 정보를 얻거나, 반대로 변화를 줄 수 있음
 
-#### Creating Outlets (a variable in code — an object in the storyboard)
+### Action
+- storyboard에 가해지는 특정 동작(controls)들을 (ex. switches, buttons) 코드화할 수 있음
+- storyboard의 동작 —> Action을 통해 —> 코드의 method로 연결
+- 이를 통해 app이 돌아갈 때 해당 동작이 특정 메서드를 작동시킴
+
+### Action - Outlet Connections를 만드는 3가지 방법
+1. object를 code로 control-drag
+2. code의 ◉를 object로 drag
+3. Connections Inspector 사용
+
+### Creating Outlets (a variable in code — an object in the storyboard)
 
 - Outlet: An outlet connects a variable in source code to an object in the storyboard. This connection allows the code to access those objects and get information or make changes when the app is running.
 
-  - ColorMix 파일 생성
-  - Main.storyboard 접근
-  - Library를 통해 ‘View’ 추가(View > Show Library)
-  - 추가된 ‘View’를 잘 보이기 위해서 Editor > Canvas > Bounds Rectangles 선택(to display an outline of everything on the scene)
-  - Assistant Editor 열기 —> ViewController.swift 파일을 볼 수 있음
-  - ‘View’를 Assisant Editor에 있는 ViewController.swift 파일에 control-drag하여 outlet 연결
+- ColorMix 파일 생성
+- Main.storyboard 접근
+- Library를 통해 ‘View’ 추가(View > Show Library)
+- 추가된 ‘View’를 잘 보이기 위해서 Editor > Canvas > Bounds Rectangles 선택(to display an outline of everything on the scene)
+- Assistant Editor 열기 —> ViewController.swift 파일을 볼 수 있음
+- ‘View’를 Assisant Editor에 있는 ViewController.swift 파일에 control-drag하여 outlet 연결
 
-- ◉ @IBOutlet wear var colorView: UIView!
-
-  - ◉: 이러한 filled circle은 해당 outlet이 connected되었음을 나타냄 // 연결되지 않을 시, empty circle이 됨
-  - @IBOutlet weak: This signals to Xcode that the property on this line is an outlet
-  - var colorView: declaration of a property
-  - UIView!: 해당 프로퍼티의 타입이 UIView! // UIView is the basic view type used in all iOS apps. Almost everything you see on the screen is a kind of UIView // 느낌표는 if the outlet is not connected and you try to access this property, your app will crash라는 뜻
-
+- `◉ @IBOutlet wear var colorView: UIView!`
+  - `◉`: 이러한 filled circle은 해당 outlet이 connected되었음을 나타냄 // 연결되지 않을 시, empty circle이 됨
+  - `@IBOutlet weak`: This signals to Xcode that the property on this line is an outlet
+  - `var colorView`: declaration of a property
+  - `UIView!`: 해당 프로퍼티의 타입이 UIView!
+    - UIView is the basic view type used in all iOS apps. Almost everything you see on the screen is a kind of UIView
+    - 느낌표는 if the outlet is not connected and you try to access this property, your app will crash라는 뜻
   - 중요한 것은 ViewController.swift 파일에 생성된 colorView라는 프로퍼티는 스토리보드에 추가된 ‘View’에 연결된 것이라는 점!
 
-- viewDidLoad()
-  - this function is called when your view controller is ready to appear on the screen // 처음 storyboard의 화면이 앱에서 나타날 때의 설정을 하는 곳
+- `viewDidLoad()`
+  - this function is called when your view controller is ready to appear on the screen
+  - 처음 storyboard의 화면이 앱에서 나타날 때의 설정을 하는 곳
 
 ```swift
 class ViewController: UIViewController {
@@ -1885,37 +1975,38 @@ class ViewController: UIViewController {
 }
 ```
 
-#### Creating Actions (a method in code — a control in the storyboard)
+### Creating Actions (a method in code — a control in the storyboard)
 
 - Action: An action connects a method in source code and a control in Interface Builder. This connection allows particular code to run when a user interacts with the app’s controls. For example, a certain method may be associated with an action, such as a button tap or a switch change.
-  - buttons, sliders, switches와 같은 여러 스토리보드의 controls를 코드의 특정 메서드와 연결
-  - 유저가 control 작동 시, 앱에서 해당 메서드를 실행하도록 함
-  - Switch(UI): A switch control in your app’s user interface acts like an on / off button, for example, for Airplane Mode and Bluetooth in the Settings app
-  - Slider(UI): A slider control in your app’s user interface allows a user to select a single value between a minimum and maximum number
 
-#### Event
+- buttons, sliders, switches와 같은 여러 스토리보드의 controls를 코드의 특정 메서드와 연결
+- 유저가 control 작동 시, 앱에서 해당 메서드를 실행하도록 함
+- `Switch(UI)`: A switch control in your app’s user interface acts like an on / off button, for example, for Airplane Mode and Bluetooth in the Settings app
+- `Slider(UI)`: A slider control in your app’s user interface allows a user to select a single value between a minimum and maximum number
+
+### Event
 
 - Switch 관련 Event: Value Changed
 - Slider 관련 Event: Value Changed
 - Button 관련 Event: Touch Up Inside
 
-  - Main.Storyboard 접근
-  - Library를 통해 switch 추가
-  - Attributes Inspector에서 Value를 Off로 설정
-    - 스위치의 초기 값을 꺼진 상태로 설정하는 것
-  - Assistant Editor에 control-drag
-  - Action 선택
-    - 타입은 ‘UISwitch’
-      - action 이름은 switchChanged로 설정
+- Main.Storyboard 접근
+- Library를 통해 switch 추가
+- Attributes Inspector에서 Value를 Off로 설정
+- 스위치의 초기 값을 꺼진 상태로 설정하는 것
+- Assistant Editor에 control-drag
+- Action 선택
+- 타입은 `UISwitch`
+    - action 이름은 switchChanged로 설정
 
 ```swift
 ◉ @IBAction func switchChanged(\_ sender: UISwitch) {
 }
 ```
 
-    - ◉: connected
-    - @IBAction: This signals to Xcode that the method on this line is an action connected to a control in Interface Builder
-    - sender: The sender argument is the instance that sent the action (function의 sender를 통해 control에 action method를 ‘send’함)
+- `◉`: connected
+- `@IBAction`: This signals to Xcode that the method on this line is an action connected to a control in Interface Builder
+- `sender`: The sender argument is the instance that sent the action (function의 sender를 통해 control에 action method를 ‘send’함)
 
 ```swift
 @IBAction func switchChanged(\_ sender: UISwitch) {
@@ -1937,26 +2028,32 @@ colorView.backgroudColor = .black
 
 - 스위치(sender)가 on이면 빨강, 스위치가 off이면 검정으로 colorView를 바꿔줌
 
-#### isOn
+### isOn
 
-- A Boolean value that determines the off/on state of the switch.
-- Declaration // var isOn: Bool { get set }
+- A Boolean value that determines the off / on state of the switch.
+- `var isOn: Bool { get set }`
 - This property allows you to retrieve and set (without animation) a value determining whether the UISwitch object is on or off.
 - value 얼마? (get) —> on true / false (set)
 
-#### Multiple Actions and Outlets
+### Multiple Actions and Outlets
 
-여러 개의 스위치를 만들어보자. - Main.Storyboard 접근 - cmd + D를 통해 스위치 duplicate - 3개의 스위치를 code에 control-drag하여 outlet 생성(redSwitch, greenSwitch, blueSwitch) - 가령 redSwitch는 ViewController.swift에서 ‘redSwitch’라는 outlet / ‘switchChanged’라는 action method에 연결된 것처럼 // 하나의 object는 outlet과 action에 둘 다 연결될 수 있음 - 즉, Sent Events / Referencing Outlets를 확인해보면 됨 (스위치의 경우 Value Changed Event is sent when a switch is switched) - object를 duplicate할 경우, duplicate된 object 역시 기존의 object가 연결되어 있던 action에 연결됨 - 하나의 object - 하나의 outlet // 여러 개의 objects - 하나의 action 연결 가능!
+여러 개의 스위치를 만들어보자.
+
+- Main.Storyboard 접근
+- cmd + D를 통해 스위치 duplicate
+- 3개의 스위치를 code에 control-drag하여 outlet 생성(redSwitch, greenSwitch, blueSwitch)
+- 가령 redSwitch는 ViewController.swift에서 ‘redSwitch’라는 outlet, ‘switchChanged’라는 action method에 연결된 것처럼, 하나의 object는 outlet과 action에 둘 다 연결될 수 있음
+- 즉, Sent Events, Referencing Outlets를 확인해보면 됨 (스위치의 경우 Value Changed Event is sent when a switch is switched)
+- object를 duplicate할 경우, duplicate된 object 역시 기존의 object가 연결되어 있던 action에 연결됨
+- 하나의 object - 하나의 outlet, 여러 개의 objects - 하나의 action 연결 가능!
 
 Action에 연결되어 있는 object들을 확인하고 싶다면?
-
-- code에 있는 ◉에 커서를 대면 연결된 object들이 하이라이트됨
+- code에 있는 `◉`에 커서를 대면 연결된 object들이 하이라이트됨
 
 Action을 object에 연결하고 싶다면?
+- code에 있는 `◉`를 클릭 후 드래그하여 연결하고자 하는 object에 연결
 
-- code에 있는 ◉를 클릭 후 드래그하여 연결하고자 하는 object에 연결
-
-viewDidLoad()나 action method에 일일이 color를 설정하는 code를 쓰지 말고, 하나의 function을 만들어놓자
+`viewDidLoad()`나 action method에 일일이 color를 설정하는 code를 쓰지 말고, 하나의 function을 만들어놓자
 코드의 반복도 피하고, 코드의 수정도 용이
 
 ```swift
@@ -1981,9 +2078,9 @@ var blue: CGFloat = 0
 }
 ```
 
-- CGFloat: Like a Double, CGFloat is a type of number that can have a decimal point, like 3.5, 7.0, or -5.5. However, they aren’t implemented in exactly the same way, and some types(like UIColor) will only interact with CGFloat numbers.
+- `CGFloat`: Like a Double, CGFloat is a type of number that can have a decimal point, like 3.5, 7.0, or -5.5. However, they aren’t implemented in exactly the same way, and some types(like UIColor) will only interact with CGFloat numbers.
 
-해당 function을 각각 viewDidLoad()와 switchChanged 메서드에 적용
+해당 function을 각각 `viewDidLoad()`와 `switchChanged` 메서드에 적용
 
 ```swift
 override func viewDidLoad() {
@@ -2002,21 +2099,21 @@ updateColor()
 
 - 스위치가 바뀔 때마다 해당 color에 맞춘 색깔을 보여줌
 
-#### Sliders
+### Sliders
 
 Why Sliders?
 
-- object value에 대한 세밀한 control이 가능(brightness, volume, color sliders…)
-  - 드래그 혹은 Shift + click을 통해 스위치 3개 모두 선택
-  - 스위치들 왼쪽으로 이동
-  - 스위치의 간격이 좁으면 원하는 스위치를 터치하기 어려우므로 Shift + arrow up, down키를 통해 일정하게 이동하여 간격 벌려줌
-  - 각각의 스위치 옆에 Library로부터 슬라이더 배치
-  - 슬라이더 3개 선택
-  - Attributes Inspector 클릭
-  - slider는 가능한 value의 범위(minimum, maximum value), 그리고 시작 value가 있음
-  - Value를 1로 설정 // 초기 구성에서 slider가 최대로 올려진 상태로 시작
-  - 각각의 slider를 ViewController.swift에 control + drag하여 outlet 생성(redSlider, greenSlider, blueSlider)
-  - redSlider를 control + drag하여 sliderChanged라는 action 생성
+- object value에 대한 세밀한 control이 가능 (brightness, volume, color sliders…)
+- 드래그 혹은 Shift + click을 통해 스위치 3개 모두 선택
+- 스위치들 왼쪽으로 이동
+- 스위치의 간격이 좁으면 원하는 스위치를 터치하기 어려우므로 Shift + arrow up, down키를 통해 일정하게 이동하여 간격 벌려줌
+- 각각의 스위치 옆에 Library로부터 슬라이더 배치
+- 슬라이더 3개 선택
+- Attributes Inspector 클릭
+- slider는 가능한 value의 범위(minimum, maximum value), 그리고 시작 value가 있음
+- Value를 1로 설정: 초기 구성에서 slider가 최대로 올려진 상태로 시작
+- 각각의 slider를 ViewController.swift에 control + drag하여 outlet 생성(redSlider, greenSlider, blueSlider)
+- redSlider를 control + drag하여 sliderChanged라는 action 생성
 
 ```swift
 ◉ @IBAction func sliderChanged(\_ sender: UISlider) {
@@ -2024,10 +2121,10 @@ updateColor()
 }
 ```
 
-- 마찬가지로 slider의 value를 변경하면 (Value Changed Event), updateColor()에 맞춰 색깔을 업데이트
-  - 해당 action 옆의 ◉를 클릭하여 각각 greenSlider와 blueSlider에 연결
-    - 하지만 현재 updateColor()는 switch의 value값에 관해서만 정의됨
-    - slider 값 역시 반영하도록 updateColor() 수정 필요
+- 마찬가지로 slider의 value를 변경하면 (Value Changed Event), `updateColor()`에 맞춰 색깔을 업데이트
+- 해당 action 옆의 `◉`를 클릭하여 각각 greenSlider와 blueSlider에 연결
+- 하지만 현재 `updateColor()`는 switch의 value값에 관해서만 정의됨
+- slider 값 역시 반영하도록 `updateColor()` 수정 필요
 
 ```swift
 func updateColor() {
@@ -2051,22 +2148,23 @@ var blue: CGFloat = 0
 }
 ```
 
-- ‘red’는 CGFloat type이고, redSlider.value는 Float type이므로 red = redSlider.value는 불가
-  - redSlider.value를 값으로 갖는 CGFloat 인스턴스 생성 필요
-- redSlider.value returns a value of type Float, which is a kind of decimal number
-  - But to make a UIColor, you need something called a CGFloat // The code above creates a new CGFloat from the Float value of the slider and assigns it to red
+- `red`는 CGFloat type이고, `redSlider.value`는 Float type이므로 `red = redSlider.value`는 불가
+  - `redSlider.value`를 값으로 갖는 CGFloat 인스턴스 생성 필요
+- `redSlider.value` returns a value of type Float, which is a kind of decimal number
+  - But to make a UIColor, you need something called a CGFloat
+  - The code above creates a new CGFloat from the Float value of the slider and assigns it to red
 
-#### Reset Button
+### Reset Button
 
 Why Buttons?
 
 - One of the most common controls used in iOS apps is a button. A button can contain text, an image, or a mix of both. When the user taps the button, something happens.
-  - Main.Storyboard 접근
-  - Library를 통해 Button 추가
-  - Title을 ‘RESET’으로 설정 (Attributes Inspector 혹은 더블 클릭)
-  - ViewController.swift에 control + drag하여 ‘reset’이라는 이름의 action 생성
-  - Connections Inspector를 확인해보면 Touch Up Inside Event에 연결되어 있음을 확인 가능
-  - Touch Up Inside Event is the standard event used for most buttons
+- Main.Storyboard 접근
+- Library를 통해 Button 추가
+- Title을 ‘RESET’으로 설정 (Attributes Inspector 혹은 더블 클릭)
+- ViewController.swift에 control + drag하여 `reset`이라는 이름의 action 생성
+- Connections Inspector를 확인해보면 Touch Up Inside Event에 연결되어 있음을 확인 가능
+- Touch Up Inside Event is the standard event used for most buttons
 
 ```swift
 ◉ @IBAction func reset(\_ sender: Any) {
@@ -2086,44 +2184,43 @@ blueSlider.value = 1
 - 각각의 슬라이더들을 초기값으로 설정했던 1로 다시 바꾸고, 각각의 스위치들을 off 상태로 바꿈
 - 그리고 스위치가 모두 꺼지고, 슬라이더들의 값이 1인 상태에서 색깔을 업데이트 해줌
 
-#### Polishing the Interface
+### Polishing the Interface
 
 문제점 및 수정
 
-A. 모든 스위치와 슬라이더가 똑같이 보인다 // 각각의 control들이 무엇을 하는지 직관성이 떨어짐
+**A. 모든 스위치와 슬라이더가 똑같이 보인다 // 각각의 control들이 무엇을 하는지 직관성이 떨어짐**
 
 TINTING THE SWITCHES / SLIDERS
 
-    - Switch의 경우 onTintColor와 thumbTintColor 2개의 tinting options가 있음
-    - onTintColor // 켜졌을 때 막대 부분
-    - thumbTintColor // 스위치의 circle 부분
-    - switch 선택 —> Attirbutes Inspector —> On Tint 선택 및 color picker를 통해 색 설정
+- Switch의 경우 onTintColor와 thumbTintColor 2개의 tinting options가 있음
+- onTintColor: 켜졌을 때 막대 부분
+- thumbTintColor: 스위치의 circle 부분
+- switch 선택 —> Attirbutes Inspector —> On Tint 선택 및 color picker를 통해 색 설정
 
-    - Slider의 경우 minTrackTintColor, maxTrackTintColor, thumbTintColor 3개의 tinting options가 있음
-    - minTrackTintColor // 슬라이더 값을 올릴 때 왼쪽 부분
-    - maxTrackTintColor // 슬라이더 값을 내릴 때 오른쪽 부분
-    - thumbTintColor // 슬라이더의 circle 부분
-    - slider 선택 —> Attributes Inspector —> Min Track 선택 및 color picker를 통해 색 설정
+- Slider의 경우 minTrackTintColor, maxTrackTintColor, thumbTintColor 3개의 tinting options가 있음
+- minTrackTintColor: 슬라이더 값을 올릴 때 왼쪽 부분
+- maxTrackTintColor: 슬라이더 값을 내릴 때 오른쪽 부분
+- thumbTintColor: 슬라이더의 circle 부분
+- slider 선택 —> Attributes Inspector —> Min Track 선택 및 color picker를 통해 색 설정
 
-B. 모든 스위치가 켜지고, 슬라이더가 최대일 때, colorView는 하얀색이 되어 background와 구분하기 어려워짐
+**B. 모든 스위치가 켜지고, 슬라이더가 최대일 때, colorView는 하얀색이 되어 background와 구분하기 어려워짐**
 
 ADDING A BORDER
 
-    - viewDidLoad()에서 colorView 추가 설정
+- `viewDidLoad()`에서 colorView 추가 설정
+- UIView의 layer property를 활용!
 
-UIView의 layer property를 활용!
-
-- colorView.layer.borderWidth = 5
-  - UIView의 인스턴스인 colorView의 layer 프로퍼티인 borderWidth를 5로 설정
+- `colorView.layer.borderWidth = 5`
+    - UIView의 인스턴스인 colorView의 layer 프로퍼티인 borderWidth를 5로 설정
     - 두께가 5인 border를 갖게 됨
-- colorView.layer.cornerRadius = 20
-  - UIView의 인스턴스인 colorView의 layer 프로퍼티인 cornerRadius를 20으로 설정
+- `colorView.layer.cornerRadius = 20`
+    - UIView의 인스턴스인 colorView의 layer 프로퍼티인 cornerRadius를 20으로 설정
     - 둥근 코너를 갖게 됨
-- colorView.layer.borderColor = UIColor.black.cgColor
-  - UIView의 인스턴스인 colorView의 layer 프로퍼티인 borderColor를 검정으로 설정
+- `colorView.layer.borderColor = UIColor.black.cgColor`
+    - UIView의 인스턴스인 colorView의 layer 프로퍼티인 borderColor를 검정으로 설정
     - 검정 border를 갖게 됨
 
-C. 스위치가 꺼진 상태에서, 슬라이더가 여전히 작동은 되나 어떠한 변화도 일으키지 않기에, 유저에게 혼동을 줄 수 있음
+**C. 스위치가 꺼진 상태에서, 슬라이더가 여전히 작동은 되나 어떠한 변화도 일으키지 않기에, 유저에게 혼동을 줄 수 있음**
 
 DISABLING SLIDERS
 
@@ -2134,14 +2231,14 @@ DISABLING SLIDERS
 isEnabled
 
 - A Boolean value indicating whether the control is in the enabled state.
-- Declaration // var isEnabled: Bool { get set }
+- `var isEnabled: Bool { get set }`
 - Set the value of this property to true to enable the control or false to disable it. An enabled control is capable of responding to user interactions, whereas a disabled control ignores touch events and may draw itself differently. Setting this property to false adds the disabled flag to the control’s state bitmask; enabling the control again removes that flag.
 - The default value of this property is true for a newly created control. You can set a control’s initial enabled state in your storyboard file.
 
 Enabled = the control is available for interaction
 Disabled = the user can still see the user interface elemet, but touching or otherwise trying to activate the control will have no effect on the app
 
-A disabled control will usually have a slightly dimmed appearance - 해당 슬라이더들이 스위치에 따라 enabled 여부를 업데이트하는 function을 만들자
+A disabled control will usually have a slightly dimmed appearance: 해당 슬라이더들이 스위치에 따라 enabled 여부를 업데이트하는 function을 만들자
 
 ```swift
 func updateControls() {
@@ -2156,23 +2253,30 @@ blueSlider.isEnabled = blueSwitch.isOn
     - viewDidLoad()에 추가
     - reset() action에 추가
 
-TROUBLESHOOTING
+**TROUBLESHOOTING**
 
-DISCONNECTED OUTLET OR ACTION - Build and run your app with no errors, but the app immediately crashes on launch? - 에러가 없어 보임에도 device / simulator에서 돌렸을 때 Home Screen만 보여주고, console에 다음과 같은 에러 표시가 나타날 수 있음 - `\*\*\* Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<YourApp.ViewController 0x7f8378f05b00> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key someNameFromYourApp` - 해당 에러에서 Interface Builder의 view에 문제가 있다고 명시하지 않지만, Interface Builder에 에러가 발생한 것임 - Select View Controller - Open the Connections Inspector - 여기서 outlet과 action connections 확인 가능 - ◉ or ○ - 이런 표시들이 있어야 함 - !(느낌표)가 있다면, that’s the source of the crash
+DISCONNECTED OUTLET OR ACTION
+- Build and run your app with no errors, but the app immediately crashes on launch?
+- 에러가 없어 보임에도 `device/simulator`에서 돌렸을 때 Home Screen만 보여주고, console에 다음과 같은 에러 표시가 나타날 수 있음
+- `Terminating app due to uncaught exception 'NSUnknownKeyException', reason: '[<YourApp.ViewController 0x7f8378f05b00> setValue:forUndefinedKey:]: this class is not key value coding-compliant for the key someNameFromYourApp`
+    - 해당 에러에서 Interface Builder의 view에 문제가 있다고 명시하지 않지만, Interface Builder에 에러가 발생한 것임
+    - Select View Controller - Open the Connections Inspector
+        - 여기서 outlet과 action connections 확인 가능
+        - `◉` or `○` - 이런 표시들이 있어야 함
+        - `!`(느낌표)가 있다면, that’s the source of the crash
 
 이러한 에러는 왜 발생할까?
 
 스토리보드의 slider에 대하여 outlet 생성
 
 - 이름을 bleuSlider라고 지음
-  - bleuSlider(code)
+    - bleuSlider(code)
     - Bleu Slider(storyboard의 슬라이더) 연결 생성
 
 typo 인지
 
 - 코드에서 이름을 blueSlider라고 바꿈
-
-  - blueSlider(code)
+    - blueSlider(code)
     - 기존의 Bleu Slider(storyboard)와 연결
 
 - 하지만 여전히 bleuSlider와 Bleu Slider의 연결은 남아있음
@@ -2180,7 +2284,7 @@ typo 인지
 - 하지만 bleuSlider는 이제 코드에 존재하지 않아 crash
 - 그러므로 View Controller의 connections inspector에서 bleuSlider와 Bleu Slider의 connection을 제거해줘야 함
 
-COMMON PROBLEMS W/ ACTIONS AND OUTLETS
+**COMMON PROBLEMS W/ ACTIONS AND OUTLETS**
 
 이처럼 ViewController의 code에서 변화가 있다면, 해당 변화와 관련하여 storyboard에서도 직접 수정해줘야 한다!!
 
@@ -2195,62 +2299,62 @@ COMMON PROBLEMS W/ ACTIONS AND OUTLETS
 - 그러므로, code를 지우는 것 뿐만 아니라
 - 스토리보드에서도 you must disconnect unwanted actions and outlets
 
+## lesson 18 (Adaptive User Interfaces)
+
 ---
 
-### lesson 18 (Adaptive User Interfaces)
-
-    - Asset catalog: The asset catalog in Xcode is the best place to keep all the images used in your app. Its file extension is .xcassets, and you can access it from the project navigator
-    - Auto Layout: You use Auto Layout to build adaptive interfaces, so your user interface elements maintain the same relative positions, no matter the screen’s size or orientation. For example, you can add one rule that a button must always be a certain distance above an image view and another rule that the image view must always be centered at the bottom of the screen. By defining this rule in Auto Layout, the two elements will follow those rules - whether the screen is large or small, in portrait or in landscape mode
-    - Constraint: A constraint is a rule in Auto Layout that defines how views should be laid out or sized / ‘set’ or ‘pin’ some aspect of the layout of the view to a desired value
-    - Stack View: You use a stack view to set up elements in your user interface in a column from top to bottom or in a row from left to right
+- Asset catalog: The asset catalog in Xcode is the best place to keep all the images used in your app. Its file extension is .xcassets, and you can access it from the project navigator
+- Auto Layout: You use Auto Layout to build adaptive interfaces, so your user interface elements maintain the same relative positions, no matter the screen’s size or orientation. For example, you can add one rule that a button must always be a certain distance above an image view and another rule that the image view must always be centered at the bottom of the screen. By defining this rule in Auto Layout, the two elements will follow those rules - whether the screen is large or small, in portrait or in landscape mode
+- Constraint: A constraint is a rule in Auto Layout that defines how views should be laid out or sized / ‘set’ or ‘pin’ some aspect of the layout of the view to a desired value
+- Stack View: You use a stack view to set up elements in your user interface in a column from top to bottom or in a row from left to right
 
 Adaptive User Interface는
 
-    - devices with different screen sizes
-    - different orientations
+- devices with different screen sizes
+- different orientations
 
 에 UI가 ‘adapt’할 수 있도록 하는 것이다
 
-#### SimpleCenter
+### SimpleCenter
 
-    - View as: button // 현재 보고 있는 스토리보드, 즉 interface builder의 canvas size가 어느 기기를 기준으로 하고 있는지를 보여줌
-    - 가장 작은 기기를 선택하는 것이 좋음
-    - label 추가
-    - devices / orientations에 따라 위치가 달라짐
+- `View as`: button
+    - 현재 보고 있는 스토리보드, 즉 interface builder의 canvas size가 어느 기기를 기준으로 하고 있는지를 보여줌
+- 가장 작은 기기를 선택하는 것이 좋음
+- label 추가
+- `devices/orientations`에 따라 위치가 달라짐
 
 Why?
 
 - 해당 view가 갖는 프레임(frame)이 기기마다 다른 곳에 나타나기 때문
-
-  - 스토리보드에 view를 생성하면 해당 view에 대한 frame이 생성됨
-  - Frame: the size and the location // size: width, height // location: a certain distance from the top, a certain distance from the left
-  - 해당 view가 현재 canvas에서 가지는 일종의 ‘좌표’임
-  - 해당 프레임은 특정 기기에서 중앙에 위치할 수 있지만, 기기의 사이즈에 따라 각 기기마다 다른 곳에 위치할 것임
-
+- 스토리보드에 view를 생성하면 해당 view에 대한 frame이 생성됨
+    - Frame: the size and the location
+    - size: width, height
+    - location: a certain distance from the top, a certain distance from the left
+- 해당 view가 현재 canvas에서 가지는 일종의 ‘좌표’임
+- 해당 프레임은 특정 기기에서 중앙에 위치할 수 있지만, 기기의 사이즈에 따라 각 기기마다 다른 곳에 위치할 것임
 - 그러므로 각각의 기기에 알맞게 adapt할 수 있는 Auto Layout을 설정해야 함
 
 - Constraints는 설정하는 Auto Layout에서 how views will be laid out을 define해주는 rules임
-
   - label 클릭
   - Align button 클릭
   - Horizontally in Container: 0, Vertically in Container: 0 2개 박스 클릭 —> Add 2 constraints 클릭
 
 - 현재 interface builder에서의 프레임에 상관없이 constraints에 의해 모든 기기에서 label이 각 기기에 맞춰 정중앙에 위치
-
   - blue lines: the constraints you’ve set up == the current frame of a view
-  - orange lines: the constraints you’ve set up != the current frame of a view // 점선으로 된 orange box는 label이 constraint에 따라 있어야 할 위치를 알려주고, 오렌지선의 숫자는 label이 x, y축으로 얼마나 이동해야 하는지를 알려줌
+  - orange lines: the constraints you’ve set up != the current frame of a view
+  - 점선으로 된 orange box는 label이 constraint에 따라 있어야 할 위치를 알려주고, 오렌지선의 숫자는 label이 x, y축으로 얼마나 이동해야 하는지를 알려줌
 
 - orange lines?
 - Update Frame(to match the constraints) or Update Constraints(to match the frame)
   - Frame을 constraints에 맞추고자 한다면 Update Frames 클릭
   - Constraints를 frame에 맞추고자 한다면 Resolve Auto Layout Issues Button —> Update Constraints
 
-#### ElementQuiz
+### ElementQuiz
 
-    - UI Elements 생성
-    - Configure
-    - Action / Outlet 생성
-    - code 작성
+- UI Elements 생성
+- Configure
+- Action / Outlet 생성
+- code 작성
 
 원소기호 사진을 보여주고 유저가 해당 원소의 이름을 맞추고 답을 확인할 수 있는 앱을 만들어보자
 
@@ -2263,7 +2367,7 @@ main user interface는 a stack or list of views로, UIStackView를 통해 views�
 - 정답을 보여주도록 하는 Button
 - 다음 원소로 넘어가도록 하는 Button
 
-IMAGE VIEW SIZE
+**IMAGE VIEW SIZE**
 
 - Image View는 기본적으로는, adjust its size to fit the size of the image함
 - 해당 Image View를 fixed size로 고정시키고 싶으면 constraints를 사용할 수 있음
@@ -2273,69 +2377,72 @@ IMAGE VIEW SIZE
 - Size Inspector에서 width: 140, height: 140으로 설정하는 것은 현재 Interface Builder에만 적용되는 것
 - Add New Constraints —> width: 140, height: 140 —> Add Constraints
 
-Red Lines❓
+**Red Lines❓**
 
 - The red lines mean you haven’t defined enough constraints for Auto Layout
 - to figure out the position and the size of the image view
 - In this case, you’ve defined the size, but you haven’t defined the position of the view
 
-CONFIGURING LABEL AND BUTTONS
+**CONFIGURING LABEL AND BUTTONS**
 
-    - Label 생성
-    - Attributes Inspector —> Font
-    - Font에서 Style은 Bold, Size는 24로 설정
-    - Label Text를 ‘Answer Label’로 변경
+- Label 생성
+- Attributes Inspector —> Font
+- Font에서 Style은 Bold, Size는 24로 설정
+- Label Text를 ‘Answer Label’로 변경
 
-    - Button 2개 생성
-    - Title을 각각 ‘Show Answer’, ‘Next Element’로 설정
+- Button 2개 생성
+- Title을 각각 ‘Show Answer’, ‘Next Element’로 설정
 
-ADDING A STACK VIEW
+**ADDING A STACK VIEW**
 
-    - 생성한 Image View / Label / Button(Show Answer) / Button(Next Element)를 묶기(Shift-click 혹은 드래그)
-    - Embed In > Stack View
-    - UIStackView 인스턴스 생성됨
+- 생성한 Image View, Label, Button(Show Answer), Button(Next Element)를 묶기 (Shift-click 혹은 드래그)
+- Embed In > Stack View
+- UIStackView 인스턴스 생성됨
 
-CENTERING THE STACK VIEW
+**CENTERING THE STACK VIEW**
 
-    - 해당 Stack View 선택(Document Outline에서 선택하면 편함)
-    - Align
-    - Horizontally in Container, Vertically in Container
-    - 2개의 constraints 생성됨
-    - Update Frames
+- 해당 Stack View 선택(Document Outline에서 선택하면 편함)
+- Align
+- Horizontally in Container, Vertically in Container
+- 2개의 constraints 생성됨
+- Update Frames
 
-CONFIGURING THE STACK VIEW
+**CONFIGURING THE STACK VIEW**
 
 Stack View와 관련하여 2가지를 설정할 수 있음 (Attributes Inspector)
 
-    - Alignment: Stack View 내부 요소들의 정렬 // How the views are arranged within the stack
-    - Spacing: Stack View 내부 요소들 간 간격 // How much space is between each view in the stack
+- Alignment: Stack View 내부 요소들의 정렬
+    - How the views are arranged within the stack
+- Spacing: Stack View 내부 요소들 간 간격
+    - How much space is between each view in the stack
 
-ADDING IMAGES
+**ADDING IMAGES**
 
-    - Assets.xcassets에 Image View에 사용될 이미지 추가
+- Assets.xcassets에 Image View에 사용될 이미지 추가
 
-ADDING OUTLETS AND ACTIONS
+**ADDING OUTLETS AND ACTIONS**
 
-    - @IBOutlet weak var imageView: UIImageView!
-    - @IBOutlet weak var answerLabel: UILabel!
+- `@IBOutlet weak var imageView: UIImageView!`
+- `@IBOutlet weak var answerLabel: UILabel!`
+- `@IBAction func gotoNextElement(_ sender: Any) {}`
+- `@IBAction func showAnswer(_ sender: Any) {}`
 
-    - @IBAction func gotoNextElement(_ sender: Any) {}
-    - @IBAction func showAnswer(_ sender: Any) {}
+**ADDING CODE**
 
-ADDING CODE
+필요한 DATA MODEL?
 
-    - 필요한 DATA MODEL?
+- 해당 앱은 a list of chemical elements를 한 번에 하나씩 보여줄 것임
+- a list of items of same type —> ‘array’
+- an array of element names가 필요할 것임!
 
-해당 앱은 a list of chemical elements를 한 번에 하나씩 보여줄 것임 // a list of items of same type —> ‘array’ // an array of element names가 필요할 것임!
-
-    - ViewController.swift에 추가
+- ViewController.swift에 추가
 
 ```swift
 let elementList = [“Carbon”, “Gold”, “Chlorine”, “Sodium”]
 var currentElementIndex = 0 // 현재 어떠한 element가 사용되고 있는지 추적하기 위함
 ```
 
-    - 앱의 behavior에 맞는 function 추가
+- 앱의 behavior에 맞는 function 추가
 
 ```swift
 func updateElement() {
@@ -2346,13 +2453,10 @@ imageView.image = image // imageView의 image에 새로 생성된 UIImage 인스
 }
 ```
 
-viewDidLoad()에 추가
+`viewDidLoad()`에 추가
+`gotoNextElement()`에 추가
 
-gotoNextElement()에 추가
-
-    - showAnswer()
-
-현재 인덱스에 맞는 element 이름을 보여줘야 함
+`showAnswer()`: 현재 인덱스에 맞는 element 이름을 보여줘야 함
 
 ```swift
 @IBAction func showAnswer(\_ sender: Any) {
@@ -2360,9 +2464,7 @@ answerLabel.text = elementList[currentElementIndex]
 }
 ```
 
-    - gotoNextElement()
-
-다음 element로 넘어가야 하므로 currentIndexNumber에 1을 추가해줘야 함
+`gotoNextElement()`: 다음 element로 넘어가야 하므로 currentIndexNumber에 1을 추가해줘야 함
 
 ```swift
 @IBAction func gotoNextElement(\_ sender: Any) {
@@ -2371,7 +2473,7 @@ updateElement()
 }
 ```
 
-‼️fatal error: Index out of range‼️라는 오류를 유발할 것임
+`‼️fatal error`: `Index out of range‼️`라는 오류를 유발할 것임
 
 ```swift
 @IBAction func gotoNextElement(\_ sender: Any) {
@@ -2382,10 +2484,6 @@ currentElementIndex = 0
 updateElement()
 }
 ```
-
-💯
-
----
 
 ### Code Review
 
@@ -2428,7 +2526,6 @@ class ViewController: UIViewController {
 ```
 
 - 해당 앱은 사용되는 image의 이름과 answerLabel에 나타나는 이름이 같아서, 즉 같은 string value를 가지고 있어서 단순한 array가 DATA MODEL로 필요했음
-
 - 만약 다음과 같은 DATA MODEL을 사용한다면?
 
 ```swift
@@ -2440,57 +2537,58 @@ let imageName: String
 }
 ```
 
-1)조금 더 복잡한 quiz를 만들 수도 있고, 2)그리고 굳이 element의 name이 image name과 같을 필요도 없다.
+1. 조금 더 복잡한 quiz를 만들 수도 있고
+2. 그리고 굳이 element의 name이 image name과 같을 필요도 없다.
 
 💡 When building apps, developers often need to make decisions like this. In this case, there’s a trade-off between the simplicity of a single string and the structure and functionality of a custom type.
 
-#### AnimalSounds
+### AnimalSounds
 
 You gotta know:
 
-    - Nesting Stack View
-    - Target Membership
+- Nesting Stack View
+- Target Membership
 
 다음 앱을 만들어보자:
 
-    - 고양이, 개, 소 모양의 버튼을 누르면(buttons)
-    - 각각 텍스트로 울음소리를 나타내고(label)
-    - Tap an animal이라는 안내(label)
-    - 해당 소리를 내주는 앱(SimpleSound API)
+- 고양이, 개, 소 모양의 버튼을 누르면(buttons)
+- 각각 텍스트로 울음소리를 나타내고(label)
+- Tap an animal이라는 안내(label)
+- 해당 소리를 내주는 앱(SimpleSound API)
 
-USER INTERFACE
+**USER INTERFACE**
 
-    - Button 생성
-    - title은 🐱 // font > size는 72로 설정
-    - cmd + = // resize the button to fit the content (Editor > Size to Fit Content)
-    - cmd + D (Duplicate) —> Button 3개 생성
-    - 각각 🐱, 🐶, 🐮
+- Button 생성
+- title은 🐱, font > size는 72로 설정
+- `cmd + =`: resize the button to fit the content (Editor > Size to Fit Content)
+- `cmd + D`: Button 3개 생성
+- 각각 🐱, 🐶, 🐮
 
-    - Stack View 생성
-    - Alignment: Center
-    - Spacing: 18
+- Stack View 생성
+- Alignment: Center
+- Spacing: 18
 
-    - label 생성
-    - text는 “Animal Sounds”
-    - font > size > 24
+- label 생성
+- text는 “Animal Sounds”
+- font > size > 24
 
-    - label 생성
-    - text는 “Tap an animal”
+- label 생성
+- text는 “Tap an animal”
 
-    - 새로운 Stack View 생성 // Stack View + label(Animal Sounds) + label(Tap an animal)
-    - Alignment: Center
-    - Spacing: 10
-    - Align > Horizontally in Container, Vertically in Container > Add 2 Constraints
-    - Update Frames
+- 새로운 Stack View 생성 // Stack View + label(Animal Sounds) + label(Tap an animal)
+- Alignment: Center
+- Spacing: 10
+- Align > Horizontally in Container, Vertically in Container > Add 2 Constraints
+- Update Frames
 
 이처럼 관련 있는 것을 stack view로 묶어주고, 또 해당 stack view를 포함하여 다른 것들과 더 큰 stack view를 만들어주는, Stack View를 Nesting할 수 있다.
 
-ADDING CODE
+**ADDING CODE**
 
-    - @IBOutlet weak var animalSoundLabel: UILabel!
-    - @IBAction func catButtonTapped(_ sender: Any) {}
-    - @IBAction func dogButtonTapped(_ sender: Any) {}
-    - @IBAction func cowButtonTapped(_ sender: Any) {}
+- `@IBOutlet weak var animalSoundLabel: UILabel!`
+- `@IBAction func catButtonTapped(_ sender: Any) {}`
+- `@IBAction func dogButtonTapped(_ sender: Any) {}`
+- `@IBAction func cowButtonTapped(_ sender: Any) {}`
 
 각각의 버튼을 누르면 animalSoundLabel에서 해당 울음소리가 나오도록 설정
 
@@ -2508,17 +2606,19 @@ animalSoundLabel.text = “Moo!”
 }
 ```
 
-SimpleSound라는 Swift 클래스를 추가해보자(API)
+SimpleSound라는 Swift 클래스를 추가해보자 (API)
 
-    - Simplesound.swift 파일 드래그
-    - sound files도 드래그해서 추가
-    - 추가 시, “Copy items if needed”와 “Add to targets” 중 AnimalSounds에 체크!
+- Simplesound.swift 파일 드래그
+- sound files도 드래그해서 추가
+- 추가 시, “Copy items if needed”와 “Add to targets” 중 AnimalSounds에 체크!
 
-Target Membership: 리소스를 추가할 때 어떠한 ‘target’에 해당 리소스를 포함시킬 것인지에 대한 것! 여기서 target은 AnimalSounds와 같이 현재 작업하고 있는 앱 등을 의미함
+`Target Membership`
 
+- 리소스를 추가할 때 어떠한 ‘target’에 해당 리소스를 포함시킬 것인지에 대한 것
+- 여기서 target은 AnimalSounds와 같이 현재 작업하고 있는 앱 등을 의미함
 - Target Membership이 있으면 해당 target에서 작업 가능
 
-SimpleSound 인스턴스 생성 (using the name of the sound file)
+**SimpleSound 인스턴스 생성 (using the name of the sound file)**
 
 ```swift
 let meowSound = SimpleSound(named: “meow”)
@@ -2526,7 +2626,7 @@ let woofSound = SimpleSound(named: “woof”)
 let mooSound = SimpleSound(named: “moo”)
 ```
 
-SimpleSound 메서드 호출
+**SimpleSound 메서드 호출**
 
 ```swift
 // 각각의 action에
@@ -2571,14 +2671,27 @@ class ViewController: UIViewController {
 }
 ```
 
-TIPS For Building Adaptive User Interfaces 😈 - Design for the smallest device // This will ensure your design will fit on other(larger) devices - Use constraints to define the height and width of image views // This will prevent you from needing to resize an image view to accommodate a very large image - Start by adding views and arranging them, then select the views and create a stack view - Use stack view settings, like spacing and alignment, to create a wide variety of interface effects - Nest stack views to create more complex user interfaces // Always try to start with the innermost stack views - Use constraints to center the outermost stack view horizontally and vertically to ensure your UI is centered on all devices - Resolve Auto Layout issues after adding constraints // Select Update Frames to get rid of those wiggly orange lines
+**TIPS For Building Adaptive User Interfaces 😈**
+- Design for the smallest device
+    - This will ensure your design will fit on other(larger) devices
+- Use constraints to define the height and width of image views
+    - This will prevent you from needing to resize an image view to accommodate a very large image
+- Start by adding views and arranging them, then select the views and create a stack view
+- Use stack view settings, like spacing and alignment, to create a wide variety of interface effects
+- Nest stack views to create more complex user interfaces
+- Always try to start with the innermost stack views
+- Use constraints to center the outermost stack view horizontally and vertically to ensure your UI is centered on all devices
+- Resolve Auto Layout issues after adding constraints
+- Select Update Frames to get rid of those wiggly orange lines
+
+## lesson 19 (Enumerations and Switch)
 
 ---
 
-### lesson 19 (Enumerations and Switch)
-
 - Case: In an enum, the case keyword declares a name for one of the enum’s options. In a switch, the case keyword introduces a pattern to try to match a value against.
-- Default: A default option is selected when no other option is available. If none of the other more-specific cases match the input, the code in the default block will run. // In an if statement, the default option is the final else clause. // In a switch statement, the default option is the catch-all option to make the switch comprehensive.
+- Default: A default option is selected when no other option is available. If none of the other more-specific cases match the input, the code in the default block will run.
+    - In an if statement, the default option is the final else clause.
+    - In a switch statement, the default option is the catch-all option to make the switch comprehensive.
 - Enum: The enum keyword declares a type made up of a group of related choices. An instance of an enum will be exactly one of the enum’s choices. The keyword enum comes from the word enumeration, which means listing distinct things one by one.
 - Exhaustive: Something that is exhaustive is comprehensive and all-inclusive. An exhaustive list contains every possibility.
 - Switch: The switch keyword chooses between different courses of action based on some value’s characteristics. The options for the values are written in case statements. Once the switch statement finds the first match between the value and a case, the block of code next to the case statement is executed. If no case statements match, the default statement’s code is executed. Once one of the blocks has been executed, the program continues running the next code after the end of the entire switch statement.
@@ -2608,20 +2721,20 @@ Multiple Choice
 
 학교 식당에서 pasta / burger / soup 이라는 3가지의 options 중에 반드시 하나만 고르는 choice를 하도록 할 때,
 
-    - 다른 옵션들은 고려하지 않아도 됨
-    - 이에 따라 신속하고 효율적으로 준비할 수 있음
-    - 더불어, 모두가 하나의 점심을 먹었음을 알 수 있음
+- 다른 옵션들은 고려하지 않아도 됨
+- 이에 따라 신속하고 효율적으로 준비할 수 있음
+- 더불어, 모두가 하나의 점심을 먹었음을 알 수 있음
 
 이라는 장점이 있다.
 
 열거형(enumerations)은 프로그램에 있어서 이와 같이 가능한 value들을 제시하고, Switch문을 통해 고를 수 있다.
 
-#### Making Decisions, Revisited
+### Making Decisions, Revisited
 
 조건에 따라 결정을 하는데 있어서(making decisions), 다음의 선택지가 있다:
 
-    - if문
-    - switch문(w/ enumerations)
+- if문
+- switch문(w/ enumerations)
 
 if문의 경우 다음과 같은 단점이 있을 수 있다:
 
@@ -2637,8 +2750,8 @@ return “🍲”
 }
 ```
 
-    - else의 경우 단순히 soup만 포함하는 것이 아니라, pasta, burger를 제외한 모든 경우를 포함한 것임(피자를 주문해도 수프가 나올 것)
-    - cookLunch(choice: String)의 경우 해당 function에 어떠한 option들이 있는지 알려주지 않음
+- else의 경우 단순히 soup만 포함하는 것이 아니라, pasta, burger를 제외한 모든 경우를 포함한 것임(피자를 주문해도 수프가 나올 것)
+- `cookLunch(choice: String)`의 경우 해당 function에 어떠한 option들이 있는지 알려주지 않음
 
 #### Enumerations
 
@@ -2660,18 +2773,18 @@ case pasta, burger, soup
 }
 ```
 
-    - enum을 정의 시 case는 각각 한 줄에 개별로도, 혹은 같은 줄에 여러 개도 정의할 수 있다
+- enum을 정의 시 case는 각각 한 줄에 개별로도, 혹은 같은 줄에 여러 개도 정의할 수 있다
 
-    - enumeration은 a group of related choices다
-    - 각각의 choice를 case라 한다
-    - enumeration 역시 하나의 type이다
-    - enum의 name은 UpperCamelCase
-    - case의 name은 lowerCamelCase
-    - enum의 value는 포함하고 있는 case 중 하나만이다
-    - 그러므로 enum의 name은 단수형으로 지어주자
+- enumeration은 a group of related choices다
+- 각각의 choice를 case라 한다
+- enumeration 역시 하나의 type이다
+- enum의 name은 UpperCamelCase
+- case의 name은 lowerCamelCase
+- enum의 value는 포함하고 있는 case 중 하나만이다
+- 그러므로 enum의 name은 단수형으로 지어주자
 
-    - enum은 limits the choices to one of its cases
-    - 그러므로 enum의 case에 없는 값을 value로 설정 불가
+- enum은 limits the choices to one of its cases
+- 그러므로 enum의 case에 없는 값을 value로 설정 불가
 
 enum의 인스턴스는 다음과 같이 생성:
 
@@ -2682,20 +2795,20 @@ let special = LunchChoice.fish // error! (Type ‘LunchChoice’ has no member �
 
 Enums and Type Inference
 
-해당 인스턴스의 type이 특정 enum임이 명확할 때, .caseName 만으로 값을 부여할 수 있다
+해당 인스턴스의 type이 특정 enum임이 명확할 때, `.caseName`만으로 값을 부여할 수 있다
 
 ```swift
 var choice: LunchChoice
 choice = .burger
 ```
 
-When to Use Enums
+**When to Use Enums**
 
 그렇다면 열거형(enums)은 언제 사용하는 것이 좋을까?
 
-    - Whenever you have a restricted group of related values in your code, it might be good to think about using an enum
-    - If there are no restrictions on the value, or you have a large number of possible values, enums probably aren’t a good fit
-    - 즉, RESTRICTED // RELATED한 value들이 있을 때, ‘열거형’으로 묶어주는 것을 생각해보자!
+- Whenever you have a restricted group of related values in your code, it might be good to think about using an enum
+- If there are no restrictions on the value, or you have a large number of possible values, enums probably aren’t a good fit
+- 즉, RESTRICTED, RELATED한 value들이 있을 때, ‘열거형’으로 묶어주는 것을 생각해보자!
 
 ```swift
 struct player {
@@ -2708,9 +2821,9 @@ position: Position
 
 - enum을 사용하기에 name의 경우 경우의 수가 너무 많고(restricted x), skillLevel은 숫자로 표현하는 것이 더 직관적일 것이다
 
-Comparing Enums
+**Comparing Enums**
 
-    - enum의 값들은 String, Int처럼 ==를 통해 비교할 수 있다
+- enum의 값들은 String, Int처럼 ==를 통해 비교할 수 있다
 
 ```swift
 enum LunchChoice {
@@ -2729,9 +2842,9 @@ if myLunch == yourLunch {
 // “We’re having the same for lunch!”
 ```
 
-Enums and Functions
+**Enums and Functions**
 
-    - enum의 값들은 functions의 패러미터나 리턴 값으로 사용될 수 있다
+- enum의 값들은 functions의 패러미터나 리턴 값으로 사용될 수 있다
 
 ```swift
 enum LunchChoice {
@@ -2751,18 +2864,19 @@ return “🍲”
 cookLunch(.burger) // 🍔
 ```
 
-- 함수 호출 시 LunchChoice의 member인 pasta, burger, soup을 제외한 경우는 호출할 수 없다는 장점! // Autocompletion을 통해 호출 값으로 가능한 옵션이 무엇인지 알 수 있음!
+- 함수 호출 시 LunchChoice의 member인 pasta, burger, soup을 제외한 경우는 호출할 수 없다는 장점!
+- Autocompletion을 통해 호출 값으로 가능한 옵션이 무엇인지 알 수 있음!
 
-The Problem with If
+**The Problem with If**
 
 하지만 위의 function은 다음의 문제점이 있다:
 
-    - enum의 case외에 다른 말들이 많이 붙어서, code가 ‘noisy’해서 어떠한 case들이 있는지 직관적이지 못함
-    - 마지막 choice는 ‘soup’인데, 이를 else로 표현하고 있어 코드를 읽는 입장에서 직관적이지 못함
+- enum의 case외에 다른 말들이 많이 붙어서, code가 ‘noisy’해서 어떠한 case들이 있는지 직관적이지 못함
+- 마지막 choice는 ‘soup’인데, 이를 else로 표현하고 있어 코드를 읽는 입장에서 직관적이지 못함
 
 그렇다면 enum과 어울리는 조건문은 무엇이 있을까?
 
-Switch
+**Switch**
 
 위의 If문 대신 다음과 같은 Switch문을 쓸 수 있다:
 
@@ -2787,19 +2901,19 @@ case .soup:
 // “🍔”
 ```
 
-    - switch 키워드를 사용
-    - switch 다음 사용되는 enum 인스턴스의 이름
-    - 이미 choice라는 인스턴스가 LunchChoice라는 type임을 알고 있으므로 각각의 case에 점(.)만 사용 가능
-    - 각 case 옆에 : 표시
-    - switch문의 case 중 매치되는 case에 해당하는 code를 실행 후 종료
+- switch 키워드를 사용
+- switch 다음 사용되는 enum 인스턴스의 이름
+- 이미 choice라는 인스턴스가 LunchChoice라는 type임을 알고 있으므로 각각의 case에 점(.)만 사용 가능
+- 각 case 옆에 `:` 표시
+- switch문의 case 중 매치되는 case에 해당하는 code를 실행 후 종료
 
-Exhausting the Possibilities
+**Exhausting the Possibilities**
 
-    - Switch문은 모든 가능성을 ‘exhaust’시켜야 한다
-    - 즉, 열거형과 호응할 경우 모든 case를 다루어야 한다
-    - Switch must be exhaustive
-    - This means a switch statement must exhaust every possibility of the value being checked
-    - With an enum, you can use a different case to handle every possible value
+- Switch문은 모든 가능성을 ‘exhaust’시켜야 한다
+- 즉, 열거형과 호응할 경우 모든 case를 다루어야 한다
+- Switch must be exhaustive
+- This means a switch statement must exhaust every possibility of the value being checked
+- With an enum, you can use a different case to handle every possible value
 
 ```swift
 enum LunchChoice {
@@ -2836,20 +2950,20 @@ case .taco:
 // “🍔”
 ```
 
-    - 결국 Switch문에서 처리하고자 하는 값은 반드시 하나의 case와 매치할 것이다
-    - 즉, Switch문에서 처리하고자 하는 값이 없는 경우를 방지한다
-    - 그리고 호응하는 enum의 정의가 달라질 시, Switch문을 그에 맞춰 업데이트하지 않을 경우 경고해준다
-    - The fact that switch statements must be exhaustive means that you can be sure that one of the cases will match the value you’re testing
-    - This feature prevents you from accidentally missing a value
-    - It also alerts you if you update the definition of an enum without updating any switch statements that use it
+- 결국 Switch문에서 처리하고자 하는 값은 반드시 하나의 case와 매치할 것이다
+- 즉, Switch문에서 처리하고자 하는 값이 없는 경우를 방지한다
+- 그리고 호응하는 enum의 정의가 달라질 시, Switch문을 그에 맞춰 업데이트하지 않을 경우 경고해준다
+- The fact that switch statements must be exhaustive means that you can be sure that one of the cases will match the value you’re testing
+- This feature prevents you from accidentally missing a value
+- It also alerts you if you update the definition of an enum without updating any switch statements that use it
 
-The Default Case
+**The Default Case**
 
-    - 하지만 enum과 switch문을 호응할 때 모든 case에 관해 실행문을 정의할 필요는 없다
-    - 남는 case들은 default 키워드로 커버하면 된다
-    - if문에서 else와 비슷하다
-    - default는 switch문 마지막에 정의한다
-    - default를 사용할 경우 호응하는 enum이 업데이트되어도 에러가 발생하지 않는다(default에 포함되므로)
+- 하지만 enum과 switch문을 호응할 때 모든 case에 관해 실행문을 정의할 필요는 없다
+- 남는 case들은 default 키워드로 커버하면 된다
+- if문에서 else와 비슷하다
+- default는 switch문 마지막에 정의한다
+- default를 사용할 경우 호응하는 enum이 업데이트되어도 에러가 발생하지 않는다(default에 포함되므로)
 
 ```swift
 enum Quality {
@@ -2872,10 +2986,10 @@ print(“OK, I’ll take it)
 
 - 코드적으로는 문제가 없지만, .terrible에 대하여 “OK, I’ll take it”이 출력된다는 점에서 문제가 있다
 
-Multiple Cases
+**Multiple Cases**
 
-    - switch문에서 하나의 case에 대하여 여러 값을 걸 수 있다
-    - enum에 값을 추가한다면, 이에 호응하는 switch문에서 알맞은 case에 마찬가지로 값을 추가할 수 있다
+- switch문에서 하나의 case에 대하여 여러 값을 걸 수 있다
+- enum에 값을 추가한다면, 이에 호응하는 switch문에서 알맞은 case에 마찬가지로 값을 추가할 수 있다
 
 ```swift
 switch quality {
@@ -2888,10 +3002,10 @@ print(“OK, I’ll take it”)
 }
 ```
 
-More Than Enums
+**More Than Enums**
 
-    - switch문에는 enum type외에 다른 type의 값들에도 적용할 수 있다
-    - String, Int 등의 type을 가진 value들에 대하여 exhaustive list를 만드는 것은 불가하므로, default를 사용한다
+- switch문에는 enum type외에 다른 type의 값들에도 적용할 수 있다
+- String, Int 등의 type을 가진 value들에 대하여 exhaustive list를 만드는 것은 불가하므로, default를 사용한다
 
 ```swift
 func soundFor(animal: String) -> String {
@@ -2919,9 +3033,9 @@ soundFor(animal: “snake”) // “Shhh!”
 soundFor(animal: “fox”) // “I don’t know that animal!”
 ```
 
-Back to the Cafeteria
+**Back to the Cafeteria**
 
-    - switch문이 enum과 잘 호응하기에, enum을 argument로 갖는 function을 정의할 시 switch문은 유용하다
+- switch문이 enum과 잘 호응하기에, enum을 argument로 갖는 function을 정의할 시 switch문은 유용하다
 
 ```swift
 enum LunchChoice {
@@ -2958,18 +3072,18 @@ cookLunch(.burger) // “🍔”
 
 이는 이전의 단점들을 보완한다:
 
-    - 코드가 case 별로 깔끔하게 분류되어 읽기 편하다
-    - enum의 각 value들에 대한 실행 사항을 각 case별로 명확히 전달한다
-    - switch문은 exhaustive하기에, enum에 변화가 생긴다면 switch문이 업데이트 되기 전까지 run하지 않을 것이므로 value를 놓치는 일이 없다
+- 코드가 case 별로 깔끔하게 분류되어 읽기 편하다
+- enum의 각 value들에 대한 실행 사항을 각 case별로 명확히 전달한다
+- switch문은 exhaustive하기에, enum에 변화가 생긴다면 switch문이 업데이트 되기 전까지 run하지 않을 것이므로 value를 놓치는 일이 없다
 
-Enum Methods and Properties
+**Enum Methods and Properties**
 
-    - struct를 정의할 때처럼 enum 역시 프로퍼티와 메서드를 정의할 수 있다
-    - self 키워드는 해당 프로퍼티나 메서드를 불러올 인스턴스 자기 자신을 의미한다
-    - self 키워드는 methods나 calculated properties에서 사용한다
-    - self keyword is used in methods and calculated properties and refers to the instance that is being asked for the property value
+- struct를 정의할 때처럼 enum 역시 프로퍼티와 메서드를 정의할 수 있다
+- self 키워드는 해당 프로퍼티나 메서드를 불러올 인스턴스 자기 자신을 의미한다
+- self 키워드는 methods나 calculated properties에서 사용한다
+- self keyword is used in methods and calculated properties and refers to the instance that is being asked for the property value
 
-ex 1
+**ex 1**
 
 ```swift
 enum LunchChoice {
@@ -2992,7 +3106,7 @@ let lunch = LunchChoice.pasta
 lunch.emoji // “🍝”
 ```
 
-ex 2
+**ex 2**
 
 ```swift
 enum Suit {
@@ -3035,29 +3149,34 @@ oneSuit.beats(otherSuit) // true
 oneSuit.beats(oneSuit) // false
 ```
 
-Wrapup
+**Wrapup**
 
-    - Enumerations are used when you want to represent one of a group of related values // Each possible value is called a case
-    - When you create an enum, you’re making a new type // Instances of that type can only have values matching one of the specified cases
-    - Using enums can make your code easier to read and write, because it’s always clear what the possible values are and what they mean
-    - You can compare enum values with ==, or use a switch statement to test for all possible values
-    - Like if statements, switch statements are another way of making decisions in your code
-    - Switch statements work very well with enums, but can be used to switch on any type of value
-    - Because switch statements must be exhaustive, you must handle every possible value
-    - To handle any values that haven’t been specified, you can use a default case
-    - Like structs, you can add calculated properties and methods to enums
+- Enumerations are used when you want to represent one of a group of related values
+- Each possible value is called a case
+- When you create an enum, you’re making a new type
+- Instances of that type can only have values matching one of the specified cases
+- Using enums can make your code easier to read and write, because it’s always clear what the possible values are and what they mean
+- You can compare enum values with `==`, or use a switch statement to test for all possible values
+- Like if statements, switch statements are another way of making decisions in your code
+- Switch statements work very well with enums, but can be used to switch on any type of value
+- Because switch statements must be exhaustive, you must handle every possible value
+- To handle any values that haven’t been specified, you can use a default case
+- Like structs, you can add calculated properties and methods to enums
 
-#### Array
+### Array
 
-    - 1)Ordered storage of values 2)of Same type
+1. Ordered storage of values
+2. of Same type
 
-#### Struct
+### Struct
 
-    - Modeling Data!
+- Modeling Data!
 
 #### Enum
 
-    - a group of 1)Related 2)Restricted number of values
+- a group of
+1. Related
+2. Restricted number of values
 
 ```swift
 enum SchoolMascotOption {
@@ -3094,11 +3213,11 @@ let mascotVoteResult = calculateMascotVotes(votes: mascotVotes)
 // 62 vote remain undecided
 ```
 
+## lesson 20 (Final Project)
+
 ---
 
-### lesson 20 (Final Project)
-
-#### M
+### M
 
 #### Sign.swift
 
@@ -3176,18 +3295,18 @@ case start, win, lose, draw
 }
 ```
 
-#### V
+### V
 
 #### Main.storyboard
 
-    - app이 내는 sign을 나타내는 label
-    - gamestate의 message를 나타내는 label
-    - 각각 r / p / s button 3개 ——> stack view 생성
-    - play again button
-    - 위 항목들로 stack view 생성
-    - align을 통해 center에 위치시킬 constraints 2개 생성
+- app이 내는 sign을 나타내는 label
+- gamestate의 message를 나타내는 label
+- 각각 r, p, s button 3개 ——> stack view 생성
+- play again button
+- 위 항목들로 stack view 생성
+- align을 통해 center에 위치시킬 constraints 2개 생성
 
-#### C
+### C
 
 #### ViewController.swift
 
@@ -3294,12 +3413,10 @@ extension ViewController {
 }
 ```
 
----
-
 ### extension
 
 - 하나의 클래스(혹은 그 외 커스텀 타입) 안에 모든 기능을 정리할 수 있지만, 코드를 따로 정리하고 싶을 때 extension 사용 가능
-- extension 클래스네임 {}
+- `extension SomeClass {}`
 - 해당 body 안에 연관된 기능들을 따로 따로 넣어 정리해줄 수 있음
 - extension 키워드를 통해 해당 클래스의 기능들을 ‘확장’시키는 개념
 - 코드 정리 및 수정 용이
@@ -3320,31 +3437,31 @@ extension ViewController {
 - 해당 class를 상속 불가한 class로 만들고자 할 때
 - 즉, 해당 클래스가 ‘파이널’이다
 - 상속하지 않을 클래스에 final을 붙여주면 코드 속도가 빨라짐
-- 상속을 하고 싶을 시에는 class SomeClass: SomeSuperClass {}와 같이 선언(SomeClass는 SomeSuperClass의 서브클래스이다)
+- 상속을 하고 싶을 시에는 `class SomeClass: SomeSuperClass {}`와 같이 선언(SomeClass는 SomeSuperClass의 서브클래스이다)
 
 ### Access Control
 
-    - Access Control은 다른 소스파일 및 모듈의 코드에서, 코드의 일부에 대한 액세스를 제한하는 것
-    - 이를 통해 코드의 구현 세부사항을 숨기고, 해당 코드를 접근하고 사용할 수 있는 기본 인터페이스를 지정할 수 있음
-    - 개별 타입(클래스, 구조체, 열거형) 외에도 해당 타입에 속하는 프로퍼티, 메서드, 이니셜라이저, 서브스크립트 등에 대한 특정 접근 레벨 지정 가능
-    - 객체 외부에서 객체 내의 자료로의 접근을 제한하고 데이터를 조작, 수정하는 동작은 내부에 두고 접근(getter), 설정(setter)하는 메서드로 결과만 받는 것
-    - private: Access Control(접근 제어)의 level 중 하나
+- Access Control은 다른 소스파일 및 모듈의 코드에서, 코드의 일부에 대한 액세스를 제한하는 것
+- 이를 통해 코드의 구현 세부사항을 숨기고, 해당 코드를 접근하고 사용할 수 있는 기본 인터페이스를 지정할 수 있음
+- 개별 타입(클래스, 구조체, 열거형) 외에도 해당 타입에 속하는 프로퍼티, 메서드, 이니셜라이저, 서브스크립트 등에 대한 특정 접근 레벨 지정 가능
+- 객체 외부에서 객체 내의 자료로의 접근을 제한하고 데이터를 조작, 수정하는 동작은 내부에 두고 접근(getter), 설정(setter)하는 메서드로 결과만 받는 것
+- `private`: Access Control(접근 제어)의 level 중 하나
 
 ### Module
 
-    - 모듈은 코드 배포(code distribution)의 단일 유닛
-    - 시스템(혹은 프로그램)이나 제품 등에서 개별적인 기능이나 역할을 가진 부품 및 요소 등을 칭함(사전적 정의)
-    - Framework와 같이 import 키워드를 통해 외부에서 가져오는 것
+- 모듈은 코드 배포(code distribution)의 단일 유닛
+- 시스템(혹은 프로그램)이나 제품 등에서 개별적인 기능이나 역할을 가진 부품 및 요소 등을 칭함(사전적 정의)
+- Framework와 같이 import 키워드를 통해 외부에서 가져오는 것
 
 ### Access Levels
 
 #### open
 
-    - 엔티티를 정의하는 모든 소스파일 내, 정의한 모듈을 가져오는 다른 모듈의 소스파일에서 모두 접근 가능
-    - 일반적으로 Framework에 공용 인터페이스를 지정할 때 사용
-    - 클래스 및 클래스 멤버에만 적용
-    - 다른 접근 레벨들과 다르게 정의 모듈 외에 이를 가져오는 외부 모듈에서도 서브클래싱 / override 가능
-    - 클래스를 명시적으로 open으로 표시하면, 해당 클래스를 Super Class로 사용하는 다른 모듈에서 가져온 코드의 영향을 고려했으므로, 클래스 코드를 적절히 디자인했음을 나타냄
+- 엔티티를 정의하는 모든 소스파일 내, 정의한 모듈을 가져오는 다른 모듈의 소스파일에서 모두 접근 가능
+- 일반적으로 Framework에 공용 인터페이스를 지정할 때 사용
+- 클래스 및 클래스 멤버에만 적용
+- 다른 접근 레벨들과 다르게 정의 모듈 외에 이를 가져오는 외부 모듈에서도 서브클래싱: override 가능
+- 클래스를 명시적으로 open으로 표시하면, 해당 클래스를 Super Class로 사용하는 다른 모듈에서 가져온 코드의 영향을 고려했으므로, 클래스 코드를 적절히 디자인했음을 나타냄
 
 ```swift
 // Zac Framework 내부
@@ -3367,14 +3484,14 @@ print(“Hello, world!”)
 
 #### public
 
-    - 엔티티를 정의하는 모든 소스파일 내, 정의한 모듈을 가져오는 다른 모듈의 소스파일에서 모두 접근 가능
-    - 일반적으로 Framework에 공용 인터페이스를 지정할 때 사용
+- 엔티티를 정의하는 모든 소스파일 내, 정의한 모듈을 가져오는 다른 모듈의 소스파일에서 모두 접근 가능
+- 일반적으로 Framework에 공용 인터페이스를 지정할 때 사용
 
 #### internal
 
-    - 정의 모듈의 모든 소스파일 내에서 사용 가능, 해당 모듈 외부의 소스파일에서는 사용 불가!(‘Internal’)
-    - 일반적으로 App이나 Framework 내부 구조를 정의할 때 internal 접근 사용
-    - 기본적인 접근 수준
+- 정의 모듈의 모든 소스파일 내에서 사용 가능, 해당 모듈 외부의 소스파일에서는 사용 불가!(‘Internal’)
+- 일반적으로 App이나 Framework 내부 구조를 정의할 때 `internal` 접근 사용
+- 기본적인 접근 수준
 
 ```swift
 // Zac Framework 내부
@@ -3401,9 +3518,9 @@ class ViewController: UIViewController {
 
 #### file-private
 
-    - 정의 소스파일에 엔티티 사용을 제한
-    - 해당 세부 정보가 전체 파일 내에서 사용될 때 특정 기능의 구현 세부 정보를 숨길 수 있음
-    - file-private 수준의 타입의 서브클래싱이나 인스턴스 생성 시 마찬가지로 접근 수준을 private or file-private으로 설정해야 함
+- 정의 소스파일에 엔티티 사용을 제한
+- 해당 세부 정보가 전체 파일 내에서 사용될 때 특정 기능의 구현 세부 정보를 숨길 수 있음
+- `file-private` 수준의 타입의 서브클래싱이나 인스턴스 생성 시 마찬가지로 접근 수준을 `private` or `file-private`으로 설정해야 함
 
 ```swift
 fileprivate class FilePrivateClass{
@@ -3417,8 +3534,8 @@ private class A: FilePrivateClass {}
 
 #### private
 
-    - 정의 선언과 해당 선언의 extension에 엔티티 사용을 제한
-    - 단일 정의 내에서만 사용되는 특정 기능 조각의 구현 상세 내역을 숨길 수 있음
+- 정의 선언과 해당 선언의 extension에 엔티티 사용을 제한
+- 단일 정의 내에서만 사용되는 특정 기능 조각의 구현 상세 내역을 숨길 수 있음
 
 ```swift
 private class PrivateClass {
@@ -3464,121 +3581,116 @@ override func someMethod() {} // error!
 }
 ```
 
+## lesson 21 (App Design)
+
 ---
 
-### lesson 21 (App Design)
+- Brainstorm - Plan - Prototype - Evaluate
+- 어디에 어떤 conding concept가 필요할지 생각
+- Easy to Use + Unique
 
-    - Brainstorm - Plan - Prototype - Evaluate
-    - 어디에 어떤 conding concept가 필요할지 생각
-    - Easy to Use + Unique
+### Brainstorm
 
-#### Brainstorm
+- 문제, 그리고 가능한 솔루션을 생각
+- 어떤 앱을 만들까?
+- App Store에서 조사
+- 개선사항은 없을까? UI가 더 좋아질 수 있을까?
+- User Reviews도 체크
 
-    - 문제 / 그리고 가능한 솔루션을 생각
-    - 어떤 앱을 만들까?
-    - App Store에서 조사
-    - 개선사항은 없을까? UI가 더 좋아질 수 있을까?
-    - User Reviews도 체크
+- 앱을 사용할 만한 가상의 persona 생성
+- 어떤 사람? 직업은? 몇 살? 기기는 얼마나 자주 사용? 사진 / 단어 중 무엇을 선호? 왜 앱을 사용하는가? 인터넷 액세스가 필요? 등등
 
-    - 앱을 사용할 만한 가상의 persona 생성
-    - 어떤 사람? 직업은? 몇 살? 기기는 얼마나 자주 사용? 사진 / 단어 중 무엇을 선호? 왜 앱을 사용하는가? 인터넷 액세스가 필요? 등등
+- 목적성을 확실히
+- My app will: ___________
+- because: ___________
+- ex: My app wil tell a new student exactly where to be right now and how to get there, because new students often get lost
 
-    - 목적성을 확실히
-    - My app will: ___________
-    - because: ___________
-    - ex) My app wil tell a new student exactly where to be right now and how to get there, because new students often get lost
+- Evaluate 이후 문제 해결을 위한 아이디어 생각
 
-    - Evaluate 이후 문제 해결을 위한 아이디어 생각
+### Plan
 
-#### Plan
+- 아이디어에 대한 디테일 플랜
 
-    - 아이디어에 대한 디테일 플랜
+- App Flow를 생각 (user experience 기반)
+- GET SPECIFIC
+- 버튼을 누르면 어떻게 되는지? 언제 특정 기능이 작동 가능해지는지?
 
-    - App Flow를 생각(user experience 기반)
-    - GET SPECIFIC
-    - 버튼을 누르면 어떻게 되는지? 언제 특정 기능이 작동 가능해지는지?
+**UI / UX는 어떻게 구성?**
 
-UI / UX는 어떻게 구성?
+- Good UI —> Good UX
+- navigation, font size, icon shape, placement 등 사소한 것까지
+- UX는 Simple할수록 좋다
 
-    - Good UI —> Good UX
-    - navigation, font size, icon shape, placement 등 사소한 것까지
-    - UX는 Simple할수록 좋다
+**디자인은 어떻게 할까?**
 
-디자인은 어떻게 할까?
+- Design통해 개성을 살리되, Simple하게
+- Color? 필요한 Image? Font? Sound?
+- App Icon은 첫인상
 
-    - Design통해 개성을 살리되, Simple하게
-    - Color? 필요한 Image? Font? Sound?
-    - App Icon은 첫인상
-
-어떤 기능을 추가할 수 있을까?
+**어떤 기능을 추가할 수 있을까?**
 
 - Basics
-
-  - Keyboard: 무슨 데이터를 입력?
-  - Camera and Microphone
-  - Touchscreen: tapping, double-tapping, swiping, dragging, button 등 / +스크린 요소가 터치로 interaction 가능한 앱?
+    - Keyboard: 무슨 데이터를 입력?
+    - Camera and Microphone
+    - Touchscreen: tapping, double-tapping, swiping, dragging, button 등 + 스크린 요소가 터치로 interaction 가능한 앱?
 
 - Connection
-
-  - Wi-Fi: 인터넷이 필요한 앱인가?
-  - GPS: iOS devices have a built-in GPS
-  - Bluetooth: 주변 기기와 연결(스피커, 로봇, 온도 측정기 등)
+    - Wi-Fi: 인터넷이 필요한 앱인가?
+    - GPS: iOS devices have a built-in GPS
+    - Bluetooth: 주변 기기와 연결(스피커, 로봇, 온도 측정기 등)
 
 - Innovation
-
-  - Speech recognition and machine learning: 키보드 사용 대신? 누가 좋아할까? Siri의 학습?
-  - Acceleromter and gyroscope: 디바이스가 accelerating / decelerating / zero gravity? 디바이스의 rotation 정도? 합쳐서 현 디바이스가 어떻게 움직이는지 3차원에서 파악 가능 / an app that recognizes if the user is falling? / the Health app and the level tool in the Compass app on iPhone
-  - Augmented reality: Blend digital objects and information in real-world environment
+    - Speech recognition and machine learning: 키보드 사용 대신? 누가 좋아할까? Siri의 학습?
+    - Acceleromter and gyroscope: 디바이스가 accelerating, decelerating, zero gravity? 디바이스의 rotation 정도? 합쳐서 현 디바이스가 어떻게 움직이는지 3차원에서 파악 가능
+    - an app that recognizes if the user is falling?
+    - the Health app and the level tool in the Compass app on iPhone
+    - Augmented reality: Blend digital objects and information in real-world environment
 
 - Accessibility
-
-  - Siri와 Dictation 활용
-  - 화면 사이즈, 대비 등 스크린 요소 변경
-  - VoiceOver screen reader
-  - 단순 장애 유저를 넘어 보통 유저들에게도 편리성 제공
-  - 직접 체험하라!
+    - Siri와 Dictation 활용
+    - 화면 사이즈, 대비 등 스크린 요소 변경
+    - VoiceOver screen reader
+    - 단순 장애 유저를 넘어 보통 유저들에게도 편리성 제공
+    - 직접 체험하라!
 
 - Feature Smash
+    - 앱에 필요한 다양한 기능 나열
+    - 다양한 combination 생각
+    - accelerometer + Bluetooth -> 로봇과 연결하여 디바이스를 리모콘으로 사용
 
-  - 앱에 필요한 다양한 기능 나열
-  - 다양한 combination 생각
-  - accelerometer + Bluetooth -> 로봇과 연결하여 디바이스를 리모콘으로 사용
+**Prototype**
 
-Prototype
+- 아이디어, 플랜을 모형처럼 만들어보는 것
+- 각 슬라이드를 앱의 스크린이라 생각하고 구상
 
-    - 아이디어 / 플랜을 모형처럼 만들어보는 것
-    - 각 슬라이드를 앱의 스크린이라 생각하고 구상
+- 처음부터 다 설계? -> NO
+- 스크린 1-2개에서 시작하여 adding한다는 생각 -> YES
 
-    - 처음부터 다 설계?(x)
-    - 스크린 1-2개에서 시작하여 adding한다는 생각(o)
+- What is the first screen?
+- Which buttons are visible?
+- Then what happens?
+- What kinds of graphics? icons?
+- How many taps?
+- How would users navigate between views?
+- 직관적으로 설명없이 어떤 feature인지 나타낼 수 있을까?
 
-    - What is the first screen?
-    - Which buttons are visible?
-    - Then what happens?
-    - What kinds of graphics? icons?
-    - How many taps?
-    - How would users navigate between views?
-    - 직관적으로 설명없이 어떤 feature인지 나타낼 수 있을까?
+**Evaluate**
 
-Evaluate
+- 프로토타입을 테스트
+- 주변 지인 + target audience에게 시험
+- Observe + Ask
 
-    - 프로토타입을 테스트
-    - 주변 지인 + target audience에게 시험
-    - Observe + Ask
+**During: Things to Observe**
 
-During: Things to Observe
+- 어떤 버튼을 tap할지 유저가 알았는가?
+- 유저가 혼동한 포인트는?
+- 유저가 즐거워한 포인트는?
 
-    - 어떤 버튼을 tap할지 유저가 알았는가?
-    - 유저가 혼동한 포인트는?
-    - 유저가 즐거워한 포인트는?
+**Afterwards: Questions to Ask**
 
-Afterwards: Questions to Ask
-
-    - 앱에서 좋았던 부분? 안좋았던 부분?
-    - 앱이 유용하다고 생각하는가? 출시된다면 사용할 의향?
-    - 앱에서 더 추가됐으면 하는 점?
-
----
+- 앱에서 좋았던 부분? 안좋았던 부분?
+- 앱이 유용하다고 생각하는가? 출시된다면 사용할 의향?
+- 앱에서 더 추가됐으면 하는 점?
 
 ### Code Review
 
@@ -3650,11 +3762,11 @@ oneSuit.emoji // "♠️"
 otherSuit.emoji // "♣️"
 ```
 
+## lesson 17 revised code
+
 ---
 
-### lesson 17 revised code
-
-#### ViewController.swift
+### ViewController.swift
 
 ```swift
 import UIKit
@@ -3782,7 +3894,7 @@ class ViewController: UIViewController {
 }
 ```
 
-#### CaptionChoice.swift
+### CaptionChoice.swift
 
 ```swift
 import Foundation
@@ -3793,7 +3905,7 @@ let caption: String
 }
 ```
 
-#### ViewController.swift
+### ViewController.swift
 
 ```swift
 import UIKit
@@ -3857,11 +3969,11 @@ extension ViewController {
 }
 ```
 
+## Pomodoro
+
 ---
 
-### Pomodoro
-
-#### M(Models)
+### M (Models)
 
 #### DailyResult.swift
 
@@ -3983,7 +4095,7 @@ DailyResult(pomodoros: pomodoros).message
 }
 ```
 
-#### VC(ViewControllers)
+### VC (ViewControllers)
 
 #### MainViewController.swift
 
@@ -4115,11 +4227,12 @@ addPomodoro()
 
 - 폴더 정리
 
-  - App(AppDelegate, SceneDelegate)
-  - Models, ViewControllers(MainViewController, Storyboard)
-  - Assets(xcassets, LaunchScreen.storyboard, Info.plist) / Products(Pomodoro.app)
-  - Info.plist의 경우 디렉토리 위치가 변경될 때 에러가 뜸
-    - 에러가 난 부분 수동으로 디렉토리 설정(Pomodoro/Assets/Info.plist)
+- App (AppDelegate, SceneDelegate)
+- Models, ViewControllers (MainViewController, Storyboard)
+- Assets (xcassets, LaunchScreen.storyboard, Info.plist)
+- Products (Pomodoro.app)
+- Info.plist의 경우 디렉토리 위치가 변경될 때 에러가 뜸
+- 에러가 난 부분 수동으로 디렉토리 설정 (`Pomodoro/Assets/Info.plist`)
 
 - Model에서는 modeling, 해당 모델에 대한 실제 인스턴스 생성은 주로 VC에서
 - 직관성 + 수정 용이성을 위해 최대한 반복되는 부분 없이 쪼개서 이름을 붙이자
@@ -4130,22 +4243,20 @@ addPomodoro()
 - VC 상단에 Outlet, 그리고 모델 인스턴스 생성
 - viewDidLoad 함수의 경우 되도록이면 VC 상단에 위치
 
-- init
-  - custom initializer 생성
-- String(repeating: count:)
-  - count만큼 해당 string을 repeating해라
-- mutating func
-  - 하나의 인스턴스는 스스로의 저장값을 바꿀 수 없어서, 저장값을 바꿀 수 있도록 mutating func으로 함
-- UIImage?
-  - Failable, 해당 Image가 있을 수도 없을 수도 있다는 이야기
-- configureTimeLabel(timeText: String?){timeLabel.isHidden = timeText == nil, timeLabel.text = timeText}
-  - timeText가 nil일 수도 있기에 String?으로 설정, timeText가 nil이라면 timeLabel을 숨기고, 그렇지 않다면 timeText를 보여줘라
-- MainViewController{enum Mode{}}
-  - MainViewController를 통해 적용할 화면들을 기능, 용도에 따라 mode 설정해보자
-- extension MainViewController.Mode{}
-  - Mode별 구현 사항 설정
-- extension MainViewController{private func update(mode: Mode){switch mode{}}}
-  - Mode별 구현 사항을 바탕으로 실제 화면을 업데이트해주는 함수 설정
-  - 이 때 또 반복되는 작업이 있다면 이 안에서도 decomposition을 통해 묶어줘라
-
----
+- `init`
+    - custom initializer 생성
+- `String(repeating: count:)`
+    - count만큼 해당 string을 repeating해라
+- `mutating func`
+    - 하나의 인스턴스는 스스로의 저장값을 바꿀 수 없어서, 저장값을 바꿀 수 있도록 mutating func으로 함
+- `UIImage?`
+    - Failable, 해당 Image가 있을 수도 없을 수도 있다는 이야기
+- `configureTimeLabel(timeText: String?){timeLabel.isHidden = timeText == nil, timeLabel.text = timeText}`
+    - timeText가 nil일 수도 있기에 String?으로 설정, timeText가 nil이라면 timeLabel을 숨기고, 그렇지 않다면 timeText를 보여줘라
+- `MainViewController{enum Mode{}}`
+    - MainViewController를 통해 적용할 화면들을 기능, 용도에 따라 mode 설정해보자
+- `extension MainViewController.Mode{}`
+    - Mode별 구현 사항 설정
+- `extension MainViewController{private func update(mode: Mode){switch mode{}}}`
+    - Mode별 구현 사항을 바탕으로 실제 화면을 업데이트해주는 함수 설정
+    - 이 때 또 반복되는 작업이 있다면 이 안에서도 decomposition을 통해 묶어줘라
