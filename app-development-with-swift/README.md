@@ -30,14 +30,14 @@
 
 ## Naming and Identifiers
 
+- `var`: variable
+- `let`: constant
 - `=`: assignment operator
 - binary operator: 곱하기, 덧셈, 뺄셈, 나누기
 - unary operator: NOT, 역수(inverse), FFT, integral, differentiation
 - operand: 연산자에 입력으로 들어가는 값들
 - type inference(타입 유추): string(문자열), int(정수), Float, Double
 - initializer(생성자): type을 인위적으로 변경 가능
-- `var`: vary able, variable
-- `let`: constant
 
 ## How to deal with text information in Swift
 
